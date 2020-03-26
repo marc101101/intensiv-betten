@@ -1,8 +1,8 @@
-# Intensiv - Betten
+# Intensiv - Beds
 
-Dieses Projekt sammelt Daten über die Intensivbettenlage in deutschen Krankenhäusern.
+This project collects data on the situation of intensive care beds in German hospitals.
 
-## Daten
+## Data
 
 Data can be found here:
 /data_storage

@@ -2,12 +2,17 @@
 
 This project collects data on the situation of intensive care beds in German hospitals.
 
+## Project Structure
+
+- ./app - vue.js based frontend application
+- ./data_analytics - jupyter notebooks to research the data
+- ./data_storage - clone of s3 bucket (updated asap)
+- ./data_collector - data parsing & collection service
+
 ## Data
 
-Data can be found here:
-/data_storage
-
 Example data:
+
 ```json
 [
   {
@@ -18,8 +23,7 @@ Example data:
     "icu_high_care": "green",
     "ecmo": "green",
     "updated": "26.03.2020, 17:09"
-  },
-
+  }
 ]
 ```
 

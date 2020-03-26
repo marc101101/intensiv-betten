@@ -1,0 +1,63 @@
+service: intensivBetten
+plugins:
+  - serverless-webpack
+  - serverless-dotenv-plugin
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: prod
+  region: eu-central-1
+
+  environment:
+    BUCKET_NAME: intensiv-betten-prod
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - cloudwatch:*
+        - logs:*
+        - "s3:ListBucket"
+        - "s3:PutObject"
+        - "ssm:GetParameters"
+      Resource:
+        - "*"
+package:
+  individually: false
+  excludeDevDependencies: true
+
+resources:
+  Resources:
+    ccCollectionBucket:
+      Type: "AWS::S3::Bucket"
+      Properties:
+        BucketName: intensiv-betten-prod
+        CorsConfiguration:
+          CorsRules:
+            - AllowedOrigins:
+                - "*"
+              AllowedHeaders:
+                - "*"
+              AllowedMethods:
+                - GET
+                - PUT
+                - POST
+                - DELETE
+                - HEAD
+              MaxAge: 3000
+
+custom:
+  file: ${file(./config/secret_env.${self:provider.stage}.yml)}
+  webpack:
+    webpackConfig: "webpack.config.js" # Name of webpack configuration file
+    includeModules:
+      forceInclude:
+        - pino-pretty
+    packager: "npm" # Packager that will be used to package your external modules
+
+functions:
+  collectIntensivBetten:
+    handler: src/intensivBetten/CollectIntensivBetten.collectIntensivBetten
+    timeout: 300
+    events:
+      - schedule: rate(1 hour)

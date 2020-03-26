@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  dev:
+    build: 
+      context: .
+    volumes:
+      - .:/app/
+      - ~/.aws/credentials:/root/.aws/credentials:ro

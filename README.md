@@ -19,8 +19,6 @@ Example data:
     "ecmo": "green",
     "updated": "26.03.2020, 17:09"
   },
-  
-...
 
 ]
 ```

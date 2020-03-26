@@ -1,15 +1,39 @@
-# ContiCloud Data Collection Service
+# Intensiv - Betten
 
-This is a data collection service of the Continental Cloud team. This service is based on AWS lambda and collectes data from different data sources.
+Dieses Projekt sammelt Daten über die Intensivbettenlage in deutschen Krankenhäusern.
 
-Currently following sources are supported:
+## Daten
 
-* [Opsgenie](./docu/README_Opsgenie.md)
+Data can be found here:
+/data_storage
 
-Currently following further data sources are planned to be supported in the future:
+Example data:
+```json
+[
+  {
+    "hospital": "Klinikum Bamberg Medizinische Klinik I/Intensivstation II, Medizinische Klinik I, Buger Straße 80, 96049 Bamberg",
+    "contact": "Intensivstation II Website",
+    "fed": "BY",
+    "icu_low_care": "green",
+    "icu_high_care": "green",
+    "ecmo": "green",
+    "updated": "26.03.2020, 17:09"
+  },
+  
+...
 
-* AWS Billing
-* Service Uptimes
+]
+```
+
+¹ ICU low care: Intensivbetten ohne invasive Beatmungsmöglichkeit (Monitoring, Überwachung, ggf. nicht-invasive Beatmung möglich)
+² ICU high care: Intensivbetten mit invasiver Beatmungsmöglichkeit (Beatmungsbetten)
+³ ECMO = Zusätzlich ECMO
+
+"green": Verfügbar
+
+"yellow": Begrenzt
+
+"red": Ausgelastet
 
 ## Installation
 
@@ -40,6 +64,3 @@ make bash
 ### Debugging
 
 Here VSCode Debugging by invoking the AWS lambda locally with the serverless framwork (see ./vscode).
-
-## ToDo
-All todos can be found [here](TODO.md).

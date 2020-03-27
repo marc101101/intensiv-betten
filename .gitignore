@@ -1,5 +1,6 @@
 .serverless/*
 node_modules
 .DS_Store
-.webpack/service/*
+.webpack/*
 .ipynb_checkpoints
+data_collector/.serverless/

@@ -1,0 +1,15 @@
+{
+  "name": "intensivBetten",
+  "version": "1.0.0",
+  "description": "Packaged externals for intensivBetten",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "node-html-parser": "^1.2.13",
+    "form-data": "^3.0.0",
+    "request": "^2.88.2",
+    "pino": "^5.16.0",
+    "aws-sdk": "",
+    "pino-pretty": "^2.6.1"
+  }
+}

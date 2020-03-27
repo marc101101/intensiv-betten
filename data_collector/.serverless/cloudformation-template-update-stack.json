@@ -1,0 +1,232 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "The AWS CloudFormation template for this Serverless application",
+  "Resources": {
+    "ServerlessDeploymentBucket": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "BucketEncryption": {
+          "ServerSideEncryptionConfiguration": [
+            {
+              "ServerSideEncryptionByDefault": {
+                "SSEAlgorithm": "AES256"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "CollectIntensivBettenLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/intensivBetten-prod-collectIntensivBetten"
+      }
+    },
+    "IamRoleLambdaExecution": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": [
+                  "lambda.amazonaws.com"
+                ]
+              },
+              "Action": [
+                "sts:AssumeRole"
+              ]
+            }
+          ]
+        },
+        "Policies": [
+          {
+            "PolicyName": {
+              "Fn::Join": [
+                "-",
+                [
+                  "prod",
+                  "intensivBetten",
+                  "lambda"
+                ]
+              ]
+            },
+            "PolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "logs:CreateLogStream"
+                  ],
+                  "Resource": [
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/intensivBetten-prod*:*"
+                    }
+                  ]
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "logs:PutLogEvents"
+                  ],
+                  "Resource": [
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/intensivBetten-prod*:*:*"
+                    }
+                  ]
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "cloudwatch:*",
+                    "logs:*",
+                    "s3:ListBucket",
+                    "s3:PutObject",
+                    "ssm:GetParameters"
+                  ],
+                  "Resource": [
+                    "*"
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "Path": "/",
+        "RoleName": {
+          "Fn::Join": [
+            "-",
+            [
+              "intensivBetten",
+              "prod",
+              {
+                "Ref": "AWS::Region"
+              },
+              "lambdaRole"
+            ]
+          ]
+        }
+      }
+    },
+    "CollectIntensivBettenLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/intensivBetten/prod/1585298104205-2020-03-27T08:35:04.205Z/intensivBetten.zip"
+        },
+        "FunctionName": "intensivBetten-prod-collectIntensivBetten",
+        "Handler": "src/intensivBetten/CollectIntensivBetten.collectIntensivBetten",
+        "MemorySize": 1024,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs10.x",
+        "Timeout": 300,
+        "Environment": {
+          "Variables": {
+            "BUCKET_NAME": "intensiv-betten-prod"
+          }
+        }
+      },
+      "DependsOn": [
+        "CollectIntensivBettenLogGroup",
+        "IamRoleLambdaExecution"
+      ]
+    },
+    "CollectIntensivBettenLambdaVersionSlSUhDUe8Ow6T9n4rZTYuI5kDB6469rd1jAR78g": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "CollectIntensivBettenLambdaFunction"
+        },
+        "CodeSha256": "L9srjRVW1cruAviZgX6rGwlMhznFgFZi5SGUrWehGd8="
+      }
+    },
+    "CollectIntensivBettenEventsRuleSchedule1": {
+      "Type": "AWS::Events::Rule",
+      "Properties": {
+        "ScheduleExpression": "rate(1 hour)",
+        "State": "ENABLED",
+        "Targets": [
+          {
+            "Arn": {
+              "Fn::GetAtt": [
+                "CollectIntensivBettenLambdaFunction",
+                "Arn"
+              ]
+            },
+            "Id": "collectIntensivBettenSchedule"
+          }
+        ]
+      }
+    },
+    "CollectIntensivBettenLambdaPermissionEventsRuleSchedule1": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "CollectIntensivBettenLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": {
+          "Fn::GetAtt": [
+            "CollectIntensivBettenEventsRuleSchedule1",
+            "Arn"
+          ]
+        }
+      }
+    },
+    "ccCollectionBucket": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "BucketName": "intensiv-betten-prod",
+        "CorsConfiguration": {
+          "CorsRules": [
+            {
+              "AllowedOrigins": [
+                "*"
+              ],
+              "AllowedHeaders": [
+                "*"
+              ],
+              "AllowedMethods": [
+                "GET",
+                "PUT",
+                "POST",
+                "DELETE",
+                "HEAD"
+              ],
+              "MaxAge": 3000
+            }
+          ]
+        }
+      }
+    }
+  },
+  "Outputs": {
+    "ServerlessDeploymentBucketName": {
+      "Value": {
+        "Ref": "ServerlessDeploymentBucket"
+      }
+    },
+    "CollectIntensivBettenLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "CollectIntensivBettenLambdaVersionSlSUhDUe8Ow6T9n4rZTYuI5kDB6469rd1jAR78g"
+      }
+    }
+  }
+}

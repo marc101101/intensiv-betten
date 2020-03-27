@@ -8,6 +8,7 @@ provider:
   runtime: nodejs10.x
   stage: prod
   region: eu-central-1
+  logRetentionInDays: 1
 
   environment:
     BUCKET_NAME: intensiv-betten-prod

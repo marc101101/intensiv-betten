@@ -10,17 +10,29 @@ export class StoreIntensivBettenClient {
     this.bucket_name = bucket_name;
   }
 
-  public async storeToS3(data) {
+  public async storeAggregationToS3(data) {
+    let params = {
+      Bucket: this.bucket_name,
+      Key: "aggregation.json",
+      Body: JSON.stringify(data)
+    };
+    await this.storeToS3(params, "aggregation");
+  }
+
+  public async storeCollectionToS3(data) {
     let params = {
       Bucket: this.bucket_name,
       Key: "data_storage/" + new Date().toUTCString() + ".json",
       Body: JSON.stringify(data)
     };
+    await this.storeToS3(params, "collection");
+  }
 
+  public async storeToS3(params, type) {
     try {
       await this.bucket.putObject(params).promise();
 
-      logger.info(`File uploaded successfully`);
+      logger.info("File - " + type + " - uploaded successfully");
       return JSON.stringify(params);
     } catch (error) {
       logger.error(error);

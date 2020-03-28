@@ -1,7 +1,8 @@
 import { diviEntry } from "./models";
-import { CollectIntensivBettenClient } from "./client";
+import { CollectIntensivBettenClient } from "./collectionClient";
 import { logger } from "../helpers";
 import { StoreIntensivBettenClient } from "./s3Store";
+import { Lambda } from "aws-sdk";
 
 export const collectIntensivBetten = async () => {
   const client = new CollectIntensivBettenClient();
@@ -9,7 +10,19 @@ export const collectIntensivBetten = async () => {
   const betten: Array<diviEntry> = await client.collectIntensivBetten();
 
   const s3Store = new StoreIntensivBettenClient(process.env.BUCKET_NAME);
-  await s3Store.storeToS3(betten);
+  await s3Store.storeCollectionToS3(betten);
 
   logger.info("Job completed successfully - beds: " + betten.length);
+
+  var params = {
+    ClientContext: "CollectIntensivBetten",
+    FunctionName:
+      "arn:aws:lambda:eu-central-1:873778873518:function:intensivBetten-prod-aggregationIntensivBetten",
+    InvocationType: "Event",
+    region: "eu-central-1"
+  };
+
+  let lambda = new Lambda();
+
+  lambda.invoke(params);
 };

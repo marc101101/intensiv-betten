@@ -62,3 +62,7 @@ functions:
     timeout: 300
     events:
       - schedule: rate(1 hour)
+
+  aggregationIntensivBetten:
+    handler: src/intensivBetten/AggregateIntensivBetten.aggregateIntensivBetten
+    timeout: 300

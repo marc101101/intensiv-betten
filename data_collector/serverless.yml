@@ -58,11 +58,11 @@ custom:
 
 functions:
   collectIntensivBetten:
-    handler: src/intensivBetten/CollectIntensivBetten.collectIntensivBetten
+    handler: src/collector/CollectIntensivBetten.collectIntensivBetten
     timeout: 300
     events:
       - schedule: rate(1 hour)
-
-  aggregationIntensivBetten:
-    handler: src/intensivBetten/AggregateIntensivBetten.aggregateIntensivBetten
-    timeout: 300
+  #aggregationIntensivBetten:
+  #  runtime: python3.7
+  #  handler: src/aggregator/AggregateIntensivBetten.aggregateIntensivBetten
+  #  timeout: 300

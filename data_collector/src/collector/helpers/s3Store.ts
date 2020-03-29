@@ -1,4 +1,4 @@
-import { logger } from "../helpers";
+import { logger } from ".";
 import AWS from "aws-sdk";
 
 export class StoreIntensivBettenClient {
@@ -10,19 +10,10 @@ export class StoreIntensivBettenClient {
     this.bucket_name = bucket_name;
   }
 
-  public async storeAggregationToS3(data) {
+  public async storeCollectionToS3(data, path) {
     let params = {
       Bucket: this.bucket_name,
-      Key: "aggregation.json",
-      Body: JSON.stringify(data)
-    };
-    await this.storeToS3(params, "aggregation");
-  }
-
-  public async storeCollectionToS3(data) {
-    let params = {
-      Bucket: this.bucket_name,
-      Key: "data_storage/" + new Date().toUTCString() + ".json",
+      Key: "data_storage/" + path + "/" + new Date().toUTCString() + ".json",
       Body: JSON.stringify(data)
     };
     await this.storeToS3(params, "collection");

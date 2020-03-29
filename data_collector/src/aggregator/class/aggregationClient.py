@@ -1,6 +1,6 @@
 class AggregationClient():
 
-    def aggregateIntensivBetten():
+    def aggregateIntensivBetten(self):
         print("test")
         pass
     pass

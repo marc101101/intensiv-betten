@@ -15,6 +15,9 @@ export class AggregatorIntensivBettenClient {
     let register = await this.aggregateIntensivBettenAWS("register");
     let capacity = await this.aggregateIntensivBettenAWS("capacity");
 
+    logger.info("Number of loaded - register entries: " + register.length);
+    logger.info("Number of loaded - capacity entries: " + capacity.length);
+
     let data = await this.mergeData(register, capacity);
     return data;
   }
@@ -91,7 +94,7 @@ export class AggregatorIntensivBettenClient {
           logger.info("Failed to retrieve an object: " + error);
           reject(error);
         } else {
-          logger.info("Loaded " + data.ContentLength + " bytes");
+          //logger.info("Loaded " + data.ContentLength + " bytes");
           resolve(JSON.parse(data.Body.toString()));
         }
       });

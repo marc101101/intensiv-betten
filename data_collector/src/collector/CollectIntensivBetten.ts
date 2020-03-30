@@ -23,14 +23,17 @@ export const collectIntensivBetten = async () => {
   logger.info("Job completed successfully - capacity: " + capacity.length);
 
   var params = {
-    ClientContext: "CollectIntensivBetten",
-    FunctionName:
-      "arn:aws:lambda:eu-central-1:873778873518:function:intensivBetten-prod-aggregationIntensivBetten",
+    ClientContext: "Collector",
+    FunctionName: "intensivBetten-prod-aggregateIntensivBetten",
     InvocationType: "Event",
     region: "eu-central-1"
   };
 
   let lambda = new Lambda();
 
-  lambda.invoke(params);
+  lambda.invoke(params, function(err, data) {
+    if (err) console.log(err, err.stack);
+    // an error occurred
+    else console.log(data); // successful response
+  });
 };

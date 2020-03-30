@@ -1,5 +1,6 @@
 import { logger } from ".";
 import AWS from "aws-sdk";
+const fs = require("fs");
 
 export class StoreIntensivBettenClient {
   private bucket: AWS.S3;
@@ -8,6 +9,10 @@ export class StoreIntensivBettenClient {
   constructor(bucket_name: string) {
     this.bucket = new AWS.S3();
     this.bucket_name = bucket_name;
+  }
+
+  public async storeLocal(data) {
+    fs.writeFileSync("aggregated.json", JSON.stringify(data));
   }
 
   public async storeCollectionToS3(data) {

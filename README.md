@@ -12,6 +12,7 @@ This project collects data on the situation of intensive care beds in German hos
 - ./data_collector - data parsing & collection service :white_check_mark 
 
 ## Design Prototype 
+
 <a>
 <img align="left" src="https://i.imgur.com/AfINK1E.png" alt="" />
 </a><br><br>

@@ -14,14 +14,18 @@ export const aggregateIntensivBetten = async () => {
   logger.info("Job completed successfully aggregated: ");
 
   var params = {
-    ClientContext: "CollectIntensivBetten",
-    FunctionName:
-      "arn:aws:lambda:eu-central-1:873778873518:function:intensivBetten-prod-aggregationIntensivBetten",
+    FunctionName: "Lambda_B", // the lambda function we are going to invoke
     InvocationType: "Event",
-    region: "eu-central-1"
+    LogType: "Tail"
   };
 
   let lambda = new Lambda();
 
-  lambda.invoke(params);
+  lambda.invoke(params, function(err, data) {
+    if (err) {
+      logger.info(err);
+    } else {
+      logger.info("Lambda_B said " + data.Payload);
+    }
+  });
 };

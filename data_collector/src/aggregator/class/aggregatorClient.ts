@@ -15,6 +15,9 @@ export class AggregatorIntensivBettenClient {
     let register = await this.aggregateIntensivBettenAWS("register");
     let capacity = await this.aggregateIntensivBettenAWS("capacity");
 
+    logger.info("Number of loaded - register entries: " + register.length);
+    logger.info("Number of loaded - capacity entries: " + capacity.length);
+
     let data = await this.mergeData(register, capacity);
     return data;
   }
@@ -26,7 +29,7 @@ export class AggregatorIntensivBettenClient {
   private async aggregateIntensivBettenAWS(type: string): Promise<Array<any>> {
     // Schau nach wann der letzte update auf den aggregated.json war
     let aggregated_last_timestamp = Date.parse(
-      await this.old_aggregation.last_update
+      this.old_aggregation.last_update
     );
 
     // Lass dir eine Liste an allen dateien geben
@@ -91,7 +94,7 @@ export class AggregatorIntensivBettenClient {
           logger.info("Failed to retrieve an object: " + error);
           reject(error);
         } else {
-          logger.info("Loaded " + data.ContentLength + " bytes");
+          //logger.info("Loaded " + data.ContentLength + " bytes");
           resolve(JSON.parse(data.Body.toString()));
         }
       });
@@ -145,26 +148,18 @@ export class AggregatorIntensivBettenClient {
         if (ag_index == -1) {
           let new_hospital: Data = {
             hospital_long: element.hospital,
-            hospital_short: "",
+            hospital_short: undefined,
             contact: element.contact,
             fed: element.fed,
             icu_low_care: element.icu_low_care,
             icu_high_care: element.icu_high_care,
             ecmo: element.ecmo,
             updated: element.updated,
-            updated_capacity: 0,
-            lat: 0,
-            lon: 0,
-            covid_current: 0,
-            history: [
-              {
-                date: new Date(file.time).toUTCString(),
-                icu_low_care: element.icu_low_care,
-                icu_high_care: element.icu_high_care,
-                ecmo: element.ecmo,
-                covid: 0
-              }
-            ]
+            updated_capacity: file.time,
+            lat: undefined,
+            lon: undefined,
+            covid_current: undefined,
+            history: []
           };
           new_aggregation.data.push(new_hospital);
         } else {
@@ -178,10 +173,11 @@ export class AggregatorIntensivBettenClient {
             "DD.MM.YYYY, HH:mm"
           ).toDate();
 
-          /*if (last_update <= current_update) {
+          if (last_update < current_update) {
             new_aggregation.data[ag_index].history = [
               {
                 date: new_aggregation.data[ag_index].updated,
+                updated_capacity: file.time,
                 icu_low_care: new_aggregation.data[ag_index].icu_low_care,
                 icu_high_care: new_aggregation.data[ag_index].icu_high_care,
                 ecmo: new_aggregation.data[ag_index].ecmo,
@@ -190,25 +186,60 @@ export class AggregatorIntensivBettenClient {
               ...new_aggregation.data[ag_index].history
             ];
 
-            new_aggregation.data[ag_index].icu_low_care = element.icu_low_dcare;
+            new_aggregation.data[ag_index].icu_low_care = element.icu_low_care;
             new_aggregation.data[ag_index].icu_high_care =
               element.icu_high_care;
+            new_aggregation.data[ag_index].updated_capacity =
+              element.updated_capacity;
             new_aggregation.data[ag_index].ecmo = element.ecmo;
             new_aggregation.data[ag_index].updated = element.updated;
           } else {
-          }*/
+          }
         }
         //UPDATE ÄLTER: Update Date Object + neuer History Eintrag an erster Stelle
         //UPDATE NEUER: EEGGAAAL
       });
     });
 
-    /*capacity.forEach(element => {
-      //suche nach krankenhaus in liste das passt
-      //wann wurde die capacity zuletzt upgedated
-      //Update ÄLTER: Update alle relvanten sachen + NEUER HISOTRY EINTRAG
-      //UPDATE NEUER: EEGGAAAAL
-    });*/
+    capacity.forEach(file => {
+      file.data.forEach(element => {
+        //suche nach krankenhaus in liste das passt
+        let ag_index = new_aggregation.data.findIndex(hospital =>
+          hospital.hospital_long.includes(element.Klinikname)
+        );
+        if (ag_index != -1) {
+          new_aggregation.data[ag_index].hospital_short = element.Klinikname;
+          let current_file_time = file.time;
+          let last_update = new_aggregation.data[ag_index].updated_capacity;
+
+          if (last_update == current_file_time) {
+            new_aggregation.data[ag_index].lat = element.lat;
+            new_aggregation.data[ag_index].lon = element.lon;
+            new_aggregation.data[ag_index].covid = element["COVID-19 aktuell"];
+          }
+          new_aggregation.data[ag_index].history.forEach(
+            (history_element, i) => {
+              let last_update =
+                new_aggregation.data[ag_index].history[i].updated_capacity;
+              if (last_update == current_file_time) {
+                new_aggregation.data[ag_index].history[i].covid =
+                  element["COVID-19 aktuell"];
+              }
+            }
+          );
+          //search in history
+        }
+        //wann wurde die capacity zuletzt upgedated
+
+        //Update ÄLTER: Update alle relvanten sachen + NEUER HISOTRY EINTRAG
+
+        //UPDATE NEUER: EEGGAAAAL
+      });
+    });
+
+    new_aggregation.last_update = new Date(
+      register[register.length - 1].time
+    ).toUTCString();
 
     return new_aggregation;
   }

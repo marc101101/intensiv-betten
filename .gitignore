@@ -7,3 +7,4 @@ data_collector/.serverless/
 .idea/*
 */dist/*
 app/src/assets/data/aggregated.json
+data_collector/.webpack/*

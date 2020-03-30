@@ -1,5 +1,6 @@
 export interface History {
   date: string;
+  updated_capacity: number;
   icu_low_care: string;
   icu_high_care: string;
   ecmo: string;

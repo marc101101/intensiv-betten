@@ -13,6 +13,7 @@ provider:
   environment:
     BUCKET_NAME: intensiv-betten-prod
     BUCKET_NAME_APP: www.intensiv-betten.de
+    AGGREGATION_FUNCTION_NAME: arn:aws:lambda:eu-central-1:873778873518:function:intensivBetten-prod-aggregateIntensivBetten
 
   iamRoleStatements:
     - Effect: Allow
@@ -22,6 +23,8 @@ provider:
         - "s3:ListBucket"
         - "s3:PutObject"
         - "ssm:GetParameters"
+        - "s3:GetObject"
+        - "lambda:InvokeFunction"
       Resource:
         - "*"
 package:

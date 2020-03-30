@@ -22,18 +22,11 @@ export const collectIntensivBetten = async () => {
   await s3Store.storeCollectionToS3(capacity, "capacity");
   logger.info("Job completed successfully - capacity: " + capacity.length);
 
-  var params = {
-    ClientContext: "Collector",
-    FunctionName: "intensivBetten-prod-aggregateIntensivBetten",
-    InvocationType: "Event",
-    region: "eu-central-1"
+  var params: Lambda.Types.InvocationRequest = {
+    FunctionName: process.env.AGGREGATION_FUNCTION_NAME,
+    InvocationType: "Event"
   };
-
+  1;
   let lambda = new Lambda();
-
-  lambda.invoke(params, function(err, data) {
-    if (err) console.log(err, err.stack);
-    // an error occurred
-    else console.log(data); // successful response
-  });
+  lambda.invoke(params);
 };

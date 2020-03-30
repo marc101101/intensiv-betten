@@ -12,6 +12,7 @@ provider:
 
   environment:
     BUCKET_NAME: intensiv-betten-prod
+    BUCKET_NAME_APP: www.intensiv-betten.de
 
   iamRoleStatements:
     - Effect: Allow

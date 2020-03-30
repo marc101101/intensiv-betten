@@ -1,13 +1,13 @@
-import { diviEntry } from "./models/models";
 import { logger } from "./helpers";
 import { StoreIntensivBettenClient } from "./helpers/s3Store";
 import { Lambda } from "aws-sdk";
 import { AggregatorIntensivBettenClient } from "./class/collectionClient";
+import { Aggregation } from "./models";
 
 export const aggregateIntensivBetten = async () => {
   const client = new AggregatorIntensivBettenClient();
 
-  const aggregate: Array<diviEntry> = await client.aggregateIntensivBetten();
+  const aggregate: any = await client.aggregateIntensivBetten();
 
   const s3Store = new StoreIntensivBettenClient(process.env.BUCKET_NAME_APP);
   await s3Store.storeCollectionToS3(aggregate);

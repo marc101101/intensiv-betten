@@ -14,14 +14,20 @@ jobs:
     name: Build and Deploy
     steps:
       - uses: actions/checkout@v1
-      - name: Setup node
+      - name: Setup Node.js 12.x
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-          working-directory: ./app
-      - run: npm install
-      - run: npm run-script build
-      - uses: jakejarvis/s3-sync-action@master
+      - name: Install dependencies
+        working-directory: ./app
+        run: |
+          npm install
+      - name: Build project
+        working-directory: ./app
+        run: |
+          npm run-script build
+      - name: Deploy to s3 bucket
+        uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete
         env:

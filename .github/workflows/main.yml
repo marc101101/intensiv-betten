@@ -13,13 +13,12 @@ jobs:
         node: ["12"]
     name: Build and Deploy
     steps:
-      - working-directory: ./app
       - uses: actions/checkout@v1
       - name: Setup node
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-      - run: cd app
+          working-directory: ./app
       - run: npm install
       - run: npm run-script build
       - uses: jakejarvis/s3-sync-action@master

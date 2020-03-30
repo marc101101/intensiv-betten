@@ -19,7 +19,7 @@ export class StoreIntensivBettenClient {
     logger.info(typeof data);
     let params = {
       Bucket: this.bucket_name,
-      Key: "aggregated-" + new Date().toUTCString() + ".json",
+      Key: "aggregated.json",
       Body: JSON.stringify(data)
     };
     await this.storeToS3(params, "collection");

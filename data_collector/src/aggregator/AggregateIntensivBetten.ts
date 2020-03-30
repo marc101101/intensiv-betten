@@ -10,7 +10,7 @@ export const aggregateIntensivBetten = async () => {
   const aggregate: any = await client.aggregateIntensivBetten();
 
   const s3Store = new StoreIntensivBettenClient(process.env.BUCKET_NAME_APP);
-  await s3Store.storeLocal(aggregate);
+  await s3Store.storeCollectionToS3(aggregate);
   logger.info("Job completed successfully aggregated: ");
 
   var params = {

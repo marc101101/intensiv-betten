@@ -186,6 +186,8 @@ export class AggregatorIntensivBettenClient {
             new_aggregation.data[ag_index].icu_low_care = element.icu_low_care;
             new_aggregation.data[ag_index].icu_high_care =
               element.icu_high_care;
+            new_aggregation.data[ag_index].updated_capacity =
+              element.updated_capacity;
             new_aggregation.data[ag_index].ecmo = element.ecmo;
             new_aggregation.data[ag_index].updated = element.updated;
           } else {

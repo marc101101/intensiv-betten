@@ -6,3 +6,4 @@ node_modules
 data_collector/.serverless/
 .idea/*
 */dist/*
+app/src/assets/data/aggregated.json

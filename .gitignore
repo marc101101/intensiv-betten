@@ -4,3 +4,4 @@ node_modules
 .webpack/*
 .ipynb_checkpoints
 data_collector/.serverless/
+.idea/*

@@ -9,7 +9,12 @@ This project collects data on the situation of intensive care beds in German hos
 - ./app - vue.js based frontend application :construction:
 - ./data_analytics - jupyter notebooks to research the data :construction:
 - ./data_storage - clone of s3 bucket (updated asap) :white_check_mark:
-- ./data_collector - data parsing & collection service :white_check_mark:
+- ./data_collector - data parsing & collection service :white_check_mark 
+
+# Design Prototype 
+<a>
+<img align="left" src="https://i.imgur.com/AfINK1E.png" alt="" />
+</a><br><br>
 
 ## Data
 

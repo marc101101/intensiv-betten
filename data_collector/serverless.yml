@@ -12,6 +12,7 @@ provider:
 
   environment:
     BUCKET_NAME: intensiv-betten-prod
+    BUCKET_NAME_APP: www.intensiv-betten.de
 
   iamRoleStatements:
     - Effect: Allow
@@ -48,7 +49,6 @@ resources:
               MaxAge: 3000
 
 custom:
-  file: ${file(./config/secret_env.${self:provider.stage}.yml)}
   webpack:
     webpackConfig: "webpack.config.js" # Name of webpack configuration file
     includeModules:
@@ -62,7 +62,7 @@ functions:
     timeout: 300
     events:
       - schedule: rate(1 hour)
-  #aggregationIntensivBetten:
-  #  runtime: python3.7
-  #  handler: src/aggregator/AggregateIntensivBetten.aggregateIntensivBetten
-  #  timeout: 300
+
+  aggregateIntensivBetten:
+    handler: src/aggregator/AggregateIntensivBetten.aggregateIntensivBetten
+    timeout: 300

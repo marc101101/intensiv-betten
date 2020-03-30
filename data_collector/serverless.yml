@@ -48,7 +48,6 @@ resources:
               MaxAge: 3000
 
 custom:
-  file: ${file(./config/secret_env.${self:provider.stage}.yml)}
   webpack:
     webpackConfig: "webpack.config.js" # Name of webpack configuration file
     includeModules:
@@ -63,7 +62,6 @@ functions:
     events:
       - schedule: rate(1 hour)
 
-  aggregationIntensivBetten:
-    runtime: python3.7
+  aggregateIntensivBetten:
     handler: src/aggregator/AggregateIntensivBetten.aggregateIntensivBetten
     timeout: 300

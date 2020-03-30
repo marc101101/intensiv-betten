@@ -6,12 +6,14 @@ This project collects data on the situation of intensive care beds in German hos
 
 - ./app - vue.js based frontend application :construction:
 - ./data_analytics - jupyter notebooks to research the data :construction:
-- ./data_storage - clone of s3 bucket (updated asap)  :white_check_mark:
-- ./data_collector - data parsing & collection service  :white_check_mark:
+- ./data_storage - clone of s3 bucket (updated asap) :white_check_mark:
+- ./data_collector - data parsing & collection service :white_check_mark:
 
 ## Data
 
 Example data:
+
+./data_storage/register
 
 ```json
 [
@@ -23,6 +25,19 @@ Example data:
     "icu_high_care": "green",
     "ecmo": "green",
     "updated": "26.03.2020, 17:09"
+  }
+]
+```
+
+./data_storage/capacity
+
+```json
+[
+  {
+    "lat": 50.884082549873,
+    "lon": 8.01902496818,
+    "COVID-19 aktuell": 0,
+    "Klinikname": "DRK Kinderklinik"
   }
 ]
 ```

@@ -26,7 +26,7 @@ export class AggregatorIntensivBettenClient {
   private async aggregateIntensivBettenAWS(type: string): Promise<Array<any>> {
     // Schau nach wann der letzte update auf den aggregated.json war
     let aggregated_last_timestamp = Date.parse(
-      await this.old_aggregation.last_update
+      this.old_aggregation.last_update
     );
 
     // Lass dir eine Liste an allen dateien geben
@@ -157,13 +157,13 @@ export class AggregatorIntensivBettenClient {
             lon: 0,
             covid_current: 0,
             history: [
-              {
+              /* {
                 date: new Date(file.time).toUTCString(),
                 icu_low_care: element.icu_low_care,
                 icu_high_care: element.icu_high_care,
                 ecmo: element.ecmo,
                 covid: 0
-              }
+              }*/
             ]
           };
           new_aggregation.data.push(new_hospital);
@@ -178,7 +178,7 @@ export class AggregatorIntensivBettenClient {
             "DD.MM.YYYY, HH:mm"
           ).toDate();
 
-          /*if (last_update <= current_update) {
+          if (last_update < current_update) {
             new_aggregation.data[ag_index].history = [
               {
                 date: new_aggregation.data[ag_index].updated,
@@ -190,13 +190,13 @@ export class AggregatorIntensivBettenClient {
               ...new_aggregation.data[ag_index].history
             ];
 
-            new_aggregation.data[ag_index].icu_low_care = element.icu_low_dcare;
+            new_aggregation.data[ag_index].icu_low_care = element.icu_low_care;
             new_aggregation.data[ag_index].icu_high_care =
               element.icu_high_care;
             new_aggregation.data[ag_index].ecmo = element.ecmo;
             new_aggregation.data[ag_index].updated = element.updated;
           } else {
-          }*/
+          }
         }
         //UPDATE ÄLTER: Update Date Object + neuer History Eintrag an erster Stelle
         //UPDATE NEUER: EEGGAAAL
@@ -209,6 +209,10 @@ export class AggregatorIntensivBettenClient {
       //Update ÄLTER: Update alle relvanten sachen + NEUER HISOTRY EINTRAG
       //UPDATE NEUER: EEGGAAAAL
     });*/
+
+    new_aggregation.last_update = new Date(
+      register[register.length - 1].time
+    ).toUTCString();
 
     return new_aggregation;
   }

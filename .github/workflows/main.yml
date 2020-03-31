@@ -26,6 +26,7 @@ jobs:
         working-directory: ./app
         run: |
           npm run-script build
+          rm dist/aggregated.json
       - name: Deploy to s3 bucket
         uses: jakejarvis/s3-sync-action@master
         with:

@@ -214,7 +214,7 @@ export class AggregatorIntensivBettenClient {
           new_aggregation.data[ag_index].lat = element.lat;
           new_aggregation.data[ag_index].lon = element.lon;
 
-          if (last_update == current_file_time) {
+          if (last_update < current_file_time) {
             new_aggregation.data[ag_index].covid = element["COVID-19 aktuell"];
           }
           new_aggregation.data[ag_index].history.forEach(

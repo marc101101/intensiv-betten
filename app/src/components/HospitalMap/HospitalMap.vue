@@ -40,6 +40,16 @@ export default Vue.extend({
           strokeWeight: 0,
           scale: 1
         }
+      },
+      {
+        position: { lat: 49.1, lng: 12 },
+        icon: {
+          path: "M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0",
+          fillColor: "#FF0000",
+          fillOpacity: 0.6,
+          strokeWeight: 0,
+          scale: 1
+        }
       }
     ]
   })

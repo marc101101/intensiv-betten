@@ -4,6 +4,7 @@ Vue.use(Vuex);
 
 const state = {
   hospitals: [],
+  selectedHospital: undefined,
   lastUpdate: ""
 };
 
@@ -13,6 +14,9 @@ const mutations = {
   },
   setHospitals(state, hospitals) {
     state.hospitals = hospitals;
+  },
+  selectHospital(state, selectedHospital) {
+    state.selectedHospital = selectedHospital;
   }
 };
 

@@ -2,8 +2,10 @@
   <v-autocomplete
     v-model="select"
     :loading="loading"
-    :items="items"
+    :items="hospitals"
     :search-input.sync="search"
+    @change="e => $store.commit('selectHospital', e)"
+    item-text="hospital_short"
     cache-items
     class="mx-4"
     flat
@@ -11,6 +13,7 @@
     label="Deine Stadt"
     prepend-icon="mdi-magnify"
     solo
+    return-object
   ></v-autocomplete>
 </template>
 <script lang="ts">
@@ -22,7 +25,7 @@ export default Vue.extend({
   data() {
     return {
       loading: false,
-      items: [] as string[],
+      items: ["a", "b"],
       search: null,
       select: null,
       states: [
@@ -100,6 +103,11 @@ export default Vue.extend({
         return (e || "").toLowerCase().indexOf((v || "").toLowerCase()) > -1;
       });
       this.loading = false;
+    }
+  },
+  computed: {
+    hospitals() {
+      return this.$store.state.hospitals;
     }
   }
 });

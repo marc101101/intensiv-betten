@@ -10,14 +10,16 @@
       styles: mapStyle
     }"
   >
-    <GmapMarker
-      :key="index"
-      v-for="(m, index) in hospitals"
-      :position="m.position"
-      :icon="m.icon"
-      :clickable="true"
-      @click="select(m)"
-    />
+    <gmap-cluster>
+      <GmapMarker
+        :key="index"
+        v-for="(m, index) in hospitals"
+        :position="m.position"
+        :icon="m.icon"
+        :clickable="true"
+        @click="select(m)"
+      />
+    </gmap-cluster>
   </GmapMap>
 </template>
 

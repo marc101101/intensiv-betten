@@ -13,10 +13,10 @@
         </v-toolbar>
       </v-card>
       <v-row class="max-height-row">
-        <v-col cols="3">
+        <v-col lg="3" cols="12">
           <search-bar />
         </v-col>
-        <v-col cols="9" class="map-outter-style">
+        <v-col lg="9" cols="12" class="map-outter-style">
           <hospital-map />
         </v-col>
       </v-row>

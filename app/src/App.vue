@@ -37,9 +37,11 @@ export default Vue.extend({
     SearchBar
   },
 
-  data: () => ({
-    //
-  })
+  data: () => ({}),
+
+  mounted() {
+    this.$store.dispatch("loadHospitals");
+  }
 });
 </script>
 

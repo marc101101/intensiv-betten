@@ -1,7 +1,7 @@
 <template>
   <GmapMap
-    :center="{ lat: 49.0134297, lng: 12.1016236 }"
-    :zoom="8"
+    :center="{ lat: 50.98, lng: 10.31 }"
+    :zoom="7"
     style="width: 100%; height: 100%"
     :options="{
       streetViewControl: false,
@@ -10,7 +10,7 @@
       styles: mapStyle
     }"
   >
-    <gmap-cluster :calculator="clusterCalc">
+    <gmap-cluster :calculator="clusterCalc" zoomOnClick>
       <GmapMarker
         :key="index"
         v-for="(m, index) in hospitals"

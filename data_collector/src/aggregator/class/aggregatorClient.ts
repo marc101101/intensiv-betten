@@ -211,10 +211,10 @@ export class AggregatorIntensivBettenClient {
           new_aggregation.data[ag_index].hospital_short = element.Klinikname;
           let current_file_time = file.time;
           let last_update = new_aggregation.data[ag_index].updated_capacity;
+          new_aggregation.data[ag_index].lat = element.lat;
+          new_aggregation.data[ag_index].lon = element.lon;
 
           if (last_update == current_file_time) {
-            new_aggregation.data[ag_index].lat = element.lat;
-            new_aggregation.data[ag_index].lon = element.lon;
             new_aggregation.data[ag_index].covid = element["COVID-19 aktuell"];
           }
           new_aggregation.data[ag_index].history.forEach(

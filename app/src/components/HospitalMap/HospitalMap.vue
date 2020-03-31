@@ -34,8 +34,11 @@ export default Vue.extend({
       {
         position: { lat: 49, lng: 12 },
         icon: {
-          url:
-            "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
+          path: "M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0",
+          fillColor: "#FF0000",
+          fillOpacity: 0.6,
+          strokeWeight: 0,
+          scale: 1
         }
       }
     ]

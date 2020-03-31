@@ -13,7 +13,9 @@
         </v-toolbar>
       </v-card>
       <v-row class="max-height-row">
-        <v-col cols="3">TEST</v-col>
+        <v-col cols="3">
+          <search-bar />
+        </v-col>
         <v-col cols="9" class="map-outter-style">
           <hospital-map />
         </v-col>
@@ -25,12 +27,14 @@
 <script lang="ts">
 import Vue from "vue";
 import HospitalMap from "./components/HospitalMap/HospitalMap.vue";
+import SearchBar from "./components/SearchBar/SearchBar.vue";
 
 export default Vue.extend({
   name: "App",
 
   components: {
-    HospitalMap
+    HospitalMap,
+    SearchBar
   },
 
   data: () => ({

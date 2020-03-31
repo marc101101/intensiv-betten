@@ -17,8 +17,10 @@ export default Vue.extend({
     HospitalMap
   },
 
-  data: () => ({
-    //
-  })
+  data: () => ({}),
+
+  mounted() {
+    this.$store.dispatch("loadHospitals");
+  }
 });
 </script>

@@ -59,11 +59,8 @@ export default Vue.extend({
           x.position = { lat: x.lat, lng: x.lon };
 
           x.icon = {
-            path: "M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0",
-            fillColor: getFillColor(x),
-            fillOpacity: 0.6,
-            strokeWeight: 0,
-            scale: 0.2
+            url: "/img/red.png",
+            scaledSize: { height: 10, width: 10 }
           };
 
           return x;

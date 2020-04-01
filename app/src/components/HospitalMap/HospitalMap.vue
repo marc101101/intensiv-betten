@@ -25,6 +25,7 @@
 <script lang="ts">
 import Vue from "vue";
 import mapStyle from "./mapStyle";
+import { log } from "util";
 
 function getFillColor(hospital) {
   if (hospital.icu_high_care === "green") {
@@ -50,12 +51,21 @@ export default Vue.extend({
     }
   },
 
+  watch: {
+    selectedHospital() {
+      console.log(this.selectedHospital);
+    }
+  },
+
   computed: {
+    selectedHospital() {
+      return this.$store.state.selectedHospital;
+    },
     hospitals() {
       const hospitals = this.$store.state.hospitals;
       return hospitals
-        .filter((x) => x.lat && x.lon)
-        .map((x) => {
+        .filter(x => x.lat && x.lon)
+        .map(x => {
           x.position = { lat: x.lat, lng: x.lon };
 
           x.icon = {

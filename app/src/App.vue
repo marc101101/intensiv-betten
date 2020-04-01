@@ -12,9 +12,13 @@
           <!--v-app-bar-nav-icon></v-app-bar-nav-icon-->
         </v-toolbar>
       </v-card>
-      <v-row class="max-height-row" v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.md">
+      <v-row
+        class="max-height-row"
+        v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.md || $vuetify.breakpoint.xl"
+      >
         <v-col lg="3">
           <search-bar />
+          <clinic-info />
         </v-col>
         <v-col lg="9" class="map-outter-style">
           <hospital-map />
@@ -27,6 +31,7 @@
       >
         <v-col cols="12">
           <search-bar />
+          <clinic-info />
         </v-col>
         <hospital-map />
       </v-row>

@@ -12,13 +12,23 @@
           <!--v-app-bar-nav-icon></v-app-bar-nav-icon-->
         </v-toolbar>
       </v-card>
-      <v-row class="max-height-row">
-        <v-col lg="3" cols="12">
+      <v-row class="max-height-row" v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.md">
+        <v-col lg="3">
           <search-bar />
         </v-col>
-        <v-col lg="9" cols="12" class="map-outter-style">
+        <v-col lg="9" class="map-outter-style">
           <hospital-map />
         </v-col>
+      </v-row>
+      <v-row
+        class="max-height-row-mobile"
+        style="overflow:hidden"
+        v-if="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm"
+      >
+        <v-col cols="12">
+          <search-bar />
+        </v-col>
+        <hospital-map />
       </v-row>
     </v-content>
   </v-app>
@@ -28,13 +38,15 @@
 import Vue from "vue";
 import HospitalMap from "./components/HospitalMap/HospitalMap.vue";
 import SearchBar from "./components/SearchBar/SearchBar.vue";
+import ClinicInfo from "./components/ClinicInfo/ClinicInfo.vue";
 
 export default Vue.extend({
   name: "App",
 
   components: {
     HospitalMap,
-    SearchBar
+    SearchBar,
+    ClinicInfo
   },
 
   data: () => ({}),
@@ -69,6 +81,10 @@ export default Vue.extend({
 
 .max-height-row {
   height: calc(100% - 48px);
+}
+
+.max-height-row-mobile {
+  height: calc(100% - 3rem);
 }
 
 .map-outter-style {

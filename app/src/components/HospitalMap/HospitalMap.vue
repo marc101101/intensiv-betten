@@ -2,7 +2,7 @@
   <GmapMap
     :center="{ lat: 49.0134297, lng: 12.1016236 }"
     :zoom="8"
-    style="width: 100%; height: 100%"
+    style="width: 100%; height: 100%;"
     :options="{
       streetViewControl: false,
       fullscreenControl: false,

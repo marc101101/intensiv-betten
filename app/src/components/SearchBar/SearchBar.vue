@@ -14,6 +14,7 @@
     prepend-icon="mdi-magnify"
     solo
     return-object
+    style="height: 3rem;"
   ></v-autocomplete>
 </template>
 <script lang="ts">

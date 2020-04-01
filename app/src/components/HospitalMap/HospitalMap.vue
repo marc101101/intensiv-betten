@@ -10,17 +10,15 @@
       styles: mapStyle
     }"
   >
-    <gmap-cluster :calculator="clusterCalc" zoomOnClick>
-      <GmapMarker
-        :key="index"
-        v-for="(m, index) in hospitals"
-        :position="m.position"
-        :icon="m.icon"
-        :clickable="true"
-        :options="{ icu: m.icu_high_care }"
-        @click="select(m)"
-      />
-    </gmap-cluster>
+    <GmapMarker
+      :key="index"
+      v-for="(m, index) in hospitals"
+      :position="m.position"
+      :icon="m.icon"
+      :clickable="true"
+      :options="{ icu: m.icu_high_care }"
+      @click="select(m)"
+    />
   </GmapMap>
 </template>
 
@@ -49,26 +47,6 @@ export default Vue.extend({
   methods: {
     select(hospital) {
       this.selected = hospital;
-    },
-    clusterCalc(markers) {
-      const count = markers.length;
-      let index = 0; // 0 blue 1 yellow 2 red
-
-      const yellowPercent =
-        (markers.filter((x) => x.icu === "yellow").length / count) * 100;
-      const redPercent =
-        (markers.filter((x) => x.icu === "red").length / count) * 100;
-
-      if (redPercent > 25) {
-        index = 2;
-      } else if (yellowPercent > 25) {
-        index = 1;
-      }
-
-      return {
-        text: count,
-        index: index
-      };
     }
   },
 
@@ -81,11 +59,8 @@ export default Vue.extend({
           x.position = { lat: x.lat, lng: x.lon };
 
           x.icon = {
-            path: "M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0",
-            fillColor: getFillColor(x),
-            fillOpacity: 0.6,
-            strokeWeight: 0,
-            scale: 1
+            url: "/img/red.png",
+            scaledSize: { height: 10, width: 10 }
           };
 
           return x;

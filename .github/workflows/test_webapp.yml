@@ -1,0 +1,28 @@
+name: Test Website
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-16.04
+    strategy:
+      matrix:
+        node: ["12"]
+    name: Build and Deploy
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install dependencies
+        working-directory: ./app
+        run: |
+          npm install
+      - name: Build project
+        working-directory: ./app
+        run: |
+          npm run-script build

@@ -88,8 +88,8 @@ export default Vue.extend({
       this.datacollection = this.generateDataRows();
     },
     generateDataRows() {
-      let dataArray = [];
-      let labelArray = [];
+      const dataArray: number[] = [];
+      const labelArray: string[] = [];
       this.selectedHospital.history.reverse().forEach(element => {
         dataArray.push(element.covid);
         labelArray.push(element.date);

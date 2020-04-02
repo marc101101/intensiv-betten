@@ -51,12 +51,6 @@ export default Vue.extend({
     }
   },
 
-  watch: {
-    selectedHospital() {
-      console.log(this.selectedHospital);
-    }
-  },
-
   computed: {
     selectedHospital() {
       return this.$store.state.selectedHospital;

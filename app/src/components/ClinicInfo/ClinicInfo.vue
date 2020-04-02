@@ -52,7 +52,7 @@
         <v-list-item-title>Zeitlicher Verlauf</v-list-item-title>
         <hr />
         <div class="small">
-          <graph-view :chart-data="datacollection" />
+          <graph-view :chart-data="historyDataCollection" />
         </div>
       </v-list-item-content>
     </v-list-item>
@@ -85,7 +85,7 @@ export default Vue.extend({
   },
   methods: {
     historyDataCollection() {
-      this.datacollection = this.generateDataRows();
+      return this.generateDataRows();
     },
     generateDataRows() {
       const dataArray: number[] = [];

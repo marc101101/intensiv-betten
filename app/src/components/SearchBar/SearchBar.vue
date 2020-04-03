@@ -53,11 +53,11 @@ export default Vue.extend({
 <style scoped>
 .searchbar {
   height: 4rem;
-
   background: white;
   z-index: 99;
   padding: 0.5rem !important;
   padding-left: 1rem !important;
+  box-shadow: 0px 12px 16px rgba(69, 91, 99, 0.08) !important;
 }
 
 .searchbar-font {

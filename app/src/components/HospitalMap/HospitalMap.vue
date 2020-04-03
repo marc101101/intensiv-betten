@@ -1,7 +1,7 @@
 <template>
   <GmapMap
-    :center="{ lat: 50.98, lng: 10.31 }"
-    :zoom="7"
+    :center="center"
+    :zoom="zoom"
     style="width: 100%; height: 100%"
     :options="{
       streetViewControl: false,
@@ -25,7 +25,6 @@
 <script lang="ts">
 import Vue from "vue";
 import mapStyle from "./mapStyle";
-import { log } from "util";
 
 function getFillColor(hospital) {
   if (hospital.icu_high_care === "green") {
@@ -42,12 +41,23 @@ export default Vue.extend({
 
   data: () => ({
     mapStyle,
-    selected: null
+    center: { lat: 50.98, lng: 10.31 },
+    zoom: 7
   }),
 
   methods: {
     select(hospital) {
-      this.selected = hospital;
+      this.$store.commit("selectHospital", hospital);
+    }
+  },
+
+  watch: {
+    selectedHospital() {
+      this.center = {
+        lat: this.selectedHospital.lat,
+        lng: this.selectedHospital.lon
+      };
+      this.zoom = 13;
     }
   },
 
@@ -58,8 +68,8 @@ export default Vue.extend({
     hospitals() {
       const hospitals = this.$store.state.hospitals;
       return hospitals
-        .filter(x => x.lat && x.lon)
-        .map(x => {
+        .filter((x) => x.lat && x.lon)
+        .map((x) => {
           x.position = { lat: x.lat, lng: x.lon };
 
           x.icon = {

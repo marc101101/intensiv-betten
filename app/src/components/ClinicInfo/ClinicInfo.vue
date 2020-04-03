@@ -1,8 +1,12 @@
 <template>
-  <v-card class="mx-4" outlined v-if="selectedHospital">
+  <v-card outlined v-if="selectedHospital">
+    <v-icon class="close-button" @click="e => $store.commit('unselectHospital')">mdi-close</v-icon>
+
     <v-list-item three-line>
       <v-list-item-content>
-        <v-list-item-title class="headline mb-1">{{selectedHospital.hospital_short}}</v-list-item-title>
+        <v-list-item-title class="headline mb-1">{{
+          selectedHospital.hospital_short
+        }}</v-list-item-title>
         <v-list-item-title>Aktuelle Situation</v-list-item-title>
         <hr />
         <v-container fluid class="pa-0 ma-0">
@@ -11,42 +15,51 @@
               class="margin-right"
               v-if="selectedHospital.icu_high_care == 'red'"
               color="red"
-            >mdi-checkbox-blank-circle</v-icon>
+              >mdi-checkbox-blank-circle</v-icon
+            >
             <v-icon
               v-if="selectedHospital.icu_high_care == 'green'"
               color="green"
-            >mdi-checkbox-blank-circle</v-icon>
+              >mdi-checkbox-blank-circle</v-icon
+            >
 
             <v-icon
               v-if="selectedHospital.icu_high_care == 'yellow'"
               color="yellow"
-            >mdi-checkbox-blank-circle</v-icon>Betten mit inv. Beatmung
+              >mdi-checkbox-blank-circle</v-icon
+            >Betten mit inv. Beatmung
           </v-col>
           <v-col class="pl-0" v-if="selectedHospital.icu_low_care">
-            <v-icon
-              v-if="selectedHospital.icu_low_care == 'red'"
-              color="red"
-            >mdi-checkbox-blank-circle</v-icon>
+            <v-icon v-if="selectedHospital.icu_low_care == 'red'" color="red"
+              >mdi-checkbox-blank-circle</v-icon
+            >
             <v-icon
               v-if="selectedHospital.icu_low_care == 'green'"
               color="green"
-            >mdi-checkbox-blank-circle</v-icon>
+              >mdi-checkbox-blank-circle</v-icon
+            >
 
             <v-icon
               v-if="selectedHospital.icu_low_care == 'yellow'"
               color="yellow"
-            >mdi-checkbox-blank-circle</v-icon>Betten ohne inv. Beatmung
+              >mdi-checkbox-blank-circle</v-icon
+            >Betten ohne inv. Beatmung
           </v-col>
 
           <v-col class="pl-0" v-if="selectedHospital.ecmo">
-            <v-icon v-if="selectedHospital.ecmo == 'red'" color="red">mdi-checkbox-blank-circle</v-icon>
-            <v-icon v-if="selectedHospital.ecmo == 'green'" color="green">mdi-checkbox-blank-circle</v-icon>
-            <v-icon
-              v-if="selectedHospital.ecmo == 'yellow'"
-              color="yellow"
-            >mdi-checkbox-blank-circle</v-icon>Zusätzliche Beatmung
+            <v-icon v-if="selectedHospital.ecmo == 'red'" color="red"
+              >mdi-checkbox-blank-circle</v-icon
+            >
+            <v-icon v-if="selectedHospital.ecmo == 'green'" color="green"
+              >mdi-checkbox-blank-circle</v-icon
+            >
+            <v-icon v-if="selectedHospital.ecmo == 'yellow'" color="yellow"
+              >mdi-checkbox-blank-circle</v-icon
+            >Zusätzliche Beatmung
           </v-col>
-          <v-col class="pl-0" v-if="selectedHospital.covid">{{selectedHospital.covid}} Corona Fälle</v-col>
+          <v-col class="pl-0" v-if="selectedHospital.covid"
+            >{{ selectedHospital.covid }} Corona Fälle</v-col
+          >
         </v-container>
 
         <v-list-item-title>Zeitlicher Verlauf</v-list-item-title>
@@ -56,7 +69,6 @@
         </div>
       </v-list-item-content>
     </v-list-item>
-
     <v-card-actions></v-card-actions>
   </v-card>
 </template>
@@ -72,16 +84,20 @@ export default Vue.extend({
     GraphView
   },
 
-  data: () => ({}),
+  data: () => ({
+    datacollection: [] as any
+  }),
+
   watch: {
     selectedHospital() {
       this.historyDataCollection();
     }
   },
   computed: {
-    selectedHospital() {
+    selectedHospital(): { history: { covid: string; date: string }[] } {
       return this.$store.state.selectedHospital;
     }
+    //$store.commit('unselectHospital', e)
   },
   methods: {
     historyDataCollection() {
@@ -114,6 +130,9 @@ export default Vue.extend({
 <style scoped>
 .headline {
   white-space: normal;
+  font-family: canada-type-gibson, sans-serif;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .margin-right {
@@ -123,5 +142,20 @@ export default Vue.extend({
 .small {
   width: 100%;
   margin-top: 1rem;
+}
+
+.v-card {
+  z-index: 99;
+  font-family: canada-type-gibson, sans-serif;
+  font-style: normal;
+}
+
+.theme--light.v-card.v-card--outlined {
+  border: 0 !important;
+}
+
+.close-button {
+  float: right;
+  padding: 0.5rem;
 }
 </style>

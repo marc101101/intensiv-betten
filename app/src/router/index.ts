@@ -1,16 +1,30 @@
 import Vue from "vue";
-import VueRouter from "vue-router";
+import Router from "vue-router";
 
-Vue.use(VueRouter);
+import Home from "../layouts/Home.vue";
+import Impressum from "../layouts/Impressum.vue";
+import NotFound from "../layouts/NotFound.vue";
+
+Vue.use(Router);
 
 const routes = [
   {
     path: "/",
-    name: "Home"
+    name: " ",
+    component: Home
+  },
+  {
+    path: "/impressum",
+    name: "Impressum",
+    component: Impressum
+  },
+  {
+    path: "*",
+    component: NotFound
   }
 ];
 
-const router = new VueRouter({
+const router = new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes

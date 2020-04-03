@@ -49,7 +49,7 @@ export default Vue.extend({
 }
 
 .max-height-row {
-  height: calc(100% - 48px);
+  height: 100%;
 }
 
 .max-height-row-mobile {

@@ -36,4 +36,15 @@ export default Vue.extend({
 });
 </script>
 <style scoped>
+.toolbar {
+  margin-left: 1.3rem;
+  border-radius: 0px;
+  border-bottom-left-radius: 0.5rem !important;
+}
+.v-card:not(.v-sheet--tile):not(.v-card--shaped) {
+  border-radius: 0px;
+}
+.v-toolbar {
+  box-shadow: 0px 12px 16px rgba(69, 91, 99, 0.08) !important;
+}
 </style>

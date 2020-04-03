@@ -56,7 +56,6 @@
         </div>
       </v-list-item-content>
     </v-list-item>
-
     <v-card-actions></v-card-actions>
   </v-card>
 </template>
@@ -114,6 +113,9 @@ export default Vue.extend({
 <style scoped>
 .headline {
   white-space: normal;
+  font-family: canada-type-gibson, sans-serif;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .margin-right {
@@ -123,5 +125,21 @@ export default Vue.extend({
 .small {
   width: 100%;
   margin-top: 1rem;
+}
+
+.v-card {
+  margin-left: 2.1rem !important;
+  width: 30rem;
+  position: absolute;
+  z-index: 99;
+  margin: 9rem;
+  font-family: canada-type-gibson, sans-serif;
+  font-style: normal;
+  margin-left: 0.5rem;
+}
+
+.theme--light.v-card.v-card--outlined {
+  border: 0 !important;
+  margin-left: 2.1rem !important;
 }
 </style>

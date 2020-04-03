@@ -17,6 +17,9 @@ const mutations = {
   },
   selectHospital(state, selectedHospital) {
     state.selectedHospital = selectedHospital;
+  },
+  unselectHospital(state) {
+    state.selectedHospital = undefined;
   }
 };
 

@@ -1,5 +1,7 @@
 <template>
-  <v-card class="mx-4" outlined v-if="selectedHospital">
+  <v-card outlined v-if="selectedHospital">
+    <v-icon class="close-button" @click="e => $store.commit('unselectHospital')">mdi-close</v-icon>
+
     <v-list-item three-line>
       <v-list-item-content>
         <v-list-item-title class="headline mb-1">{{
@@ -67,7 +69,6 @@
         </div>
       </v-list-item-content>
     </v-list-item>
-
     <v-card-actions></v-card-actions>
   </v-card>
 </template>
@@ -96,6 +97,7 @@ export default Vue.extend({
     selectedHospital(): { history: { covid: string; date: string }[] } {
       return this.$store.state.selectedHospital;
     }
+    //$store.commit('unselectHospital', e)
   },
   methods: {
     historyDataCollection() {
@@ -128,6 +130,9 @@ export default Vue.extend({
 <style scoped>
 .headline {
   white-space: normal;
+  font-family: canada-type-gibson, sans-serif;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .margin-right {
@@ -137,5 +142,20 @@ export default Vue.extend({
 .small {
   width: 100%;
   margin-top: 1rem;
+}
+
+.v-card {
+  z-index: 99;
+  font-family: canada-type-gibson, sans-serif;
+  font-style: normal;
+}
+
+.theme--light.v-card.v-card--outlined {
+  border: 0 !important;
+}
+
+.close-button {
+  float: right;
+  padding: 0.5rem;
 }
 </style>

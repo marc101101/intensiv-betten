@@ -48,14 +48,6 @@ export default Vue.extend({
   color: #eb413d;
 }
 
-.max-height-row {
-  height: 100%;
-}
-
-.max-height-row-mobile {
-  height: calc(100% - 3rem);
-}
-
 .map-outter-style {
   padding: 0px !important;
 }

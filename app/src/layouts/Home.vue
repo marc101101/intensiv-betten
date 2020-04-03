@@ -6,19 +6,20 @@
         v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.md || $vuetify.breakpoint.xl"
       >
         <v-col lg="12" class="map-outter-style">
-          <search-bar />
-          <clinic-info />
+          <search-bar class="desktop" />
+          <clinic-info class="desktop desktop-extended" />
           <hospital-map />
         </v-col>
       </v-row>
+
       <v-row
         class="max-height-row-mobile"
         style="overflow:hidden"
         v-if="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm"
       >
-        <v-col cols="12">
-          <search-bar />
-          <clinic-info />
+        <v-col cols="12" class="map-outter-style">
+          <search-bar class="mobile" />
+          <clinic-info class="mobile mobile-extended" />
         </v-col>
         <hospital-map />
       </v-row>
@@ -68,11 +69,42 @@ export default Vue.extend({
 }
 
 .max-height-row-mobile {
-  height: calc(100% - 3rem);
+  height: 100%;
+  margin-right: 0px !important;
+  margin-left: 0px !important;
 }
 
 .map-outter-style {
   padding: 0px !important;
+}
+
+.desktop {
+  margin-left: 2.1rem !important;
+  width: 30rem;
+  position: absolute;
+  z-index: 99;
+  margin-top: 4rem !important;
+}
+
+.desktop-extended {
+  margin-left: 2.1rem !important;
+  margin-top: 9rem !important;
+}
+
+.mobile {
+  margin-left: 2.1rem !important;
+  position: absolute;
+  z-index: 99;
+  margin-top: 4rem !important;
+  min-width: 20rem;
+  max-width: 30rem;
+}
+
+.mobile-extended {
+  margin-left: 0rem !important;
+  margin-right: 0rem !important;
+  margin-top: 150% !important;
+  width: 100%;
 }
 </style>
 

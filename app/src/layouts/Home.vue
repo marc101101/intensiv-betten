@@ -1,15 +1,13 @@
 <template>
-  <v-app>
+  <v-app style="margin-top:-48px">
     <v-content>
       <v-row
         class="max-height-row"
         v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.md || $vuetify.breakpoint.xl"
       >
-        <v-col lg="3">
+        <v-col lg="12" class="map-outter-style">
           <search-bar />
           <clinic-info />
-        </v-col>
-        <v-col lg="9" class="map-outter-style">
           <hospital-map />
         </v-col>
       </v-row>
@@ -66,7 +64,7 @@ export default Vue.extend({
 }
 
 .max-height-row {
-  height: calc(100% - 48px);
+  height: 100%;
 }
 
 .max-height-row-mobile {

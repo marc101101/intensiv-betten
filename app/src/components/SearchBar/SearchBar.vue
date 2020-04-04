@@ -37,7 +37,7 @@ export default Vue.extend({
   methods: {
     querySelections(v: string) {
       this.loading = true;
-      this.items = this.states.filter((e: string) => {
+      this.items = this.items.filter((e: string) => {
         return (e || "").toLowerCase().indexOf((v || "").toLowerCase()) > -1;
       });
       this.loading = false;

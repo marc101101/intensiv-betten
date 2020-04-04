@@ -10,15 +10,15 @@
       styles: mapStyle
     }"
   >
-    <GmapMarker
-      :key="index"
+    <GmapCircle
       v-for="(m, index) in hospitals"
-      :position="m.position"
-      :icon="m.icon"
-      :clickable="true"
-      :options="{ icu: m.icu_high_care }"
+      :key="index"
+      :center="m.position"
+      :radius="getRadius(m.covid)"
+      :visible="true"
+      :options="{ icu: m.icu_high_care, fillColor: m.icu_high_care }"
       @click="select(m)"
-    />
+    ></GmapCircle>
   </GmapMap>
 </template>
 
@@ -48,6 +48,12 @@ export default Vue.extend({
   methods: {
     select(hospital) {
       this.$store.commit("selectHospital", hospital);
+    },
+    getRadius(covid) {
+      if (covid) {
+        return 1000 + covid * 500;
+      }
+      return 1000;
     }
   },
 
@@ -68,8 +74,8 @@ export default Vue.extend({
     hospitals() {
       const hospitals = this.$store.state.hospitals;
       return hospitals
-        .filter((x) => x.lat && x.lon)
-        .map((x) => {
+        .filter(x => x.lat && x.lon)
+        .map(x => {
           x.position = { lat: x.lat, lng: x.lon };
 
           x.icon = {

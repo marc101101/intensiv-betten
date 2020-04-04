@@ -19,34 +19,47 @@
               color="red"
             >mdi-checkbox-blank-circle</v-icon>
             <v-icon
+              class="icon-margin"
               v-if="selectedHospital.icu_high_care == 'green'"
               color="green"
             >mdi-checkbox-blank-circle</v-icon>
 
             <v-icon
+              class="icon-margin"
               v-if="selectedHospital.icu_high_care == 'yellow'"
               color="yellow"
             >mdi-checkbox-blank-circle</v-icon>Betten mit inv. Beatmung
           </v-col>
           <v-col class="pl-0" v-if="selectedHospital.icu_low_care">
             <v-icon
+              class="icon-margin"
               v-if="selectedHospital.icu_low_care == 'red'"
               color="red"
             >mdi-checkbox-blank-circle</v-icon>
             <v-icon
+              class="icon-margin"
               v-if="selectedHospital.icu_low_care == 'green'"
               color="green"
             >mdi-checkbox-blank-circle</v-icon>
 
             <v-icon
+              class="icon-margin"
               v-if="selectedHospital.icu_low_care == 'yellow'"
               color="yellow"
             >mdi-checkbox-blank-circle</v-icon>Betten ohne inv. Beatmung
           </v-col>
 
           <v-col class="pl-0" v-if="selectedHospital.ecmo">
-            <v-icon v-if="selectedHospital.ecmo == 'red'" color="red">mdi-checkbox-blank-circle</v-icon>
-            <v-icon v-if="selectedHospital.ecmo == 'green'" color="green">mdi-checkbox-blank-circle</v-icon>
+            <v-icon
+              class="icon-margin"
+              v-if="selectedHospital.ecmo == 'red'"
+              color="red"
+            >mdi-checkbox-blank-circle</v-icon>
+            <v-icon
+              class="icon-margin"
+              v-if="selectedHospital.ecmo == 'green'"
+              color="green"
+            >mdi-checkbox-blank-circle</v-icon>
             <v-icon
               v-if="selectedHospital.ecmo == 'yellow'"
               color="yellow"
@@ -58,10 +71,14 @@
           >{{ selectedHospital.covid }} Corona Fälle</v-col>
         </v-container>
 
-        <v-list-item-title>Zeitlicher Verlauf</v-list-item-title>
+        <v-list-item-title v-if="selectedHospital.history.length != 0">Zeitlicher Verlauf</v-list-item-title>
         <hr />
-        <div class="small">
-          <graph-view :chart-data="historyDataCollection" :height="200" />
+        <div class="small" v-if="selectedHospital.history.length != 0">
+          <graph-view
+            v-if="selectedHospital.history.length != 0"
+            :chart-data="historyDataCollection()"
+            :height="200"
+          />
         </div>
       </v-list-item-content>
     </v-list-item>
@@ -79,7 +96,6 @@ export default Vue.extend({
   components: {
     GraphView
   },
-
   data: () => ({
     datacollection: [] as any
   }),
@@ -93,7 +109,6 @@ export default Vue.extend({
     selectedHospital(): { history: { covid: number; date: string }[] } {
       return this.$store.state.selectedHospital;
     }
-    //$store.commit('unselectHospital', e)
   },
   methods: {
     historyDataCollection() {
@@ -116,9 +131,6 @@ export default Vue.extend({
           }
         ]
       };
-    },
-    getRandomInt() {
-      return Math.floor(Math.random() * (50 - 5 + 1)) + 5;
     }
   }
 });
@@ -153,5 +165,9 @@ export default Vue.extend({
 .close-button {
   float: right;
   padding: 0.5rem;
+}
+
+.icon-margin {
+  margin-right: 1rem;
 }
 </style>

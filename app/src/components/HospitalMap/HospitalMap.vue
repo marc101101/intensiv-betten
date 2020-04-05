@@ -16,7 +16,7 @@
       :center="m.position"
       :radius="getRadius(m.covid)"
       :visible="true"
-      :options="{ icu: m.icu_high_care, fillColor: m.icu_high_care }"
+      :options="{ icu: m.icu_high_care, fillColor: m.icu_high_care, strokeWeight:0.3 }"
       @click="select(m)"
     ></GmapCircle>
   </GmapMap>
@@ -68,8 +68,8 @@ export default Vue.extend({
     hospitals() {
       const hospitals = this.$store.state.hospitals;
       return hospitals
-        .filter((x) => x.lat && x.lon)
-        .map((x) => {
+        .filter(x => x.lat && x.lon)
+        .map(x => {
           x.position = { lat: x.lat, lng: x.lon };
 
           x.icon = {

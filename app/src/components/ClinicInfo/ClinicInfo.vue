@@ -1,13 +1,15 @@
 <template>
   <v-card outlined v-if="selectedHospital">
-    <v-icon class="close-button" @click="e => $store.commit('unselectHospital')">mdi-close</v-icon>
+    <v-icon
+      class="close-button"
+      @click="(e) => $store.commit('unselectHospital')"
+      >mdi-close</v-icon
+    >
 
     <v-list-item three-line>
       <v-list-item-content>
         <v-list-item-title class="headline mb-1">
-          {{
-          selectedHospital.hospital_short
-          }}
+          {{ selectedHospital.hospital_short }}
         </v-list-item-title>
         <v-list-item-title>Aktuelle Situation</v-list-item-title>
         <hr />
@@ -17,36 +19,42 @@
               class="margin-right"
               v-if="selectedHospital.icu_high_care == 'red'"
               color="red"
-            >mdi-checkbox-blank-circle</v-icon>
+              >mdi-checkbox-blank-circle</v-icon
+            >
             <v-icon
               class="icon-margin"
               v-if="selectedHospital.icu_high_care == 'green'"
               color="green"
-            >mdi-checkbox-blank-circle</v-icon>
+              >mdi-checkbox-blank-circle</v-icon
+            >
 
             <v-icon
               class="icon-margin"
               v-if="selectedHospital.icu_high_care == 'yellow'"
               color="yellow"
-            >mdi-checkbox-blank-circle</v-icon>Betten mit inv. Beatmung
+              >mdi-checkbox-blank-circle</v-icon
+            >Betten mit inv. Beatmung
           </v-col>
           <v-col class="pl-0" v-if="selectedHospital.icu_low_care">
             <v-icon
               class="icon-margin"
               v-if="selectedHospital.icu_low_care == 'red'"
               color="red"
-            >mdi-checkbox-blank-circle</v-icon>
+              >mdi-checkbox-blank-circle</v-icon
+            >
             <v-icon
               class="icon-margin"
               v-if="selectedHospital.icu_low_care == 'green'"
               color="green"
-            >mdi-checkbox-blank-circle</v-icon>
+              >mdi-checkbox-blank-circle</v-icon
+            >
 
             <v-icon
               class="icon-margin"
               v-if="selectedHospital.icu_low_care == 'yellow'"
               color="yellow"
-            >mdi-checkbox-blank-circle</v-icon>Betten ohne inv. Beatmung
+              >mdi-checkbox-blank-circle</v-icon
+            >Betten ohne inv. Beatmung
           </v-col>
 
           <v-col class="pl-0" v-if="selectedHospital.ecmo">
@@ -54,29 +62,31 @@
               class="icon-margin"
               v-if="selectedHospital.ecmo == 'red'"
               color="red"
-            >mdi-checkbox-blank-circle</v-icon>
+              >mdi-checkbox-blank-circle</v-icon
+            >
             <v-icon
               class="icon-margin"
               v-if="selectedHospital.ecmo == 'green'"
               color="green"
-            >mdi-checkbox-blank-circle</v-icon>
-            <v-icon
-              v-if="selectedHospital.ecmo == 'yellow'"
-              color="yellow"
-            >mdi-checkbox-blank-circle</v-icon>Zusätzliche Beatmung
+              >mdi-checkbox-blank-circle</v-icon
+            >
+            <v-icon v-if="selectedHospital.ecmo == 'yellow'" color="yellow"
+              >mdi-checkbox-blank-circle</v-icon
+            >Zusätzliche Beatmung
           </v-col>
-          <v-col
-            class="pl-0"
-            v-if="selectedHospital.covid"
-          >{{ selectedHospital.covid }} Corona Fälle</v-col>
+          <v-col class="pl-0" v-if="selectedHospital.covid"
+            >{{ selectedHospital.covid }} Corona Fälle</v-col
+          >
         </v-container>
 
-        <v-list-item-title v-if="selectedHospital.history.length != 0">Zeitlicher Verlauf</v-list-item-title>
+        <v-list-item-title v-if="selectedHospital.history.length != 0"
+          >Zeitlicher Verlauf</v-list-item-title
+        >
         <hr />
         <div class="small" v-if="selectedHospital.history.length != 0">
           <graph-view
             v-if="selectedHospital.history.length != 0"
-            :chart-data="historyDataCollection()"
+            :chart-data="historyDataCollection"
             :height="200"
           />
         </div>
@@ -96,28 +106,25 @@ export default Vue.extend({
   components: {
     GraphView
   },
-  data: () => ({
-    datacollection: [] as any
-  }),
+  data: () => ({}),
 
-  watch: {
-    selectedHospital() {
-      this.historyDataCollection();
-    }
-  },
+  watch: {},
   computed: {
     selectedHospital(): { history: { covid: number; date: string }[] } {
       return this.$store.state.selectedHospital;
+    },
+    historyDataCollection(): {
+      labels: string[];
+      datasets: { label: string; data: number[] }[];
+    } {
+      return this.generateDataRows();
     }
   },
   methods: {
-    historyDataCollection() {
-      return this.generateDataRows();
-    },
     generateDataRows() {
       const dataArray: number[] = [];
       const labelArray: string[] = [];
-      this.selectedHospital.history.reverse().forEach(element => {
+      this.selectedHospital.history.reverse().forEach((element) => {
         dataArray.push(element.covid);
         labelArray.push(element.date);
       });

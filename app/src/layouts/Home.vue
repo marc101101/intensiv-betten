@@ -3,7 +3,11 @@
     <v-content>
       <v-row
         class="max-height-row"
-        v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.md || $vuetify.breakpoint.xl"
+        v-if="
+          $vuetify.breakpoint.lg ||
+            $vuetify.breakpoint.md ||
+            $vuetify.breakpoint.xl
+        "
       >
         <v-col lg="12" class="map-outter-style">
           <search-bar class="desktop" />
@@ -107,4 +111,3 @@ export default Vue.extend({
   width: 100%;
 }
 </style>
-

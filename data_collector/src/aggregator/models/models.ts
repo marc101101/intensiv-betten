@@ -19,7 +19,7 @@ export interface Data {
   updated_capacity: number;
   lat: number;
   lon: number;
-  covid_current: number;
+  covid: number;
   history: History[];
 }
 

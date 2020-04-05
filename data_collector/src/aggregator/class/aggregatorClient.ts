@@ -36,7 +36,7 @@ export class AggregatorIntensivBettenClient {
     let bucket_list = await this.getS3BucketList("intensiv-betten-prod", type);
 
     // Beschränke die Liste auf Dateien die jünger sind als aggregated.json
-    bucket_list = bucket_list.filter(element => {
+    bucket_list = bucket_list.filter((element) => {
       let current_timestamp = Date.parse(
         element.Key.substring(22, element.Key.length - 5)
       );
@@ -50,13 +50,13 @@ export class AggregatorIntensivBettenClient {
     let files = [];
 
     await Promise.all(
-      bucket_list.map(async element => {
+      bucket_list.map(async (element) => {
         files.push({
           time: Date.parse(element.Key.substring(22, element.Key.length - 5)),
           data: this.sortedList(
             await this.getS3BucketFile("intensiv-betten-prod", element.Key),
             "updated"
-          )
+          ),
         });
       })
     );
@@ -69,7 +69,7 @@ export class AggregatorIntensivBettenClient {
    * @param files
    */
   private sortedList(files, value) {
-    return files.sort(function(a, b) {
+    return files.sort(function (a, b) {
       var keyA = a[value],
         keyB = b[value];
       // Compare the 2 dates
@@ -88,8 +88,8 @@ export class AggregatorIntensivBettenClient {
     var s3 = new AWS.S3();
     var self = this;
 
-    return new Promise(function(resolve, reject) {
-      s3.getObject({ Bucket: bucket, Key: file }, function(error, data) {
+    return new Promise(function (resolve, reject) {
+      s3.getObject({ Bucket: bucket, Key: file }, function (error, data) {
         if (error != null) {
           logger.info("Failed to retrieve an object: " + error);
           reject(error);
@@ -112,11 +112,11 @@ export class AggregatorIntensivBettenClient {
     var self = this;
     var params = {
       Bucket: bucket,
-      Prefix: "data_storage/" + type
+      Prefix: "data_storage/" + type,
     };
 
-    return new Promise(function(resolve, reject) {
-      s3.listObjectsV2(params, function(error, data) {
+    return new Promise(function (resolve, reject) {
+      s3.listObjectsV2(params, function (error, data) {
         if (error != null) {
           logger.info("Failed to retrieve an object: " + error);
           reject(error);
@@ -137,11 +137,11 @@ export class AggregatorIntensivBettenClient {
   private async mergeData(register, capacity): Promise<any> {
     let new_aggregation = this.old_aggregation;
 
-    register.forEach(file => {
-      file.data.forEach(element => {
+    register.forEach((file) => {
+      file.data.forEach((element) => {
         //Ältester zuerst; ist im new_aggregation schon das krankenhaus drinnen
         let ag_index = new_aggregation.data.findIndex(
-          hospital => hospital.hospital_long == element.hospital
+          (hospital) => hospital.hospital_long == element.hospital
         );
         //NEIN: Neu hinzufügen
         //JA: nimm das element und schau wann es zuletzt upgedatet wurde
@@ -158,8 +158,8 @@ export class AggregatorIntensivBettenClient {
             updated_capacity: file.time,
             lat: undefined,
             lon: undefined,
-            covid_current: undefined,
-            history: []
+            covid: 0,
+            history: [],
           };
           new_aggregation.data.push(new_hospital);
         } else {
@@ -181,9 +181,9 @@ export class AggregatorIntensivBettenClient {
                 icu_low_care: new_aggregation.data[ag_index].icu_low_care,
                 icu_high_care: new_aggregation.data[ag_index].icu_high_care,
                 ecmo: new_aggregation.data[ag_index].ecmo,
-                covid: new_aggregation.data[ag_index].covid_current
+                covid: new_aggregation.data[ag_index].covid,
               },
-              ...new_aggregation.data[ag_index].history
+              ...new_aggregation.data[ag_index].history,
             ];
 
             new_aggregation.data[ag_index].icu_low_care = element.icu_low_care;
@@ -193,6 +193,7 @@ export class AggregatorIntensivBettenClient {
               element.updated_capacity;
             new_aggregation.data[ag_index].ecmo = element.ecmo;
             new_aggregation.data[ag_index].updated = element.updated;
+            new_aggregation.data[ag_index].covid = element.covid;
           } else {
           }
         }
@@ -201,21 +202,29 @@ export class AggregatorIntensivBettenClient {
       });
     });
 
-    capacity.forEach(file => {
-      file.data.forEach(element => {
+    capacity.forEach((file) => {
+      file.data.forEach((element) => {
         //suche nach krankenhaus in liste das passt
-        let ag_index = new_aggregation.data.findIndex(hospital =>
+        let ag_index = new_aggregation.data.findIndex((hospital) =>
           hospital.hospital_long.includes(element.Klinikname)
         );
         if (ag_index != -1) {
           new_aggregation.data[ag_index].hospital_short = element.Klinikname;
+
           let current_file_time = file.time;
-          let last_update = new_aggregation.data[ag_index].updated_capacity;
+          let last_update = moment(
+            new_aggregation.data[ag_index].updated,
+            "DD.MM.YYYY, HH:mm"
+          ).toDate();
+
           new_aggregation.data[ag_index].lat = element.lat;
           new_aggregation.data[ag_index].lon = element.lon;
 
           if (last_update < current_file_time) {
             new_aggregation.data[ag_index].covid = element["COVID-19 aktuell"];
+            new_aggregation.data[ag_index].updated = moment(
+              current_file_time
+            ).format("DD.MM.YYYY, HH:mm");
           }
           new_aggregation.data[ag_index].history.forEach(
             (history_element, i) => {

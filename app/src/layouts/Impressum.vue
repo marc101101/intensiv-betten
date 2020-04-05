@@ -15,6 +15,14 @@
     <br />
     <br />
     <h3>Alle Angaben ohne Gewähr</h3>
+    <p>
+      Quelle der Daten DIVI-IntensivRegister (
+      <a
+        href="https://www.intensivregister.de/"
+      >https://www.intensivregister.de/</a>)
+    </p>
+    <br />
+    <h3>Alle Angaben ohne Gewähr</h3>
     <p>Wir übernehmen keinerlei Gewähr für die Vollständigkeit, Richtigkeit und Aktualität der bereitgestellten Informationen.</p>
     <br />
     <h3>Haftung für Inhalte</h3>

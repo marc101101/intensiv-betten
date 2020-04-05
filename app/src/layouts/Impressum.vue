@@ -14,7 +14,7 @@
     <img class="imprint" src="../../public/img/imprint_2.png" />
     <br />
     <br />
-    <h3>Alle Angaben ohne Gewähr</h3>
+    <h3>Datenquelle</h3>
     <p>
       Quelle der Daten DIVI-IntensivRegister (
       <a

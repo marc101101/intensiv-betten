@@ -3,7 +3,7 @@
     v-model="select"
     :items="hospitals"
     :search-input.sync="search"
-    @change="e => $store.commit('selectHospital', e)"
+    @change="(e) => $store.commit('selectHospital', e)"
     item-text="hospital_short"
     cache-items
     class="searchbar searchbar-font"

@@ -26,16 +26,6 @@
 import Vue from "vue";
 import mapStyle from "./mapStyle";
 
-function getFillColor(hospital) {
-  if (hospital.icu_high_care === "green") {
-    return "green";
-  } else if (hospital.icu_high_care === "yellow") {
-    return "yellow";
-  } else if (hospital.icu_high_care === "red") {
-    return "red";
-  }
-}
-
 export default Vue.extend({
   name: "HospitalMap",
 
@@ -59,6 +49,10 @@ export default Vue.extend({
 
   watch: {
     selectedHospital() {
+      if (!this.selectedHospital) {
+        return;
+      }
+
       this.center = {
         lat: this.selectedHospital.lat,
         lng: this.selectedHospital.lon
@@ -74,8 +68,8 @@ export default Vue.extend({
     hospitals() {
       const hospitals = this.$store.state.hospitals;
       return hospitals
-        .filter(x => x.lat && x.lon)
-        .map(x => {
+        .filter((x) => x.lat && x.lon)
+        .map((x) => {
           x.position = { lat: x.lat, lng: x.lon };
 
           x.icon = {

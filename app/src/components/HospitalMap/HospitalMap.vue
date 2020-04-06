@@ -25,6 +25,7 @@
 <script lang="ts">
 import Vue from "vue";
 import mapStyle from "./mapStyle";
+import router from "../../router";
 
 export default Vue.extend({
   name: "HospitalMap",
@@ -32,10 +33,26 @@ export default Vue.extend({
   data: () => ({
     mapStyle,
     center: { lat: 50.98, lng: 10.31 },
-    zoom: 7
+    zoom: 7,
+    shared: false
   }),
 
+  updated() {
+    this.checkCurrentRoute();
+  },
+
   methods: {
+    checkCurrentRoute() {
+      const givenHospital = this.$route.query.klinik;
+
+      if (givenHospital) {
+        const result = this.hospitals.filter(
+          hospital => hospital.hospital_short == givenHospital
+        );
+
+        this.select(result[0]);
+      }
+    },
     select(hospital) {
       this.$store.commit("selectHospital", hospital);
     },
@@ -67,6 +84,7 @@ export default Vue.extend({
     },
     hospitals() {
       const hospitals = this.$store.state.hospitals;
+
       return hospitals
         .filter(x => x.lat && x.lon)
         .map(x => {

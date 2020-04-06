@@ -1,11 +1,13 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import router from "../router";
+
 Vue.use(Vuex);
 
 const state = {
   hospitals: [],
   selectedHospital: undefined,
-  lastUpdate: ""
+  lastUpdate: "",
 };
 
 const mutations = {
@@ -16,11 +18,19 @@ const mutations = {
     state.hospitals = hospitals;
   },
   selectHospital(state, selectedHospital) {
+    router
+      .push({ path: "", query: { klinik: selectedHospital.hospital_short } })
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+      .catch((err) => {});
     state.selectedHospital = selectedHospital;
   },
   unselectHospital(state) {
+    router
+      .push({ path: "", query: {} })
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+      .catch((err) => {});
     state.selectedHospital = undefined;
-  }
+  },
 };
 
 const actions = {
@@ -29,11 +39,11 @@ const actions = {
 
     await commit("setHospitals", data.data);
     await commit("setLastUpdate", data.last_update);
-  }
+  },
 };
 
 export default new Vuex.Store({
   state,
   mutations,
-  actions
+  actions,
 });

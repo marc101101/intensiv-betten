@@ -50,7 +50,7 @@ export class CollectIntensivBettenClient {
     // alten aggregated json holen
     let old_aggregation: any = await this.getS3BucketFile(
       "www.intensiv-betten.de",
-      "aggregated.json"
+      "aggregated_v2.json"
     );
     // migration der neuen Daten in alte struktur
     // wenns noch nicht vorhanden ist neu hinzufügen
@@ -60,24 +60,34 @@ export class CollectIntensivBettenClient {
         (hospital) => hospital.id == element.id
       );
 
+      if (!element.history) {
+        element.history = [];
+      }
+
       if (i != -1) {
         let current_time = Date.parse(element.meldezeitpunkt);
-        let old_time = Date.parse(old_aggregation[i].meldezeitpunkt);
+        let old_time = Date.parse(old_aggregation.data[i].meldezeitpunkt);
 
         if (current_time != old_time) {
-          let history_object = {
-            meldezeitpunk: old_aggregation[i].meldezeitpunkt,
-            statusLowCare: old_aggregation[i].statusLowCare,
-            statusHighCare: old_aggregation[i].statusHighCare,
-            statusECMO: old_aggregation[i].statusECMO,
-            faelleCovidAktuell: old_aggregation[i].faelleCovidAktuell,
-          };
+          let i = element.history.findIndex(
+            (hospital) => hospital.meldezeitpunkt == element.meldezeitpunkt
+          );
+          if (i == -1) {
+            let history_object = {
+              meldezeitpunk: old_aggregation.data[i].meldezeitpunkt,
+              statusLowCare: old_aggregation.data[i].bettenStatus.statusLowCare,
+              statusHighCare:
+                old_aggregation.data[i].bettenStatus.statusHighCare,
+              statusECMO: old_aggregation.data[i].bettenStatus.statusECMO,
+              faelleCovidAktuell: old_aggregation.data[i].faelleCovidAktuell,
+            };
 
-          currentRegister.history.push(history_object);
+            element.history.push(history_object);
+          }
         }
       }
     });
-    return { last_updated: Date.now(), data: currentRegister };
+    return await { last_updated: Date.now(), data: currentRegister };
   }
 
   /**

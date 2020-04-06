@@ -26,15 +26,7 @@ export const collectAndAggregateIntensivBetten = async () => {
   const s3Store_agg = new StoreIntensivBettenClient(
     process.env.BUCKET_NAME_APP
   );
-  await s3Store_agg.storeToS3(register, "aggregated.json", "aggreagted");
+  await s3Store_agg.storeToS3(aggreagte, "aggregated_v2.json", "aggreagted");
 
   logger.info("Job completed successfully - beds: " + register.length);
-
-  var params: Lambda.Types.InvocationRequest = {
-    FunctionName: process.env.AGGREGATION_FUNCTION_NAME,
-    InvocationType: "Event",
-  };
-  1;
-  let lambda = new Lambda();
-  lambda.invoke(params);
 };

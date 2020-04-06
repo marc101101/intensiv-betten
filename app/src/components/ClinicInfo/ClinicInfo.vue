@@ -141,8 +141,8 @@ export default Vue.extend({
       const dataArray: number[] = [];
       const labelArray: string[] = [];
       this.selectedHospital.history.reverse().forEach(element => {
-        dataArray.push(element.covid);
-        labelArray.push(element.date.substring(0, 10));
+        dataArray.push(element.faelleCovidAktuell);
+        labelArray.push(element.meldezeitpunkt.substring(0, 10));
       });
 
       return {

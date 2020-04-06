@@ -49,7 +49,6 @@ export default Vue.extend({
         const result = this.hospitals.filter(
           hospital => hospital.id == givenHospital
         );
-
         this.select(result[0]);
       }
     },
@@ -84,7 +83,11 @@ export default Vue.extend({
         return;
       }
 
-      this.center = this.selectedHospital.krankenhausStandort.position;
+      this.center = {
+        lat: this.selectedHospital.position.lat,
+        lng: this.selectedHospital.position.lng
+      };
+
       this.zoom = 13;
     }
   },

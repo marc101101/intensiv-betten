@@ -1,11 +1,12 @@
 import Vue from "vue";
 import Vuex from "vuex";
+
 Vue.use(Vuex);
 
 const state = {
   hospitals: [],
   selectedHospital: undefined,
-  lastUpdate: ""
+  lastUpdate: "",
 };
 
 const mutations = {
@@ -20,7 +21,7 @@ const mutations = {
   },
   unselectHospital(state) {
     state.selectedHospital = undefined;
-  }
+  },
 };
 
 const actions = {
@@ -29,11 +30,11 @@ const actions = {
 
     await commit("setHospitals", data.data);
     await commit("setLastUpdate", data.last_update);
-  }
+  },
 };
 
 export default new Vuex.Store({
   state,
   mutations,
-  actions
+  actions,
 });

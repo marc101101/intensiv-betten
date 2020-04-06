@@ -29,15 +29,6 @@
       "program": "${workspaceFolder}/node_modules/serverless/bin/serverless",
       "args": ["invoke", "local", "-f", "aggregateIntensivBetten"],
       "runtimeExecutable": "node"
-    },
-    {
-      "console": "integratedTerminal",
-      "type": "node",
-      "request": "launch",
-      "name": "Invoke Local - collectAndAggregateIntensivBetten",
-      "program": "${workspaceFolder}/node_modules/serverless/bin/serverless",
-      "args": ["invoke", "local", "-f", "collectAndAggregateIntensivBetten"],
-      "runtimeExecutable": "node"
     }
   ]
 }

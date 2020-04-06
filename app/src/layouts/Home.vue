@@ -92,7 +92,7 @@ export default Vue.extend({
 
 .desktop-extended {
   margin-left: 2.1rem !important;
-  margin-top: 9rem !important;
+  margin-top: 10rem !important;
 }
 
 .mobile {

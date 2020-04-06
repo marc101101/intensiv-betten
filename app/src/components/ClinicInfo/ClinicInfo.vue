@@ -1,6 +1,18 @@
 <template>
   <v-card outlined v-if="selectedHospital">
-    <v-icon class="close-button" @click="(e) => $store.commit('unselectHospital')">mdi-close</v-icon>
+    <v-btn
+      @click="(e) => $store.commit('unselectHospital')"
+      class="black--text"
+      depressed
+      color="white"
+      dark
+      absolute
+      top
+      right
+      fab
+    >
+      <v-icon>mdi-close</v-icon>
+    </v-btn>
 
     <v-list-item three-line>
       <v-list-item-content>
@@ -78,7 +90,6 @@
         </div>
       </v-list-item-content>
     </v-list-item>
-    <v-card-actions></v-card-actions>
   </v-card>
 </template>
 
@@ -134,6 +145,7 @@ export default Vue.extend({
   font-family: canada-type-gibson, sans-serif;
   font-weight: 600;
   font-style: normal;
+  margin-top: 1rem;
 }
 
 .margin-right {

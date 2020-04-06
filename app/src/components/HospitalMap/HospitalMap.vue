@@ -44,20 +44,17 @@ export default Vue.extend({
   methods: {
     checkCurrentRoute() {
       const givenHospital = this.$route.query.klinik;
-      console.log(this.hospitals);
 
       if (givenHospital) {
         const result = this.hospitals.filter(
           hospital => hospital.hospital_short == givenHospital
         );
-        console.log(result);
 
         this.select(result[0]);
       }
     },
     select(hospital) {
       this.$store.commit("selectHospital", hospital);
-      router.push({ path: "", query: { klinik: hospital.hospital_short } });
     },
     getRadius(covid) {
       if (covid) {

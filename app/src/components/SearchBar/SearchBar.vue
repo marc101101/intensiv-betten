@@ -5,7 +5,7 @@
     :search-input.sync="search"
     @change="(e) => $store.commit('selectHospital', e)"
     item-text="hospital_short"
-    cache-items
+    :cache-items="true"
     class="searchbar searchbar-font"
     flat
     hide-no-data
@@ -13,6 +13,7 @@
     prepend-icon="mdi-magnify"
     solo
     return-object
+    :menu-props="{ closeOnClick: true, closeOnContentClick: true }"
   ></v-autocomplete>
 </template>
 <script lang="ts">

@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import router from "../router";
 
 Vue.use(Vuex);
 
@@ -17,9 +18,17 @@ const mutations = {
     state.hospitals = hospitals;
   },
   selectHospital(state, selectedHospital) {
+    router
+      .push({ path: "", query: { klinik: selectedHospital.hospital_short } })
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+      .catch((err) => {});
     state.selectedHospital = selectedHospital;
   },
   unselectHospital(state) {
+    router
+      .push({ path: "", query: {} })
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+      .catch((err) => {});
     state.selectedHospital = undefined;
   },
 };

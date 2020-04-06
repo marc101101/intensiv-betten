@@ -60,12 +60,11 @@ custom:
     packager: "npm" # Packager that will be used to package your external modules
 
 functions:
-  collectIntensivBetten:
-    handler: src/collector/CollectIntensivBetten.collectIntensivBetten
+  collectAndAggregateIntensivBetten:
+    handler: src/v2/CollectIntensivBetten.collectAndAggregateIntensivBetten
     timeout: 300
     events:
       - schedule: rate(1 hour)
-
-  aggregateIntensivBetten:
-    handler: src/aggregator/AggregateIntensivBetten.aggregateIntensivBetten
-    timeout: 300
+  #aggregateIntensivBetten:
+  # handler: src/aggregator/AggregateIntensivBetten.aggregateIntensivBetten
+  # timeout: 300

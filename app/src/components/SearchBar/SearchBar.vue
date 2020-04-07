@@ -4,7 +4,7 @@
     :items="hospitals"
     :search-input.sync="search"
     @change="(e) => $store.commit('selectHospital', e)"
-    item-text="krankenhausStandort.bezeichnung"
+    item-text="hospital_short"
     :cache-items="true"
     class="searchbar searchbar-font"
     flat

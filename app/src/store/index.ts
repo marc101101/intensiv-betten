@@ -19,10 +19,7 @@ const mutations = {
   },
   selectHospital(state, selectedHospital) {
     router
-      .push({
-        path: "",
-        query: { klinik: selectedHospital.id },
-      })
+      .push({ path: "", query: { klinik: selectedHospital.hospital_short } })
       // eslint-disable-next-line @typescript-eslint/no-empty-function
       .catch((err) => {});
     state.selectedHospital = selectedHospital;
@@ -38,7 +35,7 @@ const mutations = {
 
 const actions = {
   async loadHospitals({ commit }: { commit: Function }) {
-    const { data } = await Vue.axios.get("/aggregated_v2.json");
+    const { data } = await Vue.axios.get("/aggregated.json");
 
     await commit("setHospitals", data.data);
     await commit("setLastUpdate", data.last_update);

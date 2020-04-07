@@ -39,7 +39,6 @@ const mutations = {
 const actions = {
   async loadHospitals({ commit }: { commit: Function }) {
     const { data } = await Vue.axios.get("/aggregated_v2.json");
-
     await commit("setHospitals", data.data);
     await commit("setLastUpdate", data.last_update);
   },

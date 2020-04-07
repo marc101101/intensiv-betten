@@ -1,4 +1,3 @@
-import { diviEntry } from "./models/models";
 import { CollectIntensivBettenClient } from "./class/collectionClient";
 import { logger } from "./helpers";
 import { StoreIntensivBettenClient } from "./helpers/s3Store";
@@ -7,7 +6,7 @@ import { Lambda } from "aws-sdk";
 export const collectAndAggregateIntensivBetten = async () => {
   const client = new CollectIntensivBettenClient();
 
-  const register: Array<diviEntry> = await client.collectIntensivBettenRegister(
+  const register: Array<any> = await client.collectIntensivBettenRegister(
     "https://www.intensivregister.de/api/public/intensivregister?page=0&size=9999"
   );
 

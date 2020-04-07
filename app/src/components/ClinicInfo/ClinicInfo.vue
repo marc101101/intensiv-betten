@@ -108,6 +108,8 @@ export default Vue.extend({
   watch: {},
   computed: {
     selectedHospital(): {
+      meldezeitpunkt: string;
+      faelleCovidAktuell: number;
       history: { faelleCovidAktuell: number; meldezeitpunkt: string }[];
     } {
       return this.$store.state.selectedHospital;
@@ -128,6 +130,9 @@ export default Vue.extend({
         dataArray.push(element.covid);
         labelArray.push(element.date.substring(0, 10));
       });
+
+      dataArray.push(this.selectedHospital.faelleCovidAktuell);
+      labelArray.push(this.selectedHospital.meldezeitpunkt.substring(0, 10));
 
       return {
         labels: labelArray,

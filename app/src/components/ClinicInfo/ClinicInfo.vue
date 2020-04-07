@@ -23,6 +23,18 @@
 
         <v-list-item-title>Aktuelle Situation</v-list-item-title>
         <hr />
+        <v-btn
+          class="black--text margin-right-btn"
+          depressed
+          color="white"
+          dark
+          absolute
+          middle
+          right
+          fab
+        >
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-btn>
         <v-container fluid class="pa-0 ma-0">
           <v-col class="pl-0" v-if="selectedHospital.bettenStatusColor.statusHighCare">
             <v-icon
@@ -177,6 +189,10 @@ export default Vue.extend({
 
 .margin-right {
   margin-right: 1rem;
+}
+
+.margin-right-btn {
+  margin-right: -2.8rem;
 }
 
 .small {

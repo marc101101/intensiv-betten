@@ -4,6 +4,7 @@
     :items="hospitals"
     :search-input.sync="search"
     @change="(e) => $store.commit('selectHospital', e)"
+    @keydown="(e) =>checkSelection(e)"
     item-text="krankenhausStandort.bezeichnung"
     :cache-items="true"
     class="searchbar searchbar-font"
@@ -18,6 +19,7 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
+import { log } from "util";
 
 export default Vue.extend({
   name: "SearchBar",
@@ -25,9 +27,10 @@ export default Vue.extend({
   data() {
     return {
       loading: false,
-      items: ["a", "b"],
+      items: [],
       search: null,
-      select: null
+      select: null,
+      menuHidden: false
     };
   },
   watch: {
@@ -42,6 +45,22 @@ export default Vue.extend({
         return (e || "").toLowerCase().indexOf((v || "").toLowerCase()) > -1;
       });
       this.loading = false;
+    },
+    checkSelection(e) {
+      if (!this.menuHidden) {
+        if (e.key == "Enter") {
+          let hospitals = this.hospitals.filter(element => {
+            return element.krankenhausStandort.bezeichnung.includes(
+              e.srcElement.value
+            );
+          });
+          document.getElementById("list-19").classList.add("hideMenu");
+          this.menuHidden = true;
+        }
+      } else {
+        document.getElementById("list-19").classList.remove("hideMenu");
+        this.menuHidden = false;
+      }
     }
   },
   computed: {
@@ -72,5 +91,9 @@ export default Vue.extend({
   font-family: canada-type-gibson, sans-serif !important;
   font-style: normal !important;
   margin-left: 0.5rem !important;
+}
+
+.hideMenu {
+  display: none;
 }
 </style>

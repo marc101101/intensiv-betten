@@ -1,5 +1,5 @@
 import * as rm from "typed-rest-client/RestClient";
-import { logger } from "../../v1/aggregator/helpers";
+import { logger } from "../helpers";
 import AWS from "aws-sdk";
 
 export class CollectIntensivBettenClient {

@@ -10,16 +10,13 @@ export class StoreIntensivBettenClient {
     this.bucket_name = bucket_name;
   }
 
-  public async storeCollectionToS3(data, path) {
+  public async storeToS3(data, path, type) {
     let params = {
       Bucket: this.bucket_name,
-      Key: "data_storage/" + path + "/" + new Date().toUTCString() + ".json",
-      Body: JSON.stringify(data)
+      Key: path,
+      Body: JSON.stringify(data),
     };
-    await this.storeToS3(params, "collection");
-  }
 
-  public async storeToS3(params, type) {
     try {
       await this.bucket.putObject(params).promise();
 

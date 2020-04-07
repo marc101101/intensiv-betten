@@ -107,7 +107,9 @@ export default Vue.extend({
 
   watch: {},
   computed: {
-    selectedHospital(): { history: { covid: number; date: string }[] } {
+    selectedHospital(): {
+      history: { faelleCovidAktuell: number; meldezeitpunkt: string }[];
+    } {
       return this.$store.state.selectedHospital;
     },
     historyDataCollection(): {
@@ -121,6 +123,7 @@ export default Vue.extend({
     generateDataRows() {
       const dataArray: number[] = [];
       const labelArray: string[] = [];
+
       this.selectedHospital.history.reverse().forEach(element => {
         dataArray.push(element.covid);
         labelArray.push(element.date.substring(0, 10));

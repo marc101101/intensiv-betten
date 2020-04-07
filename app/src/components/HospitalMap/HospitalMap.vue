@@ -14,9 +14,9 @@
       v-for="(m, index) in hospitals"
       :key="index"
       :center="m.position"
-      :radius="getRadius(m.faelleCovidAktuell)"
+      :radius="getRadius(m.covid)"
       :visible="true"
-      :options="{fillColor: m.bettenStatusColor.statusHighCare, strokeWeight:0.3 }"
+      :options="{ icu: m.icu_high_care, fillColor: m.icu_high_care, strokeWeight:0.3 }"
       @click="select(m)"
     ></GmapCircle>
   </GmapMap>
@@ -47,8 +47,9 @@ export default Vue.extend({
 
       if (givenHospital) {
         const result = this.hospitals.filter(
-          hospital => hospital.id == givenHospital
+          hospital => hospital.hospital_short == givenHospital
         );
+
         this.select(result[0]);
       }
     },
@@ -60,20 +61,6 @@ export default Vue.extend({
         return 1000 + covid * 500;
       }
       return 1000;
-    },
-    mapStringToColor(status) {
-      if (status == null) {
-        return "grey";
-      }
-      if (status == "VERFUEGBAR") {
-        return "green";
-      }
-      if (status == "NICHT_VERFUEGBAR") {
-        return "red";
-      }
-      if (status == "BEGRENZT") {
-        return "yellow";
-      }
     }
   },
 
@@ -84,10 +71,9 @@ export default Vue.extend({
       }
 
       this.center = {
-        lat: this.selectedHospital.position.lat,
-        lng: this.selectedHospital.position.lng
+        lat: this.selectedHospital.lat,
+        lng: this.selectedHospital.lon
       };
-
       this.zoom = 13;
     }
   },
@@ -100,22 +86,15 @@ export default Vue.extend({
       const hospitals = this.$store.state.hospitals;
 
       return hospitals
-        .filter(
-          x =>
-            x.krankenhausStandort.position.latitude &&
-            x.krankenhausStandort.position.longitude
-        )
+        .filter(x => x.lat && x.lon)
         .map(x => {
-          x.position = {
-            lat: x.krankenhausStandort.position.latitude,
-            lng: x.krankenhausStandort.position.longitude
+          x.position = { lat: x.lat, lng: x.lon };
+
+          x.icon = {
+            url: "/img/red.png",
+            scaledSize: { height: 10, width: 10 }
           };
-          x.bettenStatusColor = {
-            statusLowCare: this.mapStringToColor(x.bettenStatus.statusLowCare),
-            statusHighCare: this.mapStringToColor(x.bettenStatus.statusLowCare),
-            statusECMO: this.mapStringToColor(x.bettenStatus.statusLowCare)
-          };
-          x.meldezeitpunktReadable = x.meldezeitpunkt;
+
           return x;
         });
     }

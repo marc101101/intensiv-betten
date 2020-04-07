@@ -16,86 +16,67 @@
 
     <v-list-item three-line>
       <v-list-item-content>
-        <v-list-item-title
-          class="headline mb-1"
-        >{{ selectedHospital.krankenhausStandort.bezeichnung }}</v-list-item-title>
-        <span class="uptime-time">Letztes Update: {{selectedHospital.meldezeitpunktReadable}}</span>
-
+        <v-list-item-title class="headline mb-1">{{ selectedHospital.hospital_short }}</v-list-item-title>
         <v-list-item-title>Aktuelle Situation</v-list-item-title>
         <hr />
         <v-container fluid class="pa-0 ma-0">
-          <v-col class="pl-0" v-if="selectedHospital.bettenStatusColor.statusHighCare">
+          <v-col class="pl-0" v-if="selectedHospital.icu_high_care">
             <v-icon
               class="margin-right"
-              v-if="selectedHospital.bettenStatusColor.statusHighCare == 'red'"
+              v-if="selectedHospital.icu_high_care == 'red'"
               color="red"
             >mdi-checkbox-blank-circle</v-icon>
             <v-icon
               class="icon-margin"
-              v-if="selectedHospital.bettenStatusColor.statusHighCare == 'green'"
+              v-if="selectedHospital.icu_high_care == 'green'"
               color="green"
             >mdi-checkbox-blank-circle</v-icon>
+
             <v-icon
               class="icon-margin"
-              v-if="selectedHospital.bettenStatusColor.statusHighCare == 'grey'"
-              color="grey"
-            >mdi-checkbox-blank-circle</v-icon>
-            <v-icon
-              class="icon-margin"
-              v-if="selectedHospital.bettenStatusColor.statusHighCare == 'yellow'"
+              v-if="selectedHospital.icu_high_care == 'yellow'"
               color="yellow"
             >mdi-checkbox-blank-circle</v-icon>Betten mit inv. Beatmung
           </v-col>
-
-          <v-col class="pl-0" v-if="selectedHospital.bettenStatusColor.statusLowCare">
+          <v-col class="pl-0" v-if="selectedHospital.icu_low_care">
             <v-icon
               class="icon-margin"
-              v-if="selectedHospital.bettenStatusColor.statusLowCare == 'red'"
+              v-if="selectedHospital.icu_low_care == 'red'"
               color="red"
             >mdi-checkbox-blank-circle</v-icon>
             <v-icon
               class="icon-margin"
-              v-if="selectedHospital.bettenStatusColor.statusLowCare == 'green'"
+              v-if="selectedHospital.icu_low_care == 'green'"
               color="green"
             >mdi-checkbox-blank-circle</v-icon>
+
             <v-icon
               class="icon-margin"
-              v-if="selectedHospital.bettenStatusColor.statusLowCare == 'grey'"
-              color="grey"
-            >mdi-checkbox-blank-circle</v-icon>
-            <v-icon
-              class="icon-margin"
-              v-if="selectedHospital.bettenStatusColor.statusLowCare == 'yellow'"
+              v-if="selectedHospital.icu_low_care == 'yellow'"
               color="yellow"
             >mdi-checkbox-blank-circle</v-icon>Betten ohne inv. Beatmung
           </v-col>
 
-          <v-col class="pl-0" v-if="selectedHospital.bettenStatusColor.statusECMO">
+          <v-col class="pl-0" v-if="selectedHospital.ecmo">
             <v-icon
               class="icon-margin"
-              v-if="selectedHospital.bettenStatusColor.statusECMO == 'red'"
+              v-if="selectedHospital.ecmo == 'red'"
               color="red"
             >mdi-checkbox-blank-circle</v-icon>
             <v-icon
               class="icon-margin"
-              v-if="selectedHospital.bettenStatusColor.statusECMO == 'green'"
+              v-if="selectedHospital.ecmo == 'green'"
               color="green"
             >mdi-checkbox-blank-circle</v-icon>
             <v-icon
-              class="icon-margin"
-              v-if="selectedHospital.bettenStatusColor.statusECMO == 'grey'"
-              color="grey"
-            >mdi-checkbox-blank-circle</v-icon>
-            <v-icon
-              class="icon-margin"
-              v-if="selectedHospital.bettenStatusColor.statusECMO== 'yellow'"
+              v-if="selectedHospital.ecmo == 'yellow'"
               color="yellow"
             >mdi-checkbox-blank-circle</v-icon>Zusätzliche Beatmung
           </v-col>
           <v-col
             class="pl-0"
-            v-if="selectedHospital.faelleCovidAktuell"
-          >{{ selectedHospital.faelleCovidAktuell }} Corona Fälle</v-col>
+            v-if="selectedHospital.covid"
+          >{{ selectedHospital.covid }} Corona Fälle</v-col>
         </v-container>
 
         <v-list-item-title v-if="selectedHospital.history.length != 0">Zeitlicher Verlauf</v-list-item-title>
@@ -144,8 +125,8 @@ export default Vue.extend({
       const labelArray: string[] = [];
 
       this.selectedHospital.history.reverse().forEach(element => {
-        dataArray.push(element.faelleCovidAktuell);
-        labelArray.push(element.meldezeitpunkt.substring(0, 10));
+        dataArray.push(element.covid);
+        labelArray.push(element.date.substring(0, 10));
       });
 
       return {
@@ -196,12 +177,5 @@ export default Vue.extend({
 
 .icon-margin {
   margin-right: 1rem;
-}
-
-.uptime-time {
-  color: grey;
-  font-size: 0.8rem;
-  padding: 0.5rem;
-  padding-left: 0;
 }
 </style>

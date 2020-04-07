@@ -133,7 +133,7 @@ export default Vue.extend({
         labels: labelArray,
         datasets: [
           {
-            label: "Covid-19",
+            label: "covid-19",
             data: dataArray
           }
         ]

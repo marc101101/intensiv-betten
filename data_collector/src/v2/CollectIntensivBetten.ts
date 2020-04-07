@@ -8,7 +8,7 @@ export const collectAndAggregateIntensivBetten = async () => {
   const client = new CollectIntensivBettenClient();
 
   const register: Array<diviEntry> = await client.collectIntensivBettenRegister(
-    "https://www.intensivregister.de/api/public/intensivregister?page=0&size=1200"
+    "https://www.intensivregister.de/api/public/intensivregister?page=0&size=9999"
   );
 
   const aggreagte: any = await client.aggregateIntensivBetten(

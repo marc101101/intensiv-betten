@@ -32,20 +32,18 @@ export class CollectIntensivBettenClient {
         (hospital) => hospital.id == element.id
       );
 
-      if (!element.history) {
-        element.history = [];
-      }
-
       if (i != -1) {
+        element.history = old_aggregation.data[i].history;
+
         let current_object = old_aggregation.data[i];
         let current_time = Date.parse(element.meldezeitpunkt);
         let old_time = Date.parse(current_object.meldezeitpunkt);
 
         if (current_time != old_time) {
-          let i = element.history.findIndex(
+          let j = old_aggregation.data[i].history.findIndex(
             (hospital) => hospital.meldezeitpunkt == element.meldezeitpunkt
           );
-          if (i == -1) {
+          if (j == -1) {
             let history_object = {
               meldezeitpunkt: current_object.meldezeitpunkt,
               statusLowCare: current_object.bettenStatus.statusLowCare,

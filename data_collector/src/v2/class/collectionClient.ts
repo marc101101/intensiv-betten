@@ -4,34 +4,6 @@ import AWS from "aws-sdk";
 
 export class CollectIntensivBettenClient {
   /**
-   * 
-   * {
-    "id": "772842",
-    "krankenhausStandort": {
-    "id": "772842",
-    "bezeichnung": "Städtisches Klinikum Dresden, Städtisches Klinikum Dresden - Standort Friedrichstadt",
-    "strasse": "Friedrichstraße",
-    "hausnummer": "41",
-    "plz": "01067",
-    "ort": "Dresden",
-    "bundesland": "SACHSEN",
-    "ikNummer": "261400949",
-    "position": {
-    "latitude": 51.059519822296,
-    "longitude": 13.718164444035
-    }
-    },
-    "meldezeitpunkt": "2020-04-03T16:19:04Z",
-    "bettenStatus": {
-    "statusLowCare": "BEGRENZT",
-    "statusHighCare": "BEGRENZT",
-    "statusECMO": "NICHT_VERFUEGBAR"
-    },
-    "faelleCovidAktuell": 4
-    },
-   */
-
-  /**
    * Collects intensiv betten register
    * @param url
    * @returns intensiv betten register
@@ -65,8 +37,9 @@ export class CollectIntensivBettenClient {
       }
 
       if (i != -1) {
+        let current_object = old_aggregation.data[i];
         let current_time = Date.parse(element.meldezeitpunkt);
-        let old_time = Date.parse(old_aggregation.data[i].meldezeitpunkt);
+        let old_time = Date.parse(current_object.meldezeitpunkt);
 
         if (current_time != old_time) {
           let i = element.history.findIndex(
@@ -74,12 +47,11 @@ export class CollectIntensivBettenClient {
           );
           if (i == -1) {
             let history_object = {
-              meldezeitpunk: old_aggregation.data[i].meldezeitpunkt,
-              statusLowCare: old_aggregation.data[i].bettenStatus.statusLowCare,
-              statusHighCare:
-                old_aggregation.data[i].bettenStatus.statusHighCare,
-              statusECMO: old_aggregation.data[i].bettenStatus.statusECMO,
-              faelleCovidAktuell: old_aggregation.data[i].faelleCovidAktuell,
+              meldezeitpunkt: current_object.meldezeitpunkt,
+              statusLowCare: current_object.bettenStatus.statusLowCare,
+              statusHighCare: current_object.bettenStatus.statusHighCare,
+              statusECMO: current_object.bettenStatus.statusECMO,
+              faelleCovidAktuell: current_object.faelleCovidAktuell,
             };
 
             element.history.push(history_object);

@@ -1,7 +1,7 @@
 <template>
   <v-card outlined v-if="selectedHospitals != []">
     <v-btn
-      @click="(e) => $store.commit('unselectHospital')"
+      @click="(e) => $store.commit('unselectHospitals')"
       class="black--text"
       depressed
       color="white"
@@ -124,12 +124,6 @@
         </div>
       </v-list-item-content>
     </v-list-item>
-    <div v-if="selectedHospitals.length > 1" class="text-center">
-      <a v-for="(hospital, localIndex) in selectedHospitals" :key="hospital">
-        <v-icon class="dots" v-if="index != localIndex" color="grey">mdi-checkbox-blank-circle</v-icon>
-        <v-icon class="dots" v-if="index == localIndex" color="black">mdi-checkbox-blank-circle</v-icon>
-      </a>
-    </div>
   </v-card>
 </template>
 
@@ -155,8 +149,6 @@ export default Vue.extend({
       meldezeitpunkt: string;
       history: { faelleCovidAktuell: number; meldezeitpunkt: string }[];
     }> {
-      console.log(this.$store.state.selectHospitals[this.index]);
-
       return this.$store.state.selectHospitals;
     },
     historyDataCollection(): {
@@ -168,19 +160,32 @@ export default Vue.extend({
   },
   methods: {
     nextHospital() {
-      console.log(this.index);
-      console.log(this.selectedHospitals.length);
       if (this.index == this.selectedHospitals.length - 1) {
         this.index = 0;
       } else {
         this.index = this.index + 1;
       }
     },
+    sortedList(list, value) {
+      return list.sort(function(a, b) {
+        const keyA = Date.parse(a[value]);
+        const keyB = Date.parse(b[value]);
+        // Compare the 2 dates
+        if (keyA < keyB) return -1;
+        if (keyA > keyB) return 1;
+        return 0;
+      });
+    },
     generateDataRows() {
       const dataArray: number[] = [];
       const labelArray: string[] = [];
 
-      this.selectedHospitals[this.index].history.reverse().forEach(element => {
+      const sortedList = this.sortedList(
+        this.selectedHospitals[this.index].history,
+        "meldezeitpunkt"
+      );
+
+      sortedList.forEach(element => {
         dataArray.push(element.faelleCovidAktuell);
         labelArray.push(element.meldezeitpunkt.substring(0, 10));
       });

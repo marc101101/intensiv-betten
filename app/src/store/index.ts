@@ -22,21 +22,20 @@ const mutations = {
       .push({
         path: "",
         query: {
-          kliniken: selectedHospitals.map((e) => {
-            return e.id;
-          }),
+          kliniken: [selectedHospitals.map((e: any) => Object.values(e)[0])],
         },
       })
       // eslint-disable-next-line @typescript-eslint/no-empty-function
       .catch((err) => {});
+
     state.selectHospitals = selectedHospitals;
   },
-  unselectHospital(state) {
+  unselectHospitals(state) {
     router
       .push({ path: "", query: {} })
       // eslint-disable-next-line @typescript-eslint/no-empty-function
       .catch((err) => {});
-    state.selectedHospitals = [];
+    state.selectHospitals = [];
   },
 };
 

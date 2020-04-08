@@ -43,13 +43,13 @@ export default Vue.extend({
 
   methods: {
     checkCurrentRoute() {
-      const givenHospital = this.$route.query.klinik;
+      const givenHospital = this.$route.query.klinik[0];
 
       if (givenHospital) {
         const result = this.hospitals.filter(
           hospital => hospital.id == givenHospital
         );
-        this.select(result[0]);
+        this.select(result);
       }
     },
     select(hospital) {

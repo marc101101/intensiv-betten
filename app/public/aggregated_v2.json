@@ -1,5 +1,5 @@
 {
-  "last_updated": 1586335372812,
+  "last_updated": 1586342572734,
   "data": [
     {
       "id": "772842",
@@ -69,9 +69,9 @@
         "ikNummer": "261420088",
         "position": { "latitude": 51.058086530837, "longitude": 13.77770733835 }
       },
-      "meldezeitpunkt": "2020-04-07T13:00:19Z",
+      "meldezeitpunkt": "2020-04-08T10:11:58Z",
       "bettenStatus": {
-        "statusLowCare": "NICHT_VERFUEGBAR",
+        "statusLowCare": "BEGRENZT",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": "VERFUEGBAR"
       },
@@ -79,6 +79,13 @@
       "history": [
         {
           "meldezeitpunkt": "2020-03-31T08:58:09Z",
+          "statusLowCare": "NICHT_VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T13:00:19Z",
           "statusLowCare": "NICHT_VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
@@ -280,14 +287,22 @@
           "longitude": 13.645339464893
         }
       },
-      "meldezeitpunkt": "2020-04-03T10:58:54Z",
+      "meldezeitpunkt": "2020-04-08T09:40:59Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
       "faelleCovidAktuell": 0,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T10:58:54Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        }
+      ]
     },
     {
       "id": "771818",
@@ -847,7 +862,7 @@
           "longitude": 12.436151683314
         }
       },
-      "meldezeitpunkt": "2020-04-08T08:34:17Z",
+      "meldezeitpunkt": "2020-04-08T10:22:12Z",
       "bettenStatus": {
         "statusLowCare": "BEGRENZT",
         "statusHighCare": "VERFUEGBAR",
@@ -868,6 +883,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 4
+        },
+        {
+          "meldezeitpunkt": "2020-04-08T08:34:17Z",
+          "statusLowCare": "BEGRENZT",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 4
         }
       ]
     },
@@ -884,16 +906,23 @@
         "ikNummer": "261401405",
         "position": { "latitude": 51.30760564054, "longitude": 12.436903238231 }
       },
-      "meldezeitpunkt": "2020-04-08T06:46:22Z",
+      "meldezeitpunkt": "2020-04-08T09:30:11Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": "VERFUEGBAR"
       },
-      "faelleCovidAktuell": 2,
+      "faelleCovidAktuell": 0,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T12:25:24Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 2
+        },
+        {
+          "meldezeitpunkt": "2020-04-08T06:46:22Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
@@ -1012,7 +1041,7 @@
           "longitude": 12.717505216533
         }
       },
-      "meldezeitpunkt": "2020-04-07T10:46:35Z",
+      "meldezeitpunkt": "2020-04-08T10:39:23Z",
       "bettenStatus": {
         "statusLowCare": null,
         "statusHighCare": "VERFUEGBAR",
@@ -1024,6 +1053,13 @@
           "meldezeitpunkt": "2020-04-03T06:04:46Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "BEGRENZT",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T10:46:35Z",
+          "statusLowCare": null,
+          "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 0
         }
@@ -1122,7 +1158,7 @@
           "longitude": 12.941995382244
         }
       },
-      "meldezeitpunkt": "2020-04-07T13:33:26Z",
+      "meldezeitpunkt": "2020-04-08T10:04:18Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -1134,6 +1170,13 @@
           "meldezeitpunkt": "2020-04-04T21:30:26Z",
           "statusLowCare": "BEGRENZT",
           "statusHighCare": "BEGRENZT",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T13:33:26Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 0
         }
@@ -1155,14 +1198,22 @@
           "longitude": 12.620404529644
         }
       },
-      "meldezeitpunkt": "2020-04-02T09:58:06Z",
+      "meldezeitpunkt": "2020-04-08T09:24:55Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
       "faelleCovidAktuell": 1,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-02T09:58:06Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 1
+        }
+      ]
     },
     {
       "id": "771248",
@@ -1213,14 +1264,22 @@
           "longitude": 13.207791566783
         }
       },
-      "meldezeitpunkt": "2020-04-03T10:04:08Z",
+      "meldezeitpunkt": "2020-04-08T09:15:09Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": "VERFUEGBAR"
       },
-      "faelleCovidAktuell": 0,
-      "history": []
+      "faelleCovidAktuell": 1,
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T10:04:08Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 0
+        }
+      ]
     },
     {
       "id": "772512",
@@ -1318,7 +1377,7 @@
           "longitude": 11.960052231898
         }
       },
-      "meldezeitpunkt": "2020-04-07T15:02:11Z",
+      "meldezeitpunkt": "2020-04-08T10:29:21Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -1328,6 +1387,13 @@
       "history": [
         {
           "meldezeitpunkt": "2020-04-03T09:59:55Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T15:02:11Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
@@ -1490,14 +1556,22 @@
           "longitude": 11.972611034034
         }
       },
-      "meldezeitpunkt": "2020-04-02T14:27:50Z",
+      "meldezeitpunkt": "2020-04-08T09:15:09Z",
       "bettenStatus": {
-        "statusLowCare": "VERFUEGBAR",
+        "statusLowCare": "BEGRENZT",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
       "faelleCovidAktuell": 0,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-02T14:27:50Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        }
+      ]
     },
     {
       "id": "773085",
@@ -1595,14 +1669,22 @@
           "longitude": 11.231196641857
         }
       },
-      "meldezeitpunkt": "2020-04-05T08:15:21Z",
+      "meldezeitpunkt": "2020-04-08T09:54:44Z",
       "bettenStatus": {
         "statusLowCare": "BEGRENZT",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": "NICHT_VERFUEGBAR"
       },
-      "faelleCovidAktuell": 0,
-      "history": []
+      "faelleCovidAktuell": 1,
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-05T08:15:21Z",
+          "statusLowCare": "BEGRENZT",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "NICHT_VERFUEGBAR",
+          "faelleCovidAktuell": 0
+        }
+      ]
     },
     {
       "id": "771609",
@@ -2467,7 +2549,7 @@
         "ikNummer": "261102323",
         "position": { "latitude": 52.53491889392, "longitude": 13.369843125311 }
       },
-      "meldezeitpunkt": "2020-04-07T16:31:15Z",
+      "meldezeitpunkt": "2020-04-08T10:19:30Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -2477,6 +2559,13 @@
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T07:20:55Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T16:31:15Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
@@ -2918,14 +3007,22 @@
           "longitude": 13.595804750903
         }
       },
-      "meldezeitpunkt": "2020-04-03T15:05:52Z",
+      "meldezeitpunkt": "2020-04-08T08:54:50Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 0,
-      "history": []
+      "faelleCovidAktuell": 2,
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T15:05:52Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        }
+      ]
     },
     {
       "id": "773182",
@@ -3216,14 +3313,22 @@
           "longitude": 13.347768545282
         }
       },
-      "meldezeitpunkt": "2020-04-04T07:45:14Z",
+      "meldezeitpunkt": "2020-04-08T09:55:26Z",
       "bettenStatus": {
         "statusLowCare": "NICHT_VERFUEGBAR",
         "statusHighCare": "BEGRENZT",
         "statusECMO": "BEGRENZT"
       },
       "faelleCovidAktuell": 0,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-04T07:45:14Z",
+          "statusLowCare": "NICHT_VERFUEGBAR",
+          "statusHighCare": "BEGRENZT",
+          "statusECMO": "BEGRENZT",
+          "faelleCovidAktuell": 0
+        }
+      ]
     },
     {
       "id": "773109",
@@ -4503,14 +4608,22 @@
           "longitude": 12.388838052684
         }
       },
-      "meldezeitpunkt": "2020-04-01T07:44:40Z",
+      "meldezeitpunkt": "2020-04-08T10:41:28Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
       "faelleCovidAktuell": 0,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-01T07:44:40Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        }
+      ]
     },
     {
       "id": "771598",
@@ -4593,13 +4706,13 @@
           "longitude": 13.294242382017
         }
       },
-      "meldezeitpunkt": "2020-04-07T10:38:13Z",
+      "meldezeitpunkt": "2020-04-08T08:43:42Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 4,
+      "faelleCovidAktuell": 3,
       "history": [
         {
           "meldezeitpunkt": "2020-03-27T14:37:03Z",
@@ -4607,6 +4720,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T10:38:13Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 4
         }
       ]
     },
@@ -4843,7 +4963,7 @@
           "longitude": 13.984293651738
         }
       },
-      "meldezeitpunkt": "2020-04-07T13:49:49Z",
+      "meldezeitpunkt": "2020-04-08T09:21:07Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -4857,6 +4977,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T13:49:49Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 1
         }
       ]
     },
@@ -5055,7 +5182,7 @@
         "ikNummer": "261300118",
         "position": { "latitude": 54.07175069965, "longitude": 12.107268333402 }
       },
-      "meldezeitpunkt": "2020-04-07T11:52:53Z",
+      "meldezeitpunkt": "2020-04-08T10:11:42Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -5069,6 +5196,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": null
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T11:52:53Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
         }
       ]
     },
@@ -5135,14 +5269,22 @@
           "longitude": 12.444333627836
         }
       },
-      "meldezeitpunkt": "2020-04-03T06:40:28Z",
+      "meldezeitpunkt": "2020-04-08T10:40:56Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 0,
-      "history": []
+      "faelleCovidAktuell": 1,
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T06:40:28Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        }
+      ]
     },
     {
       "id": "771436",
@@ -5385,13 +5527,13 @@
           "longitude": 10.016164755507
         }
       },
-      "meldezeitpunkt": "2020-04-07T09:00:37Z",
+      "meldezeitpunkt": "2020-04-08T09:40:30Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "BEGRENZT",
         "statusECMO": "VERFUEGBAR"
       },
-      "faelleCovidAktuell": 7,
+      "faelleCovidAktuell": 6,
       "history": [
         {
           "meldezeitpunkt": "2020-04-03T07:33:19Z",
@@ -5399,6 +5541,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
           "faelleCovidAktuell": 4
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T09:00:37Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "BEGRENZT",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 7
         }
       ]
     },
@@ -5415,13 +5564,13 @@
         "ikNummer": "260200013",
         "position": { "latitude": 53.589913025365, "longitude": 9.974761963022 }
       },
-      "meldezeitpunkt": "2020-04-07T08:46:32Z",
+      "meldezeitpunkt": "2020-04-08T09:17:30Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": "VERFUEGBAR"
       },
-      "faelleCovidAktuell": 25,
+      "faelleCovidAktuell": 26,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T22:42:41Z",
@@ -5429,6 +5578,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
           "faelleCovidAktuell": 43
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T08:46:32Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 25
         }
       ]
     },
@@ -5445,13 +5601,13 @@
         "ikNummer": "260201194",
         "position": { "latitude": 53.571185658973, "longitude": 9.965228157898 }
       },
-      "meldezeitpunkt": "2020-04-07T09:14:43Z",
+      "meldezeitpunkt": "2020-04-08T09:07:06Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
-        "statusHighCare": "NICHT_VERFUEGBAR",
+        "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 3,
+      "faelleCovidAktuell": 2,
       "history": [
         {
           "meldezeitpunkt": "2020-03-28T17:04:32Z",
@@ -5459,6 +5615,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 1
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T09:14:43Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "NICHT_VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 3
         }
       ]
     },
@@ -5715,7 +5878,7 @@
           "longitude": 10.200849652274
         }
       },
-      "meldezeitpunkt": "2020-04-07T14:07:33Z",
+      "meldezeitpunkt": "2020-04-08T09:33:44Z",
       "bettenStatus": {
         "statusLowCare": null,
         "statusHighCare": "VERFUEGBAR",
@@ -5726,6 +5889,13 @@
         {
           "meldezeitpunkt": "2020-04-01T14:17:21Z",
           "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T14:07:33Z",
+          "statusLowCare": null,
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 0
@@ -6022,7 +6192,7 @@
         "ikNummer": "260200284",
         "position": { "latitude": 53.605628446777, "longitude": 9.990679800494 }
       },
-      "meldezeitpunkt": "2020-04-07T09:48:24Z",
+      "meldezeitpunkt": "2020-04-08T09:28:10Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -6036,6 +6206,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 1
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T09:48:24Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 2
         }
       ]
     },
@@ -6128,13 +6305,13 @@
           "longitude": 10.029191494004
         }
       },
-      "meldezeitpunkt": "2020-04-08T06:36:05Z",
+      "meldezeitpunkt": "2020-04-08T09:59:01Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": "VERFUEGBAR"
       },
-      "faelleCovidAktuell": 0,
+      "faelleCovidAktuell": 1,
       "history": [
         {
           "meldezeitpunkt": "2020-04-03T12:41:05Z",
@@ -6145,6 +6322,13 @@
         },
         {
           "meldezeitpunkt": "2020-04-07T13:07:06Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-08T06:36:05Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
@@ -6691,14 +6875,22 @@
           "longitude": 10.116285771123
         }
       },
-      "meldezeitpunkt": "2020-04-06T08:09:21Z",
+      "meldezeitpunkt": "2020-04-08T09:38:27Z",
       "bettenStatus": {
         "statusLowCare": null,
         "statusHighCare": null,
         "statusECMO": null
       },
       "faelleCovidAktuell": 0,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-06T08:09:21Z",
+          "statusLowCare": null,
+          "statusHighCare": null,
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        }
+      ]
     },
     {
       "id": "772314",
@@ -6767,7 +6959,7 @@
         "ikNummer": "260100820",
         "position": { "latitude": 54.23895175112, "longitude": 10.278456620872 }
       },
-      "meldezeitpunkt": "2020-04-07T12:58:09Z",
+      "meldezeitpunkt": "2020-04-08T09:49:55Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -6781,6 +6973,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "NICHT_VERFUEGBAR",
           "faelleCovidAktuell": 4
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T12:58:09Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 5
         }
       ]
     },
@@ -7055,13 +7254,13 @@
         "ikNummer": "260100739",
         "position": { "latitude": 53.752510201933, "longitude": 9.681757450235 }
       },
-      "meldezeitpunkt": "2020-04-07T09:37:30Z",
+      "meldezeitpunkt": "2020-04-08T09:34:14Z",
       "bettenStatus": {
         "statusLowCare": null,
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 4,
+      "faelleCovidAktuell": 6,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T11:19:54Z",
@@ -7069,6 +7268,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 5
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T09:37:30Z",
+          "statusLowCare": null,
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 4
         }
       ]
     },
@@ -7085,10 +7291,10 @@
         "ikNummer": "260100739",
         "position": { "latitude": 53.654589771865, "longitude": 9.811318659622 }
       },
-      "meldezeitpunkt": "2020-04-07T09:42:59Z",
+      "meldezeitpunkt": "2020-04-08T09:36:55Z",
       "bettenStatus": {
-        "statusLowCare": "BEGRENZT",
-        "statusHighCare": "BEGRENZT",
+        "statusLowCare": "NICHT_VERFUEGBAR",
+        "statusHighCare": "NICHT_VERFUEGBAR",
         "statusECMO": null
       },
       "faelleCovidAktuell": 0,
@@ -7097,6 +7303,13 @@
           "meldezeitpunkt": "2020-04-06T11:27:15Z",
           "statusLowCare": "BEGRENZT",
           "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T09:42:59Z",
+          "statusLowCare": "BEGRENZT",
+          "statusHighCare": "BEGRENZT",
           "statusECMO": null,
           "faelleCovidAktuell": 0
         }
@@ -7115,7 +7328,7 @@
         "ikNummer": "260101137",
         "position": { "latitude": 53.941746464684, "longitude": 9.503403425151 }
       },
-      "meldezeitpunkt": "2020-04-07T07:52:35Z",
+      "meldezeitpunkt": "2020-04-08T08:59:09Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -7125,6 +7338,13 @@
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T13:19:00Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 8
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T07:52:35Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
@@ -7248,14 +7468,22 @@
         "ikNummer": "260340784",
         "position": { "latitude": 53.142667947088, "longitude": 8.205731391972 }
       },
-      "meldezeitpunkt": "2020-04-06T12:28:35Z",
+      "meldezeitpunkt": "2020-04-08T08:58:59Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": "VERFUEGBAR"
       },
-      "faelleCovidAktuell": 4,
-      "history": []
+      "faelleCovidAktuell": 3,
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-06T12:28:35Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 4
+        }
+      ]
     },
     {
       "id": "771936",
@@ -7536,7 +7764,7 @@
         "ikNummer": "260330452",
         "position": { "latitude": 53.104505059312, "longitude": 9.411837101179 }
       },
-      "meldezeitpunkt": "2020-04-07T06:29:20Z",
+      "meldezeitpunkt": "2020-04-08T09:04:39Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -7548,6 +7776,13 @@
           "meldezeitpunkt": "2020-04-06T08:22:29Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "BEGRENZT",
+          "statusECMO": null,
+          "faelleCovidAktuell": 2
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T06:29:20Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 2
         }
@@ -7847,16 +8082,23 @@
         "ikNummer": "260400071",
         "position": { "latitude": 53.12580831379, "longitude": 8.745809036091 }
       },
-      "meldezeitpunkt": "2020-04-07T12:31:58Z",
+      "meldezeitpunkt": "2020-04-08T09:36:58Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
-        "statusECMO": "NICHT_VERFUEGBAR"
+        "statusECMO": null
       },
       "faelleCovidAktuell": 0,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T06:12:20Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "NICHT_VERFUEGBAR",
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T12:31:58Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "NICHT_VERFUEGBAR",
@@ -8293,7 +8535,7 @@
         "ikNummer": "260320622",
         "position": { "latitude": 52.147219172423, "longitude": 9.947458898805 }
       },
-      "meldezeitpunkt": "2020-04-07T14:19:27Z",
+      "meldezeitpunkt": "2020-04-08T10:08:19Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -8307,6 +8549,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 1
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T14:19:27Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 2
         }
       ]
     },
@@ -8568,9 +8817,9 @@
         "ikNummer": "260571421",
         "position": { "latitude": 52.112178478842, "longitude": 8.675173759657 }
       },
-      "meldezeitpunkt": "2020-04-07T13:38:16Z",
+      "meldezeitpunkt": "2020-04-08T09:14:36Z",
       "bettenStatus": {
-        "statusLowCare": null,
+        "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
@@ -8579,6 +8828,13 @@
         {
           "meldezeitpunkt": "2020-04-03T14:08:09Z",
           "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T13:38:16Z",
+          "statusLowCare": null,
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 0
@@ -8650,13 +8906,13 @@
         "ikNummer": "260570603",
         "position": { "latitude": 52.191836211534, "longitude": 8.795144140745 }
       },
-      "meldezeitpunkt": "2020-04-07T14:12:24Z",
+      "meldezeitpunkt": "2020-04-08T09:06:40Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": "VERFUEGBAR"
       },
-      "faelleCovidAktuell": 3,
+      "faelleCovidAktuell": 4,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T11:07:52Z",
@@ -8664,6 +8920,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
           "faelleCovidAktuell": 2
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T14:12:24Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 3
         }
       ]
     },
@@ -8680,7 +8943,7 @@
         "ikNummer": "260570545",
         "position": { "latitude": 52.193268327416, "longitude": 8.797191046069 }
       },
-      "meldezeitpunkt": "2020-04-07T14:17:59Z",
+      "meldezeitpunkt": "2020-04-08T09:21:00Z",
       "bettenStatus": {
         "statusLowCare": "NICHT_VERFUEGBAR",
         "statusHighCare": "NICHT_VERFUEGBAR",
@@ -8690,6 +8953,13 @@
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T11:06:16Z",
+          "statusLowCare": "NICHT_VERFUEGBAR",
+          "statusHighCare": "NICHT_VERFUEGBAR",
+          "statusECMO": "NICHT_VERFUEGBAR",
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T14:17:59Z",
           "statusLowCare": "NICHT_VERFUEGBAR",
           "statusHighCare": "NICHT_VERFUEGBAR",
           "statusECMO": "NICHT_VERFUEGBAR",
@@ -9125,14 +9395,22 @@
         "ikNummer": "260570044",
         "position": { "latitude": 52.013456454331, "longitude": 8.525701117214 }
       },
-      "meldezeitpunkt": "2020-04-05T06:21:31Z",
+      "meldezeitpunkt": "2020-04-08T10:09:21Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
       "faelleCovidAktuell": 3,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-05T06:21:31Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 3
+        }
+      ]
     },
     {
       "id": "772094",
@@ -9309,7 +9587,7 @@
         "ikNummer": "260570384",
         "position": { "latitude": 51.487498909503, "longitude": 9.140362143517 }
       },
-      "meldezeitpunkt": "2020-04-07T07:52:28Z",
+      "meldezeitpunkt": "2020-04-08T09:17:02Z",
       "bettenStatus": {
         "statusLowCare": "NICHT_VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -9319,6 +9597,13 @@
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T07:50:38Z",
+          "statusLowCare": "NICHT_VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 1
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T07:52:28Z",
           "statusLowCare": "NICHT_VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
@@ -9457,13 +9742,13 @@
         "ikNummer": "260620431",
         "position": { "latitude": 50.81526897788, "longitude": 8.805859994882 }
       },
-      "meldezeitpunkt": "2020-04-07T18:01:59Z",
+      "meldezeitpunkt": "2020-04-08T10:00:12Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": "VERFUEGBAR"
       },
-      "faelleCovidAktuell": 7,
+      "faelleCovidAktuell": 6,
       "history": [
         {
           "meldezeitpunkt": "2020-04-07T01:08:26Z",
@@ -9474,6 +9759,13 @@
         },
         {
           "meldezeitpunkt": "2020-04-07T08:10:12Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 7
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T18:01:59Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
@@ -9605,14 +9897,22 @@
         "ikNummer": "260611032",
         "position": { "latitude": 50.525030068332, "longitude": 8.806200742656 }
       },
-      "meldezeitpunkt": "2020-04-06T08:19:10Z",
+      "meldezeitpunkt": "2020-04-08T10:19:39Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
       "faelleCovidAktuell": 0,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-06T08:19:10Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        }
+      ]
     },
     {
       "id": "771876",
@@ -9894,13 +10194,13 @@
         "ikNummer": "261600042",
         "position": { "latitude": 50.8038125143, "longitude": 10.218076944548 }
       },
-      "meldezeitpunkt": "2020-04-08T08:34:14Z",
+      "meldezeitpunkt": "2020-04-08T08:50:35Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 1,
+      "faelleCovidAktuell": 2,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T08:58:53Z",
@@ -9915,6 +10215,13 @@
           "statusHighCare": "BEGRENZT",
           "statusECMO": null,
           "faelleCovidAktuell": 2
+        },
+        {
+          "meldezeitpunkt": "2020-04-08T08:34:14Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 1
         }
       ]
     },
@@ -10805,16 +11112,23 @@
         "ikNummer": "260510132",
         "position": { "latitude": 51.212615409228, "longitude": 6.773145943866 }
       },
-      "meldezeitpunkt": "2020-04-07T05:30:32Z",
+      "meldezeitpunkt": "2020-04-08T09:17:06Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
-        "statusHighCare": "BEGRENZT",
+        "statusHighCare": "NICHT_VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 4,
+      "faelleCovidAktuell": 5,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T15:15:24Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "BEGRENZT",
+          "statusECMO": null,
+          "faelleCovidAktuell": 4
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T05:30:32Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "BEGRENZT",
           "statusECMO": null,
@@ -11191,7 +11505,7 @@
         "ikNummer": "260500389",
         "position": { "latitude": 51.279306732938, "longitude": 6.627281494439 }
       },
-      "meldezeitpunkt": "2020-04-07T10:00:34Z",
+      "meldezeitpunkt": "2020-04-08T09:53:31Z",
       "bettenStatus": {
         "statusLowCare": "NICHT_VERFUEGBAR",
         "statusHighCare": "NICHT_VERFUEGBAR",
@@ -11201,6 +11515,13 @@
       "history": [
         {
           "meldezeitpunkt": "2020-04-03T14:32:46Z",
+          "statusLowCare": "NICHT_VERFUEGBAR",
+          "statusHighCare": "NICHT_VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T10:00:34Z",
           "statusLowCare": "NICHT_VERFUEGBAR",
           "statusHighCare": "NICHT_VERFUEGBAR",
           "statusECMO": null,
@@ -11265,13 +11586,13 @@
         "ikNummer": "260511144",
         "position": { "latitude": 51.250740236167, "longitude": 6.97076404098 }
       },
-      "meldezeitpunkt": "2020-04-07T08:39:29Z",
+      "meldezeitpunkt": "2020-04-08T09:49:45Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 3,
+      "faelleCovidAktuell": 0,
       "history": [
         {
           "meldezeitpunkt": "2020-04-03T07:32:05Z",
@@ -11279,6 +11600,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 1
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T08:39:29Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 3
         }
       ]
     },
@@ -11339,16 +11667,23 @@
         "ikNummer": "260510666",
         "position": { "latitude": 51.218465487226, "longitude": 6.419624588634 }
       },
-      "meldezeitpunkt": "2020-04-07T10:24:07Z",
+      "meldezeitpunkt": "2020-04-08T09:00:09Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": "VERFUEGBAR"
       },
-      "faelleCovidAktuell": 9,
+      "faelleCovidAktuell": 8,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T08:45:45Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 9
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T10:24:07Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
@@ -11569,7 +11904,7 @@
         "ikNummer": "260511428",
         "position": { "latitude": 51.25120526988, "longitude": 6.382835626537 }
       },
-      "meldezeitpunkt": "2020-04-07T12:41:22Z",
+      "meldezeitpunkt": "2020-04-08T09:41:12Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -11579,6 +11914,13 @@
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T12:16:55Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 5
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T12:41:22Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
@@ -11599,7 +11941,7 @@
         "ikNummer": "260511417",
         "position": { "latitude": 51.285717111258, "longitude": 6.375237464872 }
       },
-      "meldezeitpunkt": "2020-04-07T11:31:50Z",
+      "meldezeitpunkt": "2020-04-08T10:30:19Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -11613,6 +11955,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 1
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T11:31:50Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
         }
       ]
     },
@@ -12075,14 +12424,22 @@
         "ikNummer": "260593724",
         "position": { "latitude": 51.485567046997, "longitude": 7.498596489413 }
       },
-      "meldezeitpunkt": "2020-04-03T13:00:28Z",
+      "meldezeitpunkt": "2020-04-08T09:23:47Z",
       "bettenStatus": {
-        "statusLowCare": "VERFUEGBAR",
-        "statusHighCare": "VERFUEGBAR",
+        "statusLowCare": null,
+        "statusHighCare": null,
         "statusECMO": null
       },
       "faelleCovidAktuell": 0,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T13:00:28Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        }
+      ]
     },
     {
       "id": "772089",
@@ -12134,14 +12491,22 @@
         "ikNummer": "260590253",
         "position": { "latitude": 51.480677983394, "longitude": 7.509634852377 }
       },
-      "meldezeitpunkt": "2020-04-03T14:39:33Z",
+      "meldezeitpunkt": "2020-04-08T09:26:23Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
       "faelleCovidAktuell": 0,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T14:39:33Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        }
+      ]
     },
     {
       "id": "771108",
@@ -12156,10 +12521,10 @@
         "ikNummer": "260591619",
         "position": { "latitude": 51.519954398832, "longitude": 7.533110618624 }
       },
-      "meldezeitpunkt": "2020-04-08T06:29:40Z",
+      "meldezeitpunkt": "2020-04-08T09:39:14Z",
       "bettenStatus": {
         "statusLowCare": "BEGRENZT",
-        "statusHighCare": "NICHT_VERFUEGBAR",
+        "statusHighCare": "BEGRENZT",
         "statusECMO": "VERFUEGBAR"
       },
       "faelleCovidAktuell": 0,
@@ -12175,6 +12540,13 @@
           "meldezeitpunkt": "2020-04-07T09:29:23Z",
           "statusLowCare": "BEGRENZT",
           "statusHighCare": "BEGRENZT",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-08T06:29:40Z",
+          "statusLowCare": "BEGRENZT",
+          "statusHighCare": "NICHT_VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
           "faelleCovidAktuell": 0
         }
@@ -12541,7 +12913,7 @@
         "ikNummer": "260590106",
         "position": { "latitude": 51.485216294599, "longitude": 7.222674965842 }
       },
-      "meldezeitpunkt": "2020-04-07T13:47:00Z",
+      "meldezeitpunkt": "2020-04-08T08:56:35Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -12551,6 +12923,13 @@
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T20:40:45Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 2
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T13:47:00Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
@@ -12653,7 +13032,7 @@
         "ikNummer": "260510508",
         "position": { "latitude": 51.441965400604, "longitude": 7.030423083343 }
       },
-      "meldezeitpunkt": "2020-04-07T12:10:20Z",
+      "meldezeitpunkt": "2020-04-08T10:06:17Z",
       "bettenStatus": {
         "statusLowCare": "NICHT_VERFUEGBAR",
         "statusHighCare": "NICHT_VERFUEGBAR",
@@ -12667,6 +13046,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T12:10:20Z",
+          "statusLowCare": "NICHT_VERFUEGBAR",
+          "statusHighCare": "NICHT_VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 2
         }
       ]
     },
@@ -12683,7 +13069,7 @@
         "ikNummer": "260510461",
         "position": { "latitude": 51.445465262903, "longitude": 7.033164024288 }
       },
-      "meldezeitpunkt": "2020-04-07T10:36:39Z",
+      "meldezeitpunkt": "2020-04-08T09:04:12Z",
       "bettenStatus": {
         "statusLowCare": "BEGRENZT",
         "statusHighCare": "VERFUEGBAR",
@@ -12697,6 +13083,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
           "faelleCovidAktuell": 8
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T10:36:39Z",
+          "statusLowCare": "BEGRENZT",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 6
         }
       ]
     },
@@ -12743,7 +13136,7 @@
         "ikNummer": "260510508",
         "position": { "latitude": 51.389826096284, "longitude": 7.00573603157 }
       },
-      "meldezeitpunkt": "2020-04-07T20:28:59Z",
+      "meldezeitpunkt": "2020-04-08T10:11:21Z",
       "bettenStatus": {
         "statusLowCare": null,
         "statusHighCare": null,
@@ -12755,6 +13148,13 @@
           "meldezeitpunkt": "2020-04-06T22:14:28Z",
           "statusLowCare": "NICHT_VERFUEGBAR",
           "statusHighCare": "NICHT_VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T20:28:59Z",
+          "statusLowCare": null,
+          "statusHighCare": null,
           "statusECMO": null,
           "faelleCovidAktuell": 0
         }
@@ -13024,14 +13424,22 @@
         "ikNummer": "260550701",
         "position": { "latitude": 51.606482277585, "longitude": 7.191815078259 }
       },
-      "meldezeitpunkt": "2020-04-03T08:40:10Z",
+      "meldezeitpunkt": "2020-04-08T08:44:55Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
       "faelleCovidAktuell": 3,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T08:40:10Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 3
+        }
+      ]
     },
     {
       "id": "772452",
@@ -13142,14 +13550,22 @@
         "ikNummer": "260550596",
         "position": { "latitude": 51.652308893282, "longitude": 7.344830811007 }
       },
-      "meldezeitpunkt": "2020-04-03T13:25:01Z",
+      "meldezeitpunkt": "2020-04-08T10:06:59Z",
       "bettenStatus": {
         "statusLowCare": "NICHT_VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
-        "statusECMO": null
+        "statusECMO": "NICHT_VERFUEGBAR"
       },
       "faelleCovidAktuell": 1,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T13:25:01Z",
+          "statusLowCare": "NICHT_VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 1
+        }
+      ]
     },
     {
       "id": "771639",
@@ -13260,7 +13676,7 @@
         "ikNummer": "260550119",
         "position": { "latitude": 51.509895995494, "longitude": 7.089296758159 }
       },
-      "meldezeitpunkt": "2020-04-07T11:00:03Z",
+      "meldezeitpunkt": "2020-04-08T08:43:54Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -13274,6 +13690,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 5
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T11:00:03Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 6
         }
       ]
     },
@@ -13402,14 +13825,22 @@
         "ikNummer": "260510768",
         "position": { "latitude": 51.461968759808, "longitude": 6.854539632732 }
       },
-      "meldezeitpunkt": "2020-04-03T13:45:58Z",
+      "meldezeitpunkt": "2020-04-08T09:24:09Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
       "faelleCovidAktuell": 0,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T13:45:58Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        }
+      ]
     },
     {
       "id": "771679",
@@ -13617,7 +14048,7 @@
         "ikNummer": "260510973",
         "position": { "latitude": 51.832762637954, "longitude": 6.240157663806 }
       },
-      "meldezeitpunkt": "2020-04-08T06:01:49Z",
+      "meldezeitpunkt": "2020-04-08T10:03:28Z",
       "bettenStatus": {
         "statusLowCare": null,
         "statusHighCare": null,
@@ -13634,6 +14065,13 @@
         },
         {
           "meldezeitpunkt": "2020-04-07T16:40:08Z",
+          "statusLowCare": null,
+          "statusHighCare": null,
+          "statusECMO": null,
+          "faelleCovidAktuell": 3
+        },
+        {
+          "meldezeitpunkt": "2020-04-08T06:01:49Z",
           "statusLowCare": null,
           "statusHighCare": null,
           "statusECMO": null,
@@ -13810,14 +14248,22 @@
         "ikNummer": "260510347",
         "position": { "latitude": 51.416585676825, "longitude": 6.761754378676 }
       },
-      "meldezeitpunkt": "2020-04-06T07:16:50Z",
+      "meldezeitpunkt": "2020-04-08T09:50:18Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
       "faelleCovidAktuell": 1,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-06T07:16:50Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 1
+        }
+      ]
     },
     {
       "id": "773003",
@@ -14196,14 +14642,22 @@
         "ikNummer": "260510995",
         "position": { "latitude": 51.677209060473, "longitude": 6.181283712485 }
       },
-      "meldezeitpunkt": "2020-04-03T07:19:53Z",
+      "meldezeitpunkt": "2020-04-08T09:25:31Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
       "faelleCovidAktuell": 0,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T07:19:53Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        }
+      ]
     },
     {
       "id": "773026",
@@ -14440,13 +14894,13 @@
         "ikNummer": "260550131",
         "position": { "latitude": 51.961204012648, "longitude": 7.595886111849 }
       },
-      "meldezeitpunkt": "2020-04-07T09:03:57Z",
+      "meldezeitpunkt": "2020-04-08T10:20:03Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": "VERFUEGBAR"
       },
-      "faelleCovidAktuell": 9,
+      "faelleCovidAktuell": 8,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T08:15:43Z",
@@ -14454,6 +14908,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
           "faelleCovidAktuell": 10
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T09:03:57Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 9
         }
       ]
     },
@@ -14685,7 +15146,7 @@
         "ikNummer": "260340728",
         "position": { "latitude": 52.442344832756, "longitude": 7.064597904682 }
       },
-      "meldezeitpunkt": "2020-04-07T18:24:49Z",
+      "meldezeitpunkt": "2020-04-08T08:58:32Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -14706,6 +15167,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 6
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T18:24:49Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 5
         }
       ]
     },
@@ -15026,16 +15494,23 @@
         "ikNummer": "260530784",
         "position": { "latitude": 50.923156178519, "longitude": 6.808630406881 }
       },
-      "meldezeitpunkt": "2020-04-07T09:23:50Z",
+      "meldezeitpunkt": "2020-04-08T09:28:50Z",
       "bettenStatus": {
         "statusLowCare": null,
-        "statusHighCare": null,
+        "statusHighCare": "BEGRENZT",
         "statusECMO": null
       },
       "faelleCovidAktuell": 3,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T14:23:10Z",
+          "statusLowCare": null,
+          "statusHighCare": null,
+          "statusECMO": null,
+          "faelleCovidAktuell": 3
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T09:23:50Z",
           "statusLowCare": null,
           "statusHighCare": null,
           "statusECMO": null,
@@ -15500,7 +15975,7 @@
         "ikNummer": "260530283",
         "position": { "latitude": 50.923308887945, "longitude": 6.917503255522 }
       },
-      "meldezeitpunkt": "2020-04-08T07:21:41Z",
+      "meldezeitpunkt": "2020-04-08T09:37:21Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -15517,6 +15992,13 @@
         },
         {
           "meldezeitpunkt": "2020-04-07T14:12:59Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 10
+        },
+        {
+          "meldezeitpunkt": "2020-04-08T07:21:41Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
@@ -15567,9 +16049,9 @@
         "ikNummer": "260530318",
         "position": { "latitude": 50.966947683362, "longitude": 7.055555105144 }
       },
-      "meldezeitpunkt": "2020-04-07T17:48:51Z",
+      "meldezeitpunkt": "2020-04-08T09:24:04Z",
       "bettenStatus": {
-        "statusLowCare": "VERFUEGBAR",
+        "statusLowCare": "BEGRENZT",
         "statusHighCare": "BEGRENZT",
         "statusECMO": null
       },
@@ -15581,6 +16063,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 2
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T17:48:51Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "BEGRENZT",
+          "statusECMO": null,
+          "faelleCovidAktuell": 1
         }
       ]
     },
@@ -15597,18 +16086,25 @@
         "ikNummer": "260530498",
         "position": { "latitude": 50.941368283966, "longitude": 7.009345471843 }
       },
-      "meldezeitpunkt": "2020-04-07T14:33:22Z",
+      "meldezeitpunkt": "2020-04-08T08:56:37Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 4,
+      "faelleCovidAktuell": 3,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T07:01:18Z",
           "statusLowCare": null,
           "statusHighCare": null,
+          "statusECMO": null,
+          "faelleCovidAktuell": 4
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T14:33:22Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 4
         }
@@ -15709,14 +16205,22 @@
         "ikNummer": "260530591",
         "position": { "latitude": 51.068081221672, "longitude": 7.004953622818 }
       },
-      "meldezeitpunkt": "2020-04-03T10:06:22Z",
+      "meldezeitpunkt": "2020-04-08T09:59:35Z",
       "bettenStatus": {
         "statusLowCare": "BEGRENZT",
         "statusHighCare": "BEGRENZT",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 0,
-      "history": []
+      "faelleCovidAktuell": 1,
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T10:06:22Z",
+          "statusLowCare": "BEGRENZT",
+          "statusHighCare": "BEGRENZT",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        }
+      ]
     },
     {
       "id": "771642",
@@ -16182,7 +16686,7 @@
         "ikNummer": "260530660",
         "position": { "latitude": 50.808026333869, "longitude": 6.496521625668 }
       },
-      "meldezeitpunkt": "2020-04-07T15:00:08Z",
+      "meldezeitpunkt": "2020-04-08T09:23:05Z",
       "bettenStatus": {
         "statusLowCare": "NICHT_VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -16195,6 +16699,13 @@
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "NICHT_VERFUEGBAR",
+          "faelleCovidAktuell": 2
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T15:00:08Z",
+          "statusLowCare": "NICHT_VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
           "faelleCovidAktuell": 2
         }
       ]
@@ -16311,6 +16822,28 @@
       ]
     },
     {
+      "id": "771072",
+      "krankenhausStandort": {
+        "id": "771072",
+        "bezeichnung": "St. Elisabeth-Krankenhaus Geilenkirchen, Geilenkirchen",
+        "strasse": "Martin-Heyden-Straße",
+        "hausnummer": "32",
+        "plz": "52511",
+        "ort": "Geilenkirchen",
+        "bundesland": "NORDRHEIN_WESTFALEN",
+        "ikNummer": "260530988",
+        "position": { "latitude": 50.965685855476, "longitude": 6.123835623248 }
+      },
+      "meldezeitpunkt": "2020-04-08T09:42:31Z",
+      "bettenStatus": {
+        "statusLowCare": "NICHT_VERFUEGBAR",
+        "statusHighCare": "BEGRENZT",
+        "statusECMO": null
+      },
+      "faelleCovidAktuell": 3,
+      "history": []
+    },
+    {
       "id": "772072",
       "krankenhausStandort": {
         "id": "772072",
@@ -16323,7 +16856,7 @@
         "ikNummer": "260530999",
         "position": { "latitude": 51.064831481362, "longitude": 6.094529807551 }
       },
-      "meldezeitpunkt": "2020-04-08T06:31:51Z",
+      "meldezeitpunkt": "2020-04-08T09:35:25Z",
       "bettenStatus": {
         "statusLowCare": null,
         "statusHighCare": "BEGRENZT",
@@ -16344,6 +16877,13 @@
           "statusHighCare": "BEGRENZT",
           "statusECMO": null,
           "faelleCovidAktuell": 6
+        },
+        {
+          "meldezeitpunkt": "2020-04-08T06:31:51Z",
+          "statusLowCare": null,
+          "statusHighCare": "BEGRENZT",
+          "statusECMO": null,
+          "faelleCovidAktuell": 8
         }
       ]
     },
@@ -16456,13 +16996,13 @@
         "ikNummer": "260530192",
         "position": { "latitude": 50.71673862348, "longitude": 7.093688177119 }
       },
-      "meldezeitpunkt": "2020-04-07T10:40:44Z",
+      "meldezeitpunkt": "2020-04-08T08:50:06Z",
       "bettenStatus": {
-        "statusLowCare": "VERFUEGBAR",
-        "statusHighCare": "BEGRENZT",
+        "statusLowCare": "BEGRENZT",
+        "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 2,
+      "faelleCovidAktuell": 3,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T10:47:55Z",
@@ -16470,6 +17010,13 @@
           "statusHighCare": "NICHT_VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 3
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T10:40:44Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "BEGRENZT",
+          "statusECMO": null,
+          "faelleCovidAktuell": 2
         }
       ]
     },
@@ -16583,7 +17130,7 @@
         "ikNummer": "260530192",
         "position": { "latitude": 50.736054278457, "longitude": 7.118219956715 }
       },
-      "meldezeitpunkt": "2020-04-07T12:55:11Z",
+      "meldezeitpunkt": "2020-04-08T09:54:03Z",
       "bettenStatus": {
         "statusLowCare": "BEGRENZT",
         "statusHighCare": "NICHT_VERFUEGBAR",
@@ -16593,6 +17140,13 @@
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T09:16:07Z",
+          "statusLowCare": "BEGRENZT",
+          "statusHighCare": "NICHT_VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 1
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T12:55:11Z",
           "statusLowCare": "BEGRENZT",
           "statusHighCare": "NICHT_VERFUEGBAR",
           "statusECMO": null,
@@ -17237,7 +17791,7 @@
         "ikNummer": "260711636",
         "position": { "latitude": 49.836813030632, "longitude": 7.863286323845 }
       },
-      "meldezeitpunkt": "2020-04-07T08:03:07Z",
+      "meldezeitpunkt": "2020-04-08T08:56:59Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -17247,6 +17801,13 @@
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T08:36:02Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T08:03:07Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
@@ -17289,14 +17850,22 @@
         "ikNummer": "260711863",
         "position": { "latitude": 49.70655896432, "longitude": 7.677172601207 }
       },
-      "meldezeitpunkt": "2020-04-03T10:29:38Z",
+      "meldezeitpunkt": "2020-04-08T10:35:40Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
-        "statusHighCare": "NICHT_VERFUEGBAR",
-        "statusECMO": "NICHT_VERFUEGBAR"
+        "statusHighCare": "VERFUEGBAR",
+        "statusECMO": null
       },
       "faelleCovidAktuell": 0,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T10:29:38Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "NICHT_VERFUEGBAR",
+          "statusECMO": "NICHT_VERFUEGBAR",
+          "faelleCovidAktuell": 0
+        }
+      ]
     },
     {
       "id": "772307",
@@ -17414,13 +17983,13 @@
         "ikNummer": "260711852",
         "position": { "latitude": 50.35427127272, "longitude": 7.587126083672 }
       },
-      "meldezeitpunkt": "2020-04-07T09:45:14Z",
+      "meldezeitpunkt": "2020-04-08T08:57:47Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": "VERFUEGBAR"
       },
-      "faelleCovidAktuell": 4,
+      "faelleCovidAktuell": 7,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T07:56:34Z",
@@ -17428,6 +17997,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
           "faelleCovidAktuell": 7
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T09:45:14Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 4
         }
       ]
     },
@@ -18061,7 +18637,7 @@
         "ikNummer": "260592164",
         "position": { "latitude": 51.314572022932, "longitude": 7.514856040461 }
       },
-      "meldezeitpunkt": "2020-04-07T07:07:50Z",
+      "meldezeitpunkt": "2020-04-08T08:48:36Z",
       "bettenStatus": {
         "statusLowCare": null,
         "statusHighCare": "VERFUEGBAR",
@@ -18072,6 +18648,13 @@
         {
           "meldezeitpunkt": "2020-04-03T10:20:59Z",
           "statusLowCare": "NICHT_VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T07:07:50Z",
+          "statusLowCare": null,
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 0
@@ -18151,14 +18734,22 @@
         "ikNummer": "260591517",
         "position": { "latitude": 51.443761757032, "longitude": 7.56751853226 }
       },
-      "meldezeitpunkt": "2020-04-03T13:56:24Z",
+      "meldezeitpunkt": "2020-04-08T10:06:02Z",
       "bettenStatus": {
-        "statusLowCare": "VERFUEGBAR",
-        "statusHighCare": "VERFUEGBAR",
+        "statusLowCare": "BEGRENZT",
+        "statusHighCare": "BEGRENZT",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 2,
-      "history": []
+      "faelleCovidAktuell": 4,
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T13:56:24Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 2
+        }
+      ]
     },
     {
       "id": "771494",
@@ -18203,14 +18794,22 @@
         "ikNummer": "260590629",
         "position": { "latitude": 51.369035939496, "longitude": 7.375201463519 }
       },
-      "meldezeitpunkt": "2020-04-03T13:01:48Z",
+      "meldezeitpunkt": "2020-04-08T09:17:46Z",
       "bettenStatus": {
-        "statusLowCare": "VERFUEGBAR",
-        "statusHighCare": "VERFUEGBAR",
+        "statusLowCare": null,
+        "statusHighCare": null,
         "statusECMO": null
       },
       "faelleCovidAktuell": 0,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T13:01:48Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        }
+      ]
     },
     {
       "id": "772009",
@@ -18440,14 +19039,22 @@
         "ikNummer": "260590903",
         "position": { "latitude": 51.389902586529, "longitude": 7.757626533312 }
       },
-      "meldezeitpunkt": "2020-04-06T11:45:14Z",
+      "meldezeitpunkt": "2020-04-08T09:30:57Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
       "faelleCovidAktuell": 1,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-06T11:45:14Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 1
+        }
+      ]
     },
     {
       "id": "773278",
@@ -18536,14 +19143,22 @@
         "ikNummer": "260590402",
         "position": { "latitude": 51.669985145686, "longitude": 7.827075898631 }
       },
-      "meldezeitpunkt": "2020-04-05T07:33:30Z",
+      "meldezeitpunkt": "2020-04-08T09:08:49Z",
       "bettenStatus": {
         "statusLowCare": "NICHT_VERFUEGBAR",
         "statusHighCare": "BEGRENZT",
-        "statusECMO": null
+        "statusECMO": "NICHT_VERFUEGBAR"
       },
       "faelleCovidAktuell": 1,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-05T07:33:30Z",
+          "statusLowCare": "NICHT_VERFUEGBAR",
+          "statusHighCare": "BEGRENZT",
+          "statusECMO": null,
+          "faelleCovidAktuell": 1
+        }
+      ]
     },
     {
       "id": "772120",
@@ -18558,16 +19173,23 @@
         "ikNummer": "260590388",
         "position": { "latitude": 51.679442701881, "longitude": 7.81817632912 }
       },
-      "meldezeitpunkt": "2020-04-07T12:22:47Z",
+      "meldezeitpunkt": "2020-04-08T08:59:29Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
-        "statusECMO": "NICHT_VERFUEGBAR"
+        "statusECMO": null
       },
       "faelleCovidAktuell": 0,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T15:38:23Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "NICHT_VERFUEGBAR",
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T12:22:47Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "NICHT_VERFUEGBAR",
@@ -18588,14 +19210,22 @@
         "ikNummer": "260590388",
         "position": { "latitude": 51.688147596123, "longitude": 7.849152302952 }
       },
-      "meldezeitpunkt": "2020-04-07T12:21:14Z",
+      "meldezeitpunkt": "2020-04-08T08:53:30Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 7,
-      "history": []
+      "faelleCovidAktuell": 2,
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-07T12:21:14Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 7
+        }
+      ]
     },
     {
       "id": "772561",
@@ -18862,14 +19492,22 @@
         "ikNummer": "260591540",
         "position": { "latitude": 51.533209203116, "longitude": 7.677076578075 }
       },
-      "meldezeitpunkt": "2020-04-06T14:04:58Z",
+      "meldezeitpunkt": "2020-04-08T09:38:42Z",
       "bettenStatus": {
         "statusLowCare": null,
         "statusHighCare": null,
         "statusECMO": null
       },
       "faelleCovidAktuell": 2,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-06T14:04:58Z",
+          "statusLowCare": null,
+          "statusHighCare": null,
+          "statusECMO": null,
+          "faelleCovidAktuell": 2
+        }
+      ]
     },
     {
       "id": "772253",
@@ -19364,13 +20002,13 @@
         "ikNummer": "260610177",
         "position": { "latitude": 50.106522133041, "longitude": 8.683677435019 }
       },
-      "meldezeitpunkt": "2020-04-08T06:24:29Z",
+      "meldezeitpunkt": "2020-04-08T09:21:30Z",
       "bettenStatus": {
         "statusLowCare": "NICHT_VERFUEGBAR",
-        "statusHighCare": "BEGRENZT",
-        "statusECMO": null
+        "statusHighCare": "VERFUEGBAR",
+        "statusECMO": "NICHT_VERFUEGBAR"
       },
-      "faelleCovidAktuell": null,
+      "faelleCovidAktuell": 1,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T12:48:03Z",
@@ -19385,6 +20023,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 2
+        },
+        {
+          "meldezeitpunkt": "2020-04-08T06:24:29Z",
+          "statusLowCare": "NICHT_VERFUEGBAR",
+          "statusHighCare": "BEGRENZT",
+          "statusECMO": null,
+          "faelleCovidAktuell": null
         }
       ]
     },
@@ -19810,7 +20455,7 @@
         "ikNummer": "260960649",
         "position": { "latitude": 49.811506031558, "longitude": 9.166757011499 }
       },
-      "meldezeitpunkt": "2020-04-07T06:21:13Z",
+      "meldezeitpunkt": "2020-04-08T09:23:32Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -19820,6 +20465,13 @@
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T09:34:32Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 1
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T06:21:13Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
@@ -19884,7 +20536,7 @@
         "ikNummer": "260610758",
         "position": { "latitude": 49.912804671804, "longitude": 8.475250482625 }
       },
-      "meldezeitpunkt": "2020-04-07T11:01:34Z",
+      "meldezeitpunkt": "2020-04-08T10:21:44Z",
       "bettenStatus": {
         "statusLowCare": null,
         "statusHighCare": "VERFUEGBAR",
@@ -19898,6 +20550,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 2
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T11:01:34Z",
+          "statusLowCare": null,
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 4
         }
       ]
     },
@@ -20284,16 +20943,23 @@
         "ikNummer": "260610075",
         "position": { "latitude": 50.107939612682, "longitude": 8.543833494186 }
       },
-      "meldezeitpunkt": "2020-04-07T12:12:01Z",
+      "meldezeitpunkt": "2020-04-08T09:27:59Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": "NICHT_VERFUEGBAR"
       },
-      "faelleCovidAktuell": 10,
+      "faelleCovidAktuell": 9,
       "history": [
         {
           "meldezeitpunkt": "2020-04-03T13:41:18Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "NICHT_VERFUEGBAR",
+          "faelleCovidAktuell": 10
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T12:12:01Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "NICHT_VERFUEGBAR",
@@ -20485,14 +21151,22 @@
         "ikNummer": "261000466",
         "position": { "latitude": 49.276883786874, "longitude": 6.868356228006 }
       },
-      "meldezeitpunkt": "2020-04-03T08:11:29Z",
+      "meldezeitpunkt": "2020-04-08T09:17:23Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 0,
-      "history": []
+      "faelleCovidAktuell": 3,
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T08:11:29Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        }
+      ]
     },
     {
       "id": "772682",
@@ -20663,14 +21337,22 @@
         "ikNummer": "261000422",
         "position": { "latitude": 49.454133774318, "longitude": 7.178329467806 }
       },
-      "meldezeitpunkt": "2020-04-03T11:44:13Z",
+      "meldezeitpunkt": "2020-04-08T09:15:09Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 1,
-      "history": []
+      "faelleCovidAktuell": 2,
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T11:44:13Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 1
+        }
+      ]
     },
     {
       "id": "773407",
@@ -20685,7 +21367,7 @@
         "ikNummer": "261000160",
         "position": { "latitude": 49.457251697956, "longitude": 6.633046781571 }
       },
-      "meldezeitpunkt": "2020-04-07T09:42:29Z",
+      "meldezeitpunkt": "2020-04-08T08:55:29Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -20695,6 +21377,13 @@
       "history": [
         {
           "meldezeitpunkt": "2020-04-03T08:34:12Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 2
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T09:42:29Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
@@ -21247,7 +21936,7 @@
         "ikNummer": "260820570",
         "position": { "latitude": 49.464373064597, "longitude": 8.471255949153 }
       },
-      "meldezeitpunkt": "2020-04-07T09:23:01Z",
+      "meldezeitpunkt": "2020-04-08T10:28:16Z",
       "bettenStatus": {
         "statusLowCare": "BEGRENZT",
         "statusHighCare": "BEGRENZT",
@@ -21261,6 +21950,13 @@
           "statusHighCare": "BEGRENZT",
           "statusECMO": null,
           "faelleCovidAktuell": 1
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T09:23:01Z",
+          "statusLowCare": "BEGRENZT",
+          "statusHighCare": "BEGRENZT",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
         }
       ]
     },
@@ -21560,14 +22256,22 @@
         "ikNummer": "260821902",
         "position": { "latitude": 49.549707590859, "longitude": 8.645036995395 }
       },
-      "meldezeitpunkt": "2020-04-03T12:42:09Z",
+      "meldezeitpunkt": "2020-04-08T09:53:19Z",
       "bettenStatus": {
-        "statusLowCare": "NICHT_VERFUEGBAR",
-        "statusHighCare": "NICHT_VERFUEGBAR",
+        "statusLowCare": "BEGRENZT",
+        "statusHighCare": "BEGRENZT",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 4,
-      "history": []
+      "faelleCovidAktuell": 2,
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T12:42:09Z",
+          "statusLowCare": "NICHT_VERFUEGBAR",
+          "statusHighCare": "NICHT_VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 4
+        }
+      ]
     },
     {
       "id": "772783",
@@ -21715,7 +22419,7 @@
         "ikNummer": "260810191",
         "position": { "latitude": 48.761254645194, "longitude": 9.163320243383 }
       },
-      "meldezeitpunkt": "2020-04-07T09:51:10Z",
+      "meldezeitpunkt": "2020-04-08T10:00:38Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -21729,6 +22433,20 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 7
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T09:51:10Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 4
+        },
+        {
+          "meldezeitpunkt": "2020-04-08T09:13:27Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 4
         }
       ]
     },
@@ -21775,16 +22493,23 @@
         "ikNummer": "260810271",
         "position": { "latitude": 48.815082316815, "longitude": 9.186542808993 }
       },
-      "meldezeitpunkt": "2020-04-07T05:08:27Z",
+      "meldezeitpunkt": "2020-04-08T08:45:30Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": "VERFUEGBAR"
       },
-      "faelleCovidAktuell": 8,
+      "faelleCovidAktuell": 11,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T05:11:56Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 8
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T05:08:27Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
@@ -21849,7 +22574,7 @@
         "ikNummer": "260812525",
         "position": { "latitude": 48.690314124962, "longitude": 9.03298044208 }
       },
-      "meldezeitpunkt": "2020-04-07T11:34:00Z",
+      "meldezeitpunkt": "2020-04-08T10:00:23Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -21863,6 +22588,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "NICHT_VERFUEGBAR",
           "faelleCovidAktuell": 6
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T11:34:00Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 5
         }
       ]
     },
@@ -21879,7 +22611,7 @@
         "ikNummer": "260812525",
         "position": { "latitude": 48.715365464627, "longitude": 9.023957490954 }
       },
-      "meldezeitpunkt": "2020-04-07T11:39:47Z",
+      "meldezeitpunkt": "2020-04-08T10:08:30Z",
       "bettenStatus": {
         "statusLowCare": null,
         "statusHighCare": "VERFUEGBAR",
@@ -21889,6 +22621,13 @@
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T11:31:15Z",
+          "statusLowCare": null,
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "NICHT_VERFUEGBAR",
+          "faelleCovidAktuell": 7
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T11:39:47Z",
           "statusLowCare": null,
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "NICHT_VERFUEGBAR",
@@ -21909,13 +22648,13 @@
         "ikNummer": "260810431",
         "position": { "latitude": 48.591850404105, "longitude": 8.874998331103 }
       },
-      "meldezeitpunkt": "2020-04-07T11:36:48Z",
+      "meldezeitpunkt": "2020-04-08T10:04:12Z",
       "bettenStatus": {
         "statusLowCare": null,
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 4,
+      "faelleCovidAktuell": 2,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T11:48:02Z",
@@ -21923,6 +22662,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 2
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T11:36:48Z",
+          "statusLowCare": null,
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 4
         }
       ]
     },
@@ -21939,16 +22685,23 @@
         "ikNummer": "260810453",
         "position": { "latitude": 48.802883376299, "longitude": 9.00049889091 }
       },
-      "meldezeitpunkt": "2020-04-07T11:32:33Z",
+      "meldezeitpunkt": "2020-04-08T10:06:07Z",
       "bettenStatus": {
         "statusLowCare": null,
-        "statusHighCare": "VERFUEGBAR",
+        "statusHighCare": "BEGRENZT",
         "statusECMO": null
       },
       "faelleCovidAktuell": 4,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T11:59:05Z",
+          "statusLowCare": null,
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 4
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T11:32:33Z",
           "statusLowCare": null,
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
@@ -22087,16 +22840,23 @@
         "ikNummer": "260821025",
         "position": { "latitude": 48.541709160802, "longitude": 8.72203570606 }
       },
-      "meldezeitpunkt": "2020-04-07T11:38:44Z",
+      "meldezeitpunkt": "2020-04-08T10:07:20Z",
       "bettenStatus": {
         "statusLowCare": null,
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 5,
+      "faelleCovidAktuell": 6,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T11:36:42Z",
+          "statusLowCare": null,
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 5
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T11:38:44Z",
           "statusLowCare": null,
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
@@ -22199,13 +22959,13 @@
         "ikNummer": "260840028",
         "position": { "latitude": 48.483743343529, "longitude": 9.21819368004 }
       },
-      "meldezeitpunkt": "2020-04-07T14:07:25Z",
+      "meldezeitpunkt": "2020-04-08T09:48:00Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
-        "statusHighCare": "BEGRENZT",
+        "statusHighCare": "VERFUEGBAR",
         "statusECMO": "NICHT_VERFUEGBAR"
       },
-      "faelleCovidAktuell": 9,
+      "faelleCovidAktuell": 10,
       "history": [
         {
           "meldezeitpunkt": "2020-04-03T08:40:32Z",
@@ -22213,6 +22973,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
           "faelleCovidAktuell": 11
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T14:07:25Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "BEGRENZT",
+          "statusECMO": "NICHT_VERFUEGBAR",
+          "faelleCovidAktuell": 9
         }
       ]
     },
@@ -22524,7 +23291,7 @@
         "ikNummer": "260811089",
         "position": { "latitude": 49.211829227608, "longitude": 9.23586923629 }
       },
-      "meldezeitpunkt": "2020-04-07T21:52:49Z",
+      "meldezeitpunkt": "2020-04-08T09:58:39Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -22534,6 +23301,13 @@
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T18:44:19Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T21:52:49Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
@@ -22771,13 +23545,13 @@
         "ikNummer": "260820785",
         "position": { "latitude": 49.251958261548, "longitude": 8.890484064809 }
       },
-      "meldezeitpunkt": "2020-04-07T07:53:47Z",
+      "meldezeitpunkt": "2020-04-08T08:50:32Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 2,
+      "faelleCovidAktuell": 3,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T12:54:08Z",
@@ -22785,6 +23559,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 3
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T07:53:47Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 2
         }
       ]
     },
@@ -22919,7 +23700,7 @@
         "ikNummer": "260821025",
         "position": { "latitude": 48.71523715962, "longitude": 8.745196580903 }
       },
-      "meldezeitpunkt": "2020-04-07T11:35:12Z",
+      "meldezeitpunkt": "2020-04-08T10:02:34Z",
       "bettenStatus": {
         "statusLowCare": null,
         "statusHighCare": "VERFUEGBAR",
@@ -22929,6 +23710,13 @@
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T10:48:21Z",
+          "statusLowCare": null,
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 2
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T11:35:12Z",
           "statusLowCare": null,
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
@@ -23045,7 +23833,7 @@
         "ikNummer": "260820137",
         "position": { "latitude": 48.972140735068, "longitude": 8.409467697029 }
       },
-      "meldezeitpunkt": "2020-04-07T16:05:05Z",
+      "meldezeitpunkt": "2020-04-08T10:33:16Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -23055,6 +23843,13 @@
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T17:20:16Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 1
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T16:05:05Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
@@ -23075,14 +23870,22 @@
         "ikNummer": "260820319",
         "position": { "latitude": 48.904304210237, "longitude": 8.502052187887 }
       },
-      "meldezeitpunkt": "2020-04-02T06:20:30Z",
+      "meldezeitpunkt": "2020-04-08T10:02:03Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 2,
-      "history": []
+      "faelleCovidAktuell": 3,
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-02T06:20:30Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 2
+        }
+      ]
     },
     {
       "id": "772905",
@@ -23097,7 +23900,7 @@
         "ikNummer": "260820433",
         "position": { "latitude": 48.861438048179, "longitude": 8.205321013911 }
       },
-      "meldezeitpunkt": "2020-04-07T08:25:48Z",
+      "meldezeitpunkt": "2020-04-08T10:06:16Z",
       "bettenStatus": {
         "statusLowCare": null,
         "statusHighCare": "BEGRENZT",
@@ -23110,6 +23913,13 @@
           "statusLowCare": "BEGRENZT",
           "statusHighCare": "BEGRENZT",
           "statusECMO": "NICHT_VERFUEGBAR",
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T08:25:48Z",
+          "statusLowCare": null,
+          "statusHighCare": "BEGRENZT",
+          "statusECMO": null,
           "faelleCovidAktuell": 0
         }
       ]
@@ -23127,14 +23937,22 @@
         "ikNummer": "260820013",
         "position": { "latitude": 48.784711946944, "longitude": 8.216414630397 }
       },
-      "meldezeitpunkt": "2020-04-03T07:30:32Z",
+      "meldezeitpunkt": "2020-04-08T10:13:02Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 13,
-      "history": []
+      "faelleCovidAktuell": 27,
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T07:30:32Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 13
+        }
+      ]
     },
     {
       "id": "772071",
@@ -23734,16 +24552,23 @@
         "ikNummer": "260831049",
         "position": { "latitude": 48.29619404926, "longitude": 8.578818619235 }
       },
-      "meldezeitpunkt": "2020-04-07T09:01:23Z",
+      "meldezeitpunkt": "2020-04-08T09:02:37Z",
       "bettenStatus": {
-        "statusLowCare": "BEGRENZT",
+        "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "BEGRENZT",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 2,
+      "faelleCovidAktuell": 3,
       "history": [
         {
           "meldezeitpunkt": "2020-04-03T08:38:18Z",
+          "statusLowCare": "BEGRENZT",
+          "statusHighCare": "BEGRENZT",
+          "statusECMO": null,
+          "faelleCovidAktuell": 2
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T09:01:23Z",
           "statusLowCare": "BEGRENZT",
           "statusHighCare": "BEGRENZT",
           "statusECMO": null,
@@ -24000,7 +24825,7 @@
         "ikNummer": "260830618",
         "position": { "latitude": 48.174583181991, "longitude": 8.080041208304 }
       },
-      "meldezeitpunkt": "2020-04-07T08:21:39Z",
+      "meldezeitpunkt": "2020-04-08T09:08:18Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -24010,6 +24835,13 @@
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T09:13:04Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "NICHT_VERFUEGBAR",
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T08:21:39Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "NICHT_VERFUEGBAR",
@@ -24682,14 +25514,22 @@
         "ikNummer": "260910374",
         "position": { "latitude": 48.102343257345, "longitude": 11.54790823367 }
       },
-      "meldezeitpunkt": "2020-04-03T14:20:16Z",
+      "meldezeitpunkt": "2020-04-08T10:18:20Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 2,
-      "history": []
+      "faelleCovidAktuell": 10,
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T14:20:16Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 2
+        }
+      ]
     },
     {
       "id": "771083",
@@ -25045,7 +25885,7 @@
           "longitude": 11.259284198268
         }
       },
-      "meldezeitpunkt": "2020-04-08T08:36:46Z",
+      "meldezeitpunkt": "2020-04-08T08:52:37Z",
       "bettenStatus": {
         "statusLowCare": "BEGRENZT",
         "statusHighCare": "VERFUEGBAR",
@@ -25069,6 +25909,13 @@
         },
         {
           "meldezeitpunkt": "2020-04-08T07:58:23Z",
+          "statusLowCare": "BEGRENZT",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 5
+        },
+        {
+          "meldezeitpunkt": "2020-04-08T08:36:46Z",
           "statusLowCare": "BEGRENZT",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
@@ -25257,7 +26104,7 @@
           "longitude": 11.127636015399
         }
       },
-      "meldezeitpunkt": "2020-04-07T14:06:27Z",
+      "meldezeitpunkt": "2020-04-08T08:51:31Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -25271,6 +26118,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "NICHT_VERFUEGBAR",
           "faelleCovidAktuell": 6
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T14:06:27Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "NICHT_VERFUEGBAR",
+          "faelleCovidAktuell": 7
         }
       ]
     },
@@ -25557,14 +26411,22 @@
           "longitude": 12.187999606149
         }
       },
-      "meldezeitpunkt": "2020-04-03T12:50:03Z",
+      "meldezeitpunkt": "2020-04-08T08:58:32Z",
       "bettenStatus": {
         "statusLowCare": "NICHT_VERFUEGBAR",
-        "statusHighCare": "VERFUEGBAR",
+        "statusHighCare": "BEGRENZT",
         "statusECMO": "BEGRENZT"
       },
-      "faelleCovidAktuell": 2,
-      "history": []
+      "faelleCovidAktuell": 3,
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T12:50:03Z",
+          "statusLowCare": "NICHT_VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "BEGRENZT",
+          "faelleCovidAktuell": 2
+        }
+      ]
     },
     {
       "id": "772913",
@@ -26041,14 +26903,22 @@
         "ikNummer": "260913607",
         "position": { "latitude": 48.95200937965, "longitude": 11.394290506823 }
       },
-      "meldezeitpunkt": "2020-04-03T14:57:57Z",
+      "meldezeitpunkt": "2020-04-08T08:52:20Z",
       "bettenStatus": {
         "statusLowCare": "NICHT_VERFUEGBAR",
         "statusHighCare": "NICHT_VERFUEGBAR",
         "statusECMO": null
       },
       "faelleCovidAktuell": 0,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T14:57:57Z",
+          "statusLowCare": "NICHT_VERFUEGBAR",
+          "statusHighCare": "NICHT_VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        }
+      ]
     },
     {
       "id": "771686",
@@ -26937,14 +27807,22 @@
           "longitude": 10.169142723116
         }
       },
-      "meldezeitpunkt": "2020-04-02T05:29:12Z",
+      "meldezeitpunkt": "2020-04-08T10:38:12Z",
       "bettenStatus": {
-        "statusLowCare": "VERFUEGBAR",
-        "statusHighCare": "VERFUEGBAR",
+        "statusLowCare": null,
+        "statusHighCare": null,
         "statusECMO": null
       },
-      "faelleCovidAktuell": 1,
-      "history": []
+      "faelleCovidAktuell": 2,
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-02T05:29:12Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 1
+        }
+      ]
     },
     {
       "id": "771843",
@@ -27487,14 +28365,22 @@
           "longitude": 10.293619376153
         }
       },
-      "meldezeitpunkt": "2020-04-03T05:21:54Z",
+      "meldezeitpunkt": "2020-04-08T10:12:54Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 2,
-      "history": []
+      "faelleCovidAktuell": 1,
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T05:21:54Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 2
+        }
+      ]
     },
     {
       "id": "772527",
@@ -27512,7 +28398,7 @@
           "longitude": 10.406087994543
         }
       },
-      "meldezeitpunkt": "2020-04-07T16:58:30Z",
+      "meldezeitpunkt": "2020-04-08T10:28:12Z",
       "bettenStatus": {
         "statusLowCare": null,
         "statusHighCare": "NICHT_VERFUEGBAR",
@@ -27525,6 +28411,13 @@
           "statusLowCare": null,
           "statusHighCare": "NICHT_VERFUEGBAR",
           "statusECMO": "NICHT_VERFUEGBAR",
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T16:58:30Z",
+          "statusLowCare": null,
+          "statusHighCare": "NICHT_VERFUEGBAR",
+          "statusECMO": null,
           "faelleCovidAktuell": 0
         }
       ]
@@ -27710,7 +28603,7 @@
           "longitude": 11.063412129879
         }
       },
-      "meldezeitpunkt": "2020-04-07T15:34:48Z",
+      "meldezeitpunkt": "2020-04-08T08:45:13Z",
       "bettenStatus": {
         "statusLowCare": null,
         "statusHighCare": null,
@@ -27724,6 +28617,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
           "faelleCovidAktuell": 7
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T15:34:48Z",
+          "statusLowCare": null,
+          "statusHighCare": null,
+          "statusECMO": null,
+          "faelleCovidAktuell": 8
         }
       ]
     },
@@ -27783,7 +28683,7 @@
           "longitude": 11.149226188136
         }
       },
-      "meldezeitpunkt": "2020-04-07T15:39:10Z",
+      "meldezeitpunkt": "2020-04-08T08:51:09Z",
       "bettenStatus": {
         "statusLowCare": null,
         "statusHighCare": null,
@@ -27796,6 +28696,13 @@
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 6
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T15:39:10Z",
+          "statusLowCare": null,
+          "statusHighCare": null,
+          "statusECMO": null,
           "faelleCovidAktuell": 6
         }
       ]
@@ -28697,9 +29604,9 @@
         "ikNummer": "260930061",
         "position": { "latitude": 49.0070151794, "longitude": 12.118438124689 }
       },
-      "meldezeitpunkt": "2020-04-07T06:02:54Z",
+      "meldezeitpunkt": "2020-04-08T09:23:47Z",
       "bettenStatus": {
-        "statusLowCare": "BEGRENZT",
+        "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": "VERFUEGBAR"
       },
@@ -28711,6 +29618,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
           "faelleCovidAktuell": 2
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T06:02:54Z",
+          "statusLowCare": "BEGRENZT",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 3
         }
       ]
     },
@@ -28760,7 +29674,7 @@
           "longitude": 12.399249851687
         }
       },
-      "meldezeitpunkt": "2020-04-08T07:21:40Z",
+      "meldezeitpunkt": "2020-04-08T08:47:37Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -28777,6 +29691,13 @@
         },
         {
           "meldezeitpunkt": "2020-04-07T12:28:40Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 1
+        },
+        {
+          "meldezeitpunkt": "2020-04-08T07:21:40Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
@@ -29895,13 +30816,13 @@
         "ikNummer": "260960079",
         "position": { "latitude": 49.807103506384, "longitude": 9.958309024564 }
       },
-      "meldezeitpunkt": "2020-04-07T16:09:11Z",
+      "meldezeitpunkt": "2020-04-08T10:21:52Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": "VERFUEGBAR"
       },
-      "faelleCovidAktuell": 17,
+      "faelleCovidAktuell": 16,
       "history": [
         {
           "meldezeitpunkt": "2020-04-06T13:32:05Z",
@@ -29909,6 +30830,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",
           "faelleCovidAktuell": 20
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T16:09:11Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 17
         }
       ]
     },
@@ -29928,16 +30856,23 @@
           "longitude": 10.088237123564
         }
       },
-      "meldezeitpunkt": "2020-04-07T09:26:57Z",
+      "meldezeitpunkt": "2020-04-08T09:05:02Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
-      "faelleCovidAktuell": 1,
+      "faelleCovidAktuell": 2,
       "history": [
         {
           "meldezeitpunkt": "2020-04-04T12:10:54Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 1
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T09:26:57Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
@@ -30173,14 +31108,22 @@
           "longitude": 10.235710926354
         }
       },
-      "meldezeitpunkt": "2020-04-02T16:19:00Z",
+      "meldezeitpunkt": "2020-04-08T09:09:13Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": "VERFUEGBAR"
       },
-      "faelleCovidAktuell": 3,
-      "history": []
+      "faelleCovidAktuell": 13,
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-02T16:19:00Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 3
+        }
+      ]
     },
     {
       "id": "773431",
@@ -30293,13 +31236,13 @@
         "ikNummer": "260961150",
         "position": { "latitude": 50.30745861741, "longitude": 9.784847617125 }
       },
-      "meldezeitpunkt": "2020-04-07T11:05:35Z",
+      "meldezeitpunkt": "2020-04-08T10:05:05Z",
       "bettenStatus": {
-        "statusLowCare": "VERFUEGBAR",
-        "statusHighCare": "VERFUEGBAR",
+        "statusLowCare": null,
+        "statusHighCare": null,
         "statusECMO": null
       },
-      "faelleCovidAktuell": null,
+      "faelleCovidAktuell": 0,
       "history": [
         {
           "meldezeitpunkt": "2020-04-03T12:38:12Z",
@@ -30307,6 +31250,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T11:05:35Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": null
         }
       ]
     },
@@ -30880,14 +31830,22 @@
           "longitude": 10.678103685477
         }
       },
-      "meldezeitpunkt": "2020-04-03T11:17:44Z",
+      "meldezeitpunkt": "2020-04-08T09:26:02Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
         "statusECMO": null
       },
       "faelleCovidAktuell": 0,
-      "history": []
+      "history": [
+        {
+          "meldezeitpunkt": "2020-04-03T11:17:44Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        }
+      ]
     },
     {
       "id": "771236",
@@ -30905,7 +31863,7 @@
           "longitude": 10.649081647421
         }
       },
-      "meldezeitpunkt": "2020-04-07T07:17:24Z",
+      "meldezeitpunkt": "2020-04-08T09:45:56Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": null,
@@ -30917,6 +31875,13 @@
           "meldezeitpunkt": "2020-04-03T06:24:41Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 0
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T07:17:24Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": null,
           "statusECMO": null,
           "faelleCovidAktuell": 0
         }
@@ -30938,7 +31903,7 @@
           "longitude": 10.467689216162
         }
       },
-      "meldezeitpunkt": "2020-04-07T07:16:25Z",
+      "meldezeitpunkt": "2020-04-08T09:47:20Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -30952,6 +31917,13 @@
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": null,
           "faelleCovidAktuell": 1
+        },
+        {
+          "meldezeitpunkt": "2020-04-07T07:16:25Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": null,
+          "faelleCovidAktuell": 2
         }
       ]
     },
@@ -30968,7 +31940,7 @@
         "ikNummer": "999999999",
         "position": { "latitude": 999.999, "longitude": 999.999 }
       },
-      "meldezeitpunkt": "2020-04-08T06:56:17Z",
+      "meldezeitpunkt": "2020-04-08T10:14:30Z",
       "bettenStatus": {
         "statusLowCare": "VERFUEGBAR",
         "statusHighCare": "VERFUEGBAR",
@@ -30985,6 +31957,13 @@
         },
         {
           "meldezeitpunkt": "2020-04-07T16:26:25Z",
+          "statusLowCare": "VERFUEGBAR",
+          "statusHighCare": "VERFUEGBAR",
+          "statusECMO": "VERFUEGBAR",
+          "faelleCovidAktuell": 38
+        },
+        {
+          "meldezeitpunkt": "2020-04-08T06:56:17Z",
           "statusLowCare": "VERFUEGBAR",
           "statusHighCare": "VERFUEGBAR",
           "statusECMO": "VERFUEGBAR",

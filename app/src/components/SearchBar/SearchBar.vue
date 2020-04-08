@@ -17,26 +17,23 @@
       return-object
       :menu-props="{ closeOnClick: true, closeOnContentClick: true }"
     ></v-autocomplete>
-    <v-btn
+    <!--v-btn
       @click="filterVisible = !filterVisible"
       rounded
       style="margin-top: 0.5rem;"
       class="white searchbar-font"
     >Filter</v-btn>
     <br />
-    <filter-search v-if="filterVisible" />
+    <filter-search v-if="filterVisible" />-->
   </div>
 </template>
 <script lang="ts">
 import Vue from "vue";
 import { log } from "util";
-import FilterSearch from "../FilterSearch/FilterSearch.vue";
 
 export default Vue.extend({
   name: "SearchBar",
-  components: {
-    FilterSearch
-  },
+  components: {},
   data() {
     return {
       loading: false,
@@ -64,9 +61,9 @@ export default Vue.extend({
       if (!this.menuHidden) {
         if (e.key == "Enter") {
           const hospitals = this.hospitals.filter(element => {
-            return element.krankenhausStandort.bezeichnung.includes(
-              e.srcElement.value
-            );
+            return element.krankenhausStandort.bezeichnung
+              .toLowerCase()
+              .includes(e.srcElement.value.toLowerCase());
           });
           this.$store.commit("selectHospitals", hospitals);
           document.getElementById("list-19")!.classList.add("hideMenu");

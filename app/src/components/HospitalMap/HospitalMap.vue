@@ -53,7 +53,7 @@ export default Vue.extend({
       }
     },
     select(hospital) {
-      this.$store.commit("selectHospital", hospital);
+      this.$store.commit("selectHospitals", [hospital]);
     },
     getRadius(covid) {
       if (covid) {
@@ -78,14 +78,14 @@ export default Vue.extend({
   },
 
   watch: {
-    selectedHospital() {
-      if (!this.selectedHospital) {
+    selectedHospitals() {
+      if (!this.selectedHospitals) {
         return;
       }
 
       this.center = {
-        lat: this.selectedHospital.position.lat,
-        lng: this.selectedHospital.position.lng
+        lat: this.selectedHospitals[0].position.lat,
+        lng: this.selectedHospitals[0].position.lng
       };
 
       this.zoom = 13;
@@ -93,8 +93,8 @@ export default Vue.extend({
   },
 
   computed: {
-    selectedHospital() {
-      return this.$store.state.selectedHospital;
+    selectedHospitals() {
+      return this.$store.state.selectHospitals;
     },
     hospitals() {
       const hospitals = this.$store.state.hospitals;

@@ -1,36 +1,50 @@
 <template>
-  <v-autocomplete
-    v-model="select"
-    :items="hospitals"
-    :search-input.sync="search"
-    @change="(e) => $store.commit('selectHospital', e)"
-    @keydown="(e) =>checkSelection(e)"
-    item-text="krankenhausStandort.bezeichnung"
-    :cache-items="true"
-    class="searchbar searchbar-font"
-    flat
-    hide-no-data
-    label="Deine Stadt"
-    prepend-icon="mdi-magnify"
-    solo
-    return-object
-    :menu-props="{ closeOnClick: true, closeOnContentClick: true }"
-  ></v-autocomplete>
+  <div>
+    <v-autocomplete
+      v-model="select"
+      :items="hospitals"
+      :search-input.sync="search"
+      @change="(e) => $store.commit('selectHospitals', [e])"
+      @keydown="(e) =>checkSelection(e)"
+      item-text="krankenhausStandort.bezeichnung"
+      :cache-items="true"
+      class="searchbar searchbar-font"
+      flat
+      hide-no-data
+      label="Deine Stadt"
+      prepend-icon="mdi-magnify"
+      solo
+      return-object
+      :menu-props="{ closeOnClick: true, closeOnContentClick: true }"
+    ></v-autocomplete>
+    <v-btn
+      @click="filterVisible = !filterVisible"
+      rounded
+      style="margin-top: 0.5rem;"
+      class="white searchbar-font"
+    >Filter</v-btn>
+    <br />
+    <filter-search v-if="filterVisible" />
+  </div>
 </template>
 <script lang="ts">
 import Vue from "vue";
 import { log } from "util";
+import FilterSearch from "../FilterSearch/FilterSearch.vue";
 
 export default Vue.extend({
   name: "SearchBar",
-
+  components: {
+    FilterSearch
+  },
   data() {
     return {
       loading: false,
       items: [],
       search: null,
       select: null,
-      menuHidden: false
+      menuHidden: false,
+      filterVisible: false
     };
   },
   watch: {
@@ -49,16 +63,17 @@ export default Vue.extend({
     checkSelection(e) {
       if (!this.menuHidden) {
         if (e.key == "Enter") {
-          let hospitals = this.hospitals.filter(element => {
+          const hospitals = this.hospitals.filter(element => {
             return element.krankenhausStandort.bezeichnung.includes(
               e.srcElement.value
             );
           });
-          document.getElementById("list-19").classList.add("hideMenu");
+          this.$store.commit("selectHospitals", hospitals);
+          document.getElementById("list-19")!.classList.add("hideMenu");
           this.menuHidden = true;
         }
       } else {
-        document.getElementById("list-19").classList.remove("hideMenu");
+        document.getElementById("list-19")!.classList.remove("hideMenu");
         this.menuHidden = false;
       }
     }
@@ -84,7 +99,6 @@ export default Vue.extend({
   font-family: canada-type-gibson, sans-serif;
   font-weight: 600;
   font-style: normal;
-  margin-left: 0.5rem;
 }
 
 .v-list-item__title {
@@ -95,5 +109,9 @@ export default Vue.extend({
 
 .hideMenu {
   display: none;
+}
+
+.white {
+  background-color: white;
 }
 </style>

@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 const state = {
   hospitals: [],
-  selectHospitals: [],
+  selectHospitals: undefined,
   lastUpdate: "",
 };
 
@@ -35,7 +35,7 @@ const mutations = {
       .push({ path: "", query: {} })
       // eslint-disable-next-line @typescript-eslint/no-empty-function
       .catch((err) => {});
-    state.selectHospitals = [];
+    state.selectHospitals = undefined;
   },
 };
 

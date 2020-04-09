@@ -1,5 +1,6 @@
 <template >
   <GmapMap
+    v-if="hospitals"
     :center="center"
     :zoom="zoom"
     style="width: 100%; height: 100%"
@@ -38,14 +39,20 @@ export default Vue.extend({
   }),
 
   updated() {
-    this.checkCurrentRoute();
+    //this.checkCurrentRoute();
   },
 
   methods: {
     checkCurrentRoute() {
-      const givenHospital = this.$route.query.klinik[0];
+      let givenHospital = this.$route.query.kliniken;
 
-      if (givenHospital) {
+      console.log(givenHospital);
+
+      if (!givenHospital) {
+        givenHospital = [];
+      }
+
+      if (givenHospital.length != 0) {
         const result = this.hospitals.filter(
           hospital => hospital.id == givenHospital
         );
@@ -82,7 +89,6 @@ export default Vue.extend({
       if (!this.selectedHospitals) {
         return;
       }
-
       this.center = {
         lat: this.selectedHospitals[0].position.lat,
         lng: this.selectedHospitals[0].position.lng

@@ -1,5 +1,5 @@
 <template>
-  <v-card outlined v-if="selectedHospitals != []">
+  <v-card outlined v-if="selectedHospitals">
     <v-btn
       @click="(e) => $store.commit('unselectHospitals')"
       class="black--text"
@@ -18,10 +18,10 @@
       <v-list-item-content>
         <v-list-item-title
           class="headline mb-1"
-        >{{ selectedHospitals[index].krankenhausStandort.bezeichnung }}</v-list-item-title>
+        >{{ selectedHospitals[currentObject].krankenhausStandort.bezeichnung }}</v-list-item-title>
         <span
           class="uptime-time"
-        >Letztes Update: {{selectedHospitals[index].meldezeitpunktReadable}}</span>
+        >Letztes Update: {{selectedHospitals[currentObject].meldezeitpunktReadable}}</span>
 
         <v-list-item-title>Aktuelle Situation</v-list-item-title>
         <hr />
@@ -40,99 +40,106 @@
           <v-icon>mdi-chevron-right</v-icon>
         </v-btn>
         <v-container fluid class="pa-0 ma-0">
-          <v-col class="pl-0" v-if="selectedHospitals[index].bettenStatusColor.statusHighCare">
+          <v-col
+            class="pl-0"
+            v-if="selectedHospitals[currentObject].bettenStatusColor.statusHighCare"
+          >
             <v-icon
               class="margin-right"
-              v-if="selectedHospitals[index].bettenStatusColor.statusHighCare == 'red'"
+              v-if="selectedHospitals[currentObject].bettenStatusColor.statusHighCare == 'red'"
               color="red"
             >mdi-checkbox-blank-circle</v-icon>
             <v-icon
               class="icon-margin"
-              v-if="selectedHospitals[index].bettenStatusColor.statusHighCare == 'green'"
+              v-if="selectedHospitals[currentObject].bettenStatusColor.statusHighCare == 'green'"
               color="green"
             >mdi-checkbox-blank-circle</v-icon>
             <v-icon
               class="icon-margin"
-              v-if="selectedHospitals[index].bettenStatusColor.statusHighCare == 'grey'"
+              v-if="selectedHospitals[currentObject].bettenStatusColor.statusHighCare == 'grey'"
               color="grey"
             >mdi-checkbox-blank-circle</v-icon>
             <v-icon
               class="icon-margin"
-              v-if="selectedHospitals[index].bettenStatusColor.statusHighCare == 'yellow'"
+              v-if="selectedHospitals[currentObject].bettenStatusColor.statusHighCare == 'yellow'"
               color="yellow"
             >mdi-checkbox-blank-circle</v-icon>Betten mit inv. Beatmung
           </v-col>
 
-          <v-col class="pl-0" v-if="selectedHospitals[index].bettenStatusColor.statusLowCare">
+          <v-col
+            class="pl-0"
+            v-if="selectedHospitals[currentObject].bettenStatusColor.statusLowCare"
+          >
             <v-icon
               class="icon-margin"
-              v-if="selectedHospitals[index].bettenStatusColor.statusLowCare == 'red'"
+              v-if="selectedHospitals[currentObject].bettenStatusColor.statusLowCare == 'red'"
               color="red"
             >mdi-checkbox-blank-circle</v-icon>
             <v-icon
               class="icon-margin"
-              v-if="selectedHospitals[index].bettenStatusColor.statusLowCare == 'green'"
+              v-if="selectedHospitals[currentObject].bettenStatusColor.statusLowCare == 'green'"
               color="green"
             >mdi-checkbox-blank-circle</v-icon>
             <v-icon
               class="icon-margin"
-              v-if="selectedHospitals[index].bettenStatusColor.statusLowCare == 'grey'"
+              v-if="selectedHospitals[currentObject].bettenStatusColor.statusLowCare == 'grey'"
               color="grey"
             >mdi-checkbox-blank-circle</v-icon>
             <v-icon
               class="icon-margin"
-              v-if="selectedHospitals[index].bettenStatusColor.statusLowCare == 'yellow'"
+              v-if="selectedHospitals[currentObject].bettenStatusColor.statusLowCare == 'yellow'"
               color="yellow"
             >mdi-checkbox-blank-circle</v-icon>Betten ohne inv. Beatmung
           </v-col>
 
-          <v-col class="pl-0" v-if="selectedHospitals[index].bettenStatusColor.statusECMO">
+          <v-col class="pl-0" v-if="selectedHospitals[currentObject].bettenStatusColor.statusECMO">
             <v-icon
               class="icon-margin"
-              v-if="selectedHospitals[index].bettenStatusColor.statusECMO == 'red'"
+              v-if="selectedHospitals[currentObject].bettenStatusColor.statusECMO == 'red'"
               color="red"
             >mdi-checkbox-blank-circle</v-icon>
             <v-icon
               class="icon-margin"
-              v-if="selectedHospitals[index].bettenStatusColor.statusECMO == 'green'"
+              v-if="selectedHospitals[currentObject].bettenStatusColor.statusECMO == 'green'"
               color="green"
             >mdi-checkbox-blank-circle</v-icon>
             <v-icon
               class="icon-margin"
-              v-if="selectedHospitals[index].bettenStatusColor.statusECMO == 'grey'"
+              v-if="selectedHospitals[currentObject].bettenStatusColor.statusECMO == 'grey'"
               color="grey"
             >mdi-checkbox-blank-circle</v-icon>
             <v-icon
               class="icon-margin"
-              v-if="selectedHospitals[index].bettenStatusColor.statusECMO== 'yellow'"
+              v-if="selectedHospitals[currentObject].bettenStatusColor.statusECMO== 'yellow'"
               color="yellow"
             >mdi-checkbox-blank-circle</v-icon>Zusätzliche Beatmung
           </v-col>
           <v-col
             class="pl-0"
-            v-if="selectedHospitals[index].faelleCovidAktuell"
-          >{{ selectedHospitals[index].faelleCovidAktuell }} Corona Fälle</v-col>
+            v-if="selectedHospitals[currentObject].faelleCovidAktuell"
+          >{{ selectedHospitals[currentObject].faelleCovidAktuell }} Corona Fälle</v-col>
         </v-container>
 
-        <v-list-item-title v-if="selectedHospitals[index].history.length != 0">Zeitlicher Verlauf</v-list-item-title>
+        <v-list-item-title
+          v-if="selectedHospitals[currentObject].history.length != 0"
+        >Zeitlicher Verlauf</v-list-item-title>
         <hr />
-        <div class="small" v-if="selectedHospitals[index].history.length != 0">
+        <div class="small" v-if="selectedHospitals[currentObject].history.length != 0">
           <graph-view
-            v-if="selectedHospitals[index].history.length != 0"
+            v-if="selectedHospitals[currentObject].history.length != 0"
             :chart-data="historyDataCollection"
             :height="200"
           />
         </div>
       </v-list-item-content>
     </v-list-item>
-    <div v-if="selectedHospitals.length > 1 && selectedHospitals.length < 12" class="text-center">
-      <a
-        style="padding: 0.1rem;"
-        v-for="(hospital, localIndex) in selectedHospitals"
-        :key="hospital"
-      >
-        <v-icon class="dots" v-if="index != localIndex" color="grey">mdi-checkbox-blank-circle</v-icon>
-        <v-icon class="dots" v-if="index == localIndex" color="black">mdi-checkbox-blank-circle</v-icon>
+    <div
+      v-if="(selectedHospitals.length > 1) && (selectedHospitals.length < 12)"
+      class="text-center"
+    >
+      <a style="padding: 0.1rem;" v-for="(hospital, i) in selectedHospitals" :key="hospital.id">
+        <v-icon class="dots" v-if="currentObject != i" color="grey">mdi-checkbox-blank-circle</v-icon>
+        <v-icon class="dots" v-if="currentObject == i" color="black">mdi-checkbox-blank-circle</v-icon>
       </a>
     </div>
   </v-card>
@@ -150,7 +157,7 @@ export default Vue.extend({
   },
 
   data: () => ({
-    index: 0
+    currentObject: 0
   }),
 
   watch: {},
@@ -171,10 +178,10 @@ export default Vue.extend({
   },
   methods: {
     nextHospital() {
-      if (this.index == this.selectedHospitals.length - 1) {
-        this.index = 0;
+      if (this.currentObject == this.selectedHospitals.length - 1) {
+        this.currentObject = 0;
       } else {
-        this.index = this.index + 1;
+        this.currentObject = this.currentObject + 1;
       }
     },
     sortedList(list, value) {
@@ -191,20 +198,29 @@ export default Vue.extend({
       const dataArray: number[] = [];
       const labelArray: string[] = [];
 
-      const sortedList = this.sortedList(
-        this.selectedHospitals[this.index].history,
-        "meldezeitpunkt"
-      );
+      try {
+        const sortedList = this.sortedList(
+          this.selectedHospitals[this.currentObject].history,
+          "meldezeitpunkt"
+        );
 
-      sortedList.forEach(element => {
-        dataArray.push(element.faelleCovidAktuell);
-        labelArray.push(element.meldezeitpunkt.substring(0, 10));
-      });
+        sortedList.forEach(element => {
+          dataArray.push(element.faelleCovidAktuell);
+          labelArray.push(element.meldezeitpunkt.substring(0, 10));
+        });
 
-      dataArray.push(this.selectedHospitals[this.index].faelleCovidAktuell);
-      labelArray.push(
-        this.selectedHospitals[this.index].meldezeitpunkt.substring(0, 10)
-      );
+        dataArray.push(
+          this.selectedHospitals[this.currentObject].faelleCovidAktuell
+        );
+        labelArray.push(
+          this.selectedHospitals[this.currentObject].meldezeitpunkt.substring(
+            0,
+            10
+          )
+        );
+      } catch (error) {
+        console.log(error);
+      }
 
       return {
         labels: labelArray,
@@ -242,7 +258,7 @@ export default Vue.extend({
 }
 
 .v-card {
-  z-index: 99;
+  z-currentobject: 99;
   font-family: canada-type-gibson, sans-serif;
   font-style: normal;
 }

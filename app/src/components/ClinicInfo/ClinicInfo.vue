@@ -1,5 +1,5 @@
 <template>
-  <v-card outlined v-if="selectedHospitals != []">
+  <v-card outlined v-if="selectedHospitals != undefined">
     <v-btn
       @click="(e) => $store.commit('unselectHospitals')"
       class="black--text"
@@ -26,6 +26,7 @@
         <v-list-item-title>Aktuelle Situation</v-list-item-title>
         <hr />
         <v-btn
+          v-if="selectedHospitals.length > 1"
           class="black--text margin-right-btn"
           depressed
           color="white"
@@ -124,6 +125,16 @@
         </div>
       </v-list-item-content>
     </v-list-item>
+    <div v-if="selectedHospitals.length > 1 && selectedHospitals.length < 12" class="text-center">
+      <a
+        style="padding: 0.1rem;"
+        v-for="(hospital, localIndex) in selectedHospitals"
+        :key="hospital"
+      >
+        <v-icon class="dots" v-if="index != localIndex" color="grey">mdi-checkbox-blank-circle</v-icon>
+        <v-icon class="dots" v-if="index == localIndex" color="black">mdi-checkbox-blank-circle</v-icon>
+      </a>
+    </div>
   </v-card>
 </template>
 

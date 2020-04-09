@@ -1,5 +1,6 @@
-<template>
+<template >
   <GmapMap
+    v-if="hospitals != undefined"
     :center="center"
     :zoom="zoom"
     style="width: 100%; height: 100%"

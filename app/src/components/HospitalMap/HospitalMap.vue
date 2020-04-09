@@ -25,8 +25,7 @@
 <script lang="ts">
 import Vue from "vue";
 import mapStyle from "./mapStyle";
-import router from "../../router";
-git import { orderBy } from "lodash";
+import { orderBy } from "lodash";
 
 export default Vue.extend({
   name: "HospitalMap",

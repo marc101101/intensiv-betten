@@ -1,26 +1,27 @@
 <template >
-  <GmapMap
-    v-if="hospitals != undefined"
-    :center="center"
-    :zoom="zoom"
-    style="width: 100%; height: 100%"
-    :options="{
+  <div v-if="hospitals != []">
+    <GmapMap
+      :center="center"
+      :zoom="zoom"
+      style="width: 100%; height: 100%"
+      :options="{
       streetViewControl: false,
       fullscreenControl: false,
       mapTypeControl: false,
       styles: mapStyle
     }"
-  >
-    <GmapCircle
-      v-for="(m, index) in hospitals"
-      :key="index"
-      :center="m.position"
-      :radius="getRadius(m.faelleCovidAktuell)"
-      :visible="true"
-      :options="{fillColor: m.bettenStatusColor.statusHighCare, strokeWeight:0.3 }"
-      @click="select(m)"
-    ></GmapCircle>
-  </GmapMap>
+    >
+      <GmapCircle
+        v-for="(m, index) in hospitals"
+        :key="index"
+        :center="m.position"
+        :radius="getRadius(m.faelleCovidAktuell)"
+        :visible="true"
+        :options="{fillColor: m.bettenStatusColor.statusHighCare, strokeWeight:0.3 }"
+        @click="select(m)"
+      ></GmapCircle>
+    </GmapMap>
+  </div>
 </template>
 
 <script lang="ts">

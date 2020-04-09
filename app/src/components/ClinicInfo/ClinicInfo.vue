@@ -1,5 +1,5 @@
 <template>
-  <v-card outlined v-if="selectedHospitals != undefined">
+  <v-card outlined v-if="selectedHospitals != []">
     <v-btn
       @click="(e) => $store.commit('unselectHospitals')"
       class="black--text"

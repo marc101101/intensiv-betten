@@ -37,7 +37,7 @@ function parseHospital(history) {
     };
   });
 }
-//object {hospital: history}
+
 let history_list_old = [];
 
 old_json.forEach((hospital) => {
@@ -69,11 +69,11 @@ new_json_data.forEach((hospital_new) => {
 
 new_json.data = new_json_data;
 
-fs.writeFile(
+/*fs.writeFile(
   "./src/migration/aggregated_v2.json",
   JSON.stringify(new_json),
   (err) => {
     if (err) throw err;
     console.log("Data written to file");
   }
-);
+);*/

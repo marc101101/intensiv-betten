@@ -54,10 +54,10 @@ old_json.forEach((hospital) => {
 
 let rawdata_new = fs.readFileSync("./src/migration/aggregated_v2.json");
 let new_json = JSON.parse(rawdata_new);
-new_json = new_json.data;
+let new_json_data = new_json.data;
 
 let counter = 0;
-new_json.forEach((hospital_new) => {
+new_json_data.forEach((hospital_new) => {
   history_list_old.forEach((hospital_old) => {
     if (
       hospital_new.krankenhausStandort.bezeichnung.includes(hospital_old.name)
@@ -66,6 +66,8 @@ new_json.forEach((hospital_new) => {
     }
   });
 });
+
+new_json.data = new_json_data;
 
 fs.writeFile(
   "./src/migration/aggregated_v2.json",

@@ -3,7 +3,7 @@
     v-if="hospitals"
     :center="center"
     :zoom="zoom"
-    style="width: 100%; height: 100%"
+    style="position: initial; height:100%"
     :options="{
       streetViewControl: false,
       fullscreenControl: false,

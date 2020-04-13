@@ -167,7 +167,7 @@ export default Vue.extend({
       meldezeitpunkt: string;
       history: { faelleCovidAktuell: number; meldezeitpunkt: string }[];
     }> {
-      this.currentObject = 0;
+      //this.currentObject = 0;
       return this.$store.state.selectHospitals;
     },
     historyDataCollection(): {

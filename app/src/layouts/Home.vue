@@ -12,7 +12,6 @@
         <v-col lg="12" class="map-outter-style">
           <search-bar class="desktop" />
           <clinic-info class="desktop desktop-extended" />
-          <hospital-map />
         </v-col>
       </v-row>
 
@@ -25,9 +24,9 @@
           <search-bar class="mobile" />
           <clinic-info class="mobile mobile-extended" />
         </v-col>
-        <hospital-map />
       </v-row>
     </v-content>
+    <hospital-map />
   </v-app>
 </template>
 
@@ -85,14 +84,14 @@ export default Vue.extend({
 .desktop {
   margin-left: 2.1rem !important;
   width: 30rem;
-  position: absolute;
   z-index: 99;
   margin-top: 4rem !important;
 }
 
 .desktop-extended {
   margin-left: 2.1rem !important;
-  margin-top: 11.5rem !important;
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
 }
 
 .mobile {

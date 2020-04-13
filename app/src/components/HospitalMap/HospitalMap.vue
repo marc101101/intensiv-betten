@@ -39,7 +39,7 @@ export default Vue.extend({
   }),
 
   updated() {
-    //this.checkCurrentRoute();
+    this.checkCurrentRoute();
   },
 
   methods: {
@@ -54,8 +54,10 @@ export default Vue.extend({
 
       if (givenHospital.length != 0) {
         const result = this.hospitals.filter(
-          hospital => hospital.id == givenHospital
+          hospital => hospital.id == givenHospital[0]
         );
+        console.log(result);
+
         this.select(result);
       }
     },

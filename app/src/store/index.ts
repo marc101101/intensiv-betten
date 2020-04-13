@@ -18,15 +18,21 @@ const mutations = {
     state.hospitals = hospitals;
   },
   selectHospitals(state, selectedHospitals) {
+    /*let queryContent: Array<string> = [];
+
+    selectedHospitals.forEach((element: any) => {
+      queryContent.push(element.id);
+    });
+
     router
       .push({
         path: "",
         query: {
-          kliniken: [selectedHospitals.map((e: any) => Object.values(e)[0])],
+          kliniken: queryContent,
         },
       })
       // eslint-disable-next-line @typescript-eslint/no-empty-function
-      .catch((err) => {});
+      .catch((err) => {});*/
 
     state.selectHospitals = selectedHospitals;
   },

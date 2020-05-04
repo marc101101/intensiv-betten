@@ -1,6 +1,6 @@
 ![Upload Website](https://github.com/marc101101/intensiv-betten/workflows/Upload%20Website/badge.svg?branch=master)
 
-# Intensiv - Bettten
+# IntensivBettten
 
 This project collects data on the situation of intensive care beds in German hospitals.
 

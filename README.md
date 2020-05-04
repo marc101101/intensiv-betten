@@ -12,7 +12,6 @@ This project collects data on the situation of intensive care beds in German hos
 
 - ./app - vue.js based frontend application :construction:
 - ./data_analytics - jupyter notebooks to research the data :construction:
-- ./data_storage - clone of s3 bucket (updated asap) :white_check_mark:
 - ./data_collector - data parsing & collection service :white_check_mark 
 
 ## Data
@@ -24,13 +23,13 @@ Example data:
 ```json
 [
   {
-    "hospital": "Klinikum Bamberg Medizinische Klinik I/Intensivstation II, Medizinische Klinik I, Buger Straße 80, 96049 Bamberg",
-    "contact": "Intensivstation II Website",
+    "hospital": "Klinikum XYZ",
+    "contact": "Intensivstation Website",
     "fed": "BY",
     "icu_low_care": "green",
-    "icu_high_care": "green",
-    "ecmo": "green",
-    "updated": "26.03.2020, 17:09"
+    "icu_high_care": "yellow",
+    "ecmo": "red",
+    "updated": "MM.DD.YYYY, HH:MM"
   }
 ]
 ```

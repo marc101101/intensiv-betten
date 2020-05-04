@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 const state = {
   hospitals: [],
-  selectedHospital: undefined,
+  selectHospitals: undefined,
   lastUpdate: "",
 };
 
@@ -17,22 +17,31 @@ const mutations = {
   setHospitals(state, hospitals) {
     state.hospitals = hospitals;
   },
-  selectHospital(state, selectedHospital) {
+  selectHospitals(state, selectedHospitals) {
+    /*let queryContent: Array<string> = [];
+
+    selectedHospitals.forEach((element: any) => {
+      queryContent.push(element.id);
+    });
+
     router
       .push({
         path: "",
-        query: { klinik: selectedHospital.id },
+        query: {
+          kliniken: queryContent,
+        },
       })
       // eslint-disable-next-line @typescript-eslint/no-empty-function
-      .catch((err) => {});
-    state.selectedHospital = selectedHospital;
+      .catch((err) => {});*/
+
+    state.selectHospitals = selectedHospitals;
   },
-  unselectHospital(state) {
+  unselectHospitals(state) {
     router
       .push({ path: "", query: {} })
       // eslint-disable-next-line @typescript-eslint/no-empty-function
       .catch((err) => {});
-    state.selectedHospital = undefined;
+    state.selectHospitals = undefined;
   },
 };
 

@@ -1,5 +1,5 @@
 import * as rm from "typed-rest-client/RestClient";
-import { logger } from "../../v1/aggregator/helpers";
+import { logger } from "../helpers";
 import AWS from "aws-sdk";
 
 export class CollectIntensivBettenClient {
@@ -34,13 +34,15 @@ export class CollectIntensivBettenClient {
 
       if (i != -1) {
         element.history = old_aggregation.data[i].history;
-
+        if (element.history == undefined) {
+          element.history = [];
+        }
         let current_object = old_aggregation.data[i];
         let current_time = Date.parse(element.meldezeitpunkt);
         let old_time = Date.parse(current_object.meldezeitpunkt);
 
         if (current_time != old_time) {
-          let j = old_aggregation.data[i].history.findIndex(
+          let j = element.history.findIndex(
             (hospital) => hospital.meldezeitpunkt == element.meldezeitpunkt
           );
           if (j == -1) {

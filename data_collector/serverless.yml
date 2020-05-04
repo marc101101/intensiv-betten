@@ -60,7 +60,7 @@ custom:
     packager: "npm" # Packager that will be used to package your external modules
 
 functions:
-  collectIntensivBetten:
+  collectAndAggregateIntensivBetten:
     handler: src/v2/CollectIntensivBetten.collectAndAggregateIntensivBetten
     timeout: 300
     events:

@@ -12,7 +12,18 @@ export default Vue.extend({
     // this.chartData is created in the mixin.
     // If you want to pass options please create a local options object
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (this as any).renderChart(this.chartData, { spanGaps: true });
+    (this as any).renderChart(this.chartData, {
+      spanGaps: true,
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              beginAtZero: true
+            }
+          }
+        ]
+      }
+    });
   }
 });
 </script>

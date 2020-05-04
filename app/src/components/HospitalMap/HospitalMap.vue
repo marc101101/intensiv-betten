@@ -1,8 +1,9 @@
-<template>
+<template >
   <GmapMap
+    v-if="hospitals"
     :center="center"
     :zoom="zoom"
-    style="width: 100%; height: 100%"
+    style="position: initial; height:100%"
     :options="{
       streetViewControl: false,
       fullscreenControl: false,
@@ -43,17 +44,25 @@ export default Vue.extend({
 
   methods: {
     checkCurrentRoute() {
-      const givenHospital = this.$route.query.klinik;
+      let givenHospital = this.$route.query.kliniken;
 
-      if (givenHospital) {
+      console.log(givenHospital);
+
+      if (!givenHospital) {
+        givenHospital = [];
+      }
+
+      if (givenHospital.length != 0) {
         const result = this.hospitals.filter(
-          hospital => hospital.id == givenHospital
+          hospital => hospital.id == givenHospital[0]
         );
-        this.select(result[0]);
+        console.log(result);
+
+        this.select(result);
       }
     },
     select(hospital) {
-      this.$store.commit("selectHospital", hospital);
+      this.$store.commit("selectHospitals", [hospital]);
     },
     getRadius(covid) {
       if (covid) {
@@ -78,14 +87,13 @@ export default Vue.extend({
   },
 
   watch: {
-    selectedHospital() {
-      if (!this.selectedHospital) {
+    selectedHospitals() {
+      if (!this.selectedHospitals) {
         return;
       }
-
       this.center = {
-        lat: this.selectedHospital.position.lat,
-        lng: this.selectedHospital.position.lng
+        lat: this.selectedHospitals[0].position.lat,
+        lng: this.selectedHospitals[0].position.lng
       };
 
       this.zoom = 13;
@@ -93,8 +101,8 @@ export default Vue.extend({
   },
 
   computed: {
-    selectedHospital() {
-      return this.$store.state.selectedHospital;
+    selectedHospitals() {
+      return this.$store.state.selectHospitals;
     },
     hospitals() {
       const hospitals = this.$store.state.hospitals;

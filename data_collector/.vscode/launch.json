@@ -5,6 +5,12 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "node",
+      "request": "launch",
+      "name": "Migration Script",
+      "program": "${workspaceFolder}/src/migration/migration_v1_to_v2.js"
+    },
+    {
       "console": "integratedTerminal",
       "type": "node",
       "request": "launch",
@@ -28,6 +34,15 @@
       "name": "Invoke Local - aggregateIntensivBetten",
       "program": "${workspaceFolder}/node_modules/serverless/bin/serverless",
       "args": ["invoke", "local", "-f", "aggregateIntensivBetten"],
+      "runtimeExecutable": "node"
+    },
+    {
+      "console": "integratedTerminal",
+      "type": "node",
+      "request": "launch",
+      "name": "Invoke Local - collectAndAggregateIntensivBetten",
+      "program": "${workspaceFolder}/node_modules/serverless/bin/serverless",
+      "args": ["invoke", "local", "-f", "collectAndAggregateIntensivBetten"],
       "runtimeExecutable": "node"
     }
   ]

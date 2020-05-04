@@ -25,7 +25,7 @@
 <script lang="ts">
 import Vue from "vue";
 import mapStyle from "./mapStyle";
-import router from "../../router";
+import { orderBy } from "lodash";
 
 export default Vue.extend({
   name: "HospitalMap",
@@ -99,7 +99,7 @@ export default Vue.extend({
     hospitals() {
       const hospitals = this.$store.state.hospitals;
 
-      return hospitals
+      const result = hospitals
         .filter(
           x =>
             x.krankenhausStandort.position.latitude &&
@@ -110,6 +110,8 @@ export default Vue.extend({
             lat: x.krankenhausStandort.position.latitude,
             lng: x.krankenhausStandort.position.longitude
           };
+          x.faelleCovidAktuell =
+            x.faelleCovidAktuell != null ? x.faelleCovidAktuell : 0;
           x.bettenStatusColor = {
             statusLowCare: this.mapStringToColor(x.bettenStatus.statusLowCare),
             statusHighCare: this.mapStringToColor(x.bettenStatus.statusLowCare),
@@ -118,6 +120,7 @@ export default Vue.extend({
           x.meldezeitpunktReadable = x.meldezeitpunkt;
           return x;
         });
+      return orderBy(result, "faelleCovidAktuell", "desc");
     }
   }
 });

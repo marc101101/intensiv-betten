@@ -14,7 +14,7 @@ This project collects data on the situation of intensive care beds in German hos
 ## Design Prototype 
 
 <a>
-<img align="left" src="https://i.imgur.com/AfINK1E.png" alt="" />
+<img align="left" src="https://i.imgur.com/SJEayJY.png" alt="" />
 </a><br><br>
 
 ## Data

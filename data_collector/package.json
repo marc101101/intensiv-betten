@@ -22,7 +22,7 @@
     "typescript": "^2.9.2"
   },
   "dependencies": {
-    "@types/pino": "^5.15.5",
+    "@types/pino": "^6.3.2",
     "cheerio": "^1.0.0-rc.3",
     "copy-webpack-plugin": "^5.1.1",
     "fork-ts-checker-webpack-plugin": "^4.1.3",

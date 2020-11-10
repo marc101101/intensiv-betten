@@ -35,7 +35,7 @@
     "proxy-agent": "^3.1.1",
     "request": "^2.88.2",
     "serverless-webpack": "^5.3.1",
-    "ts-loader": "^6.2.1",
+    "ts-loader": "^8.0.11",
     "typed-rest-client": "^1.7.1",
     "unirest": "^0.6.0",
     "webpack": "^4.41.6",

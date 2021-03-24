@@ -14,7 +14,7 @@
   "devDependencies": {
     "@types/aws-sdk": "0.0.42",
     "@types/node": "^13.9.0",
-    "serverless": "^1.64.1",
+    "serverless": "^2.31.0",
     "serverless-dotenv-plugin": "^2.3.2",
     "ts-node": "^8.6.2",
     "tslint": "^5.5.0",
